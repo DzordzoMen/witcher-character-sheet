@@ -1,13 +1,15 @@
 <template>
   <div class="base-field rounded-lg relative">
-    <div class="absolute field-label">
+    <div class="absolute field-label primary--text">
       <slot name="label" />
     </div>
-    <v-text-field
-      v-model="fieldValue"
-      hide-details
-      :disabled="disabled"
-    />
+    <slot name="default">
+      <v-text-field
+        v-model="fieldValue"
+        hide-details
+        :disabled="disabled"
+      />
+    </slot>
   </div>
 </template>
 
