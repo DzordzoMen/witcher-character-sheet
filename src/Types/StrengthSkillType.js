@@ -2,7 +2,7 @@ const strengthSkillType = {
   Strength: 'Strength',
   HeavyArmor: 'HeavyArmor',
   HeavyWeapon: 'HeavyWeapon',
-  Condition: 'Condition',
+  FistFight: 'FistFight',
   Wholesomness: 'Wholesomness',
   Endurance: 'Endurance',
   ElixirTolerance: 'ElixirTolerance',

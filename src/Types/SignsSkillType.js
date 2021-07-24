@@ -1,5 +1,5 @@
 const signsSkillType = {
-  Signs: 'Signs',
+  Signs: 'Signs', // TODO rename
   Somme: 'Somme',
   Heliotrop: 'Heliotrop',
   Aard: 'Aard',
