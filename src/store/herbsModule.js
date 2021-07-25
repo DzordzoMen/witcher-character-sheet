@@ -41,9 +41,10 @@ const herbsModule = {
     VERMILION: (state) => state.Vermilion,
   },
   mutations: {
-    // REFACTOR
     SET_HERBS(state, newHerbs) {
-      state.herbs = newHerbs;
+      Object.keys(newHerbs).forEach((key) => {
+        state[key] = newHerbs[key];
+      });
     },
     SET_VITRIOL(state, newAmount) {
       state.Vitriol = newAmount;
@@ -68,7 +69,6 @@ const herbsModule = {
     SET_WITCHER_HERBS: ({ commit, rootGetters }) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.getObjectWithId(witcherId).then((data) => {
-        console.log(data);
         commit('SET_HERBS', data);
       });
     },
