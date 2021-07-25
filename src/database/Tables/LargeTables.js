@@ -23,9 +23,7 @@ async function getAll() {
  * @param {Number} witcherId
  */
 async function getObjectWithId(witcherId) {
-  const witchers = getAll();
-
-  return getDataForWitcherId(witchers, witcherId);
+  return getAll().then((data) => getDataForWitcherId(data, witcherId));
 }
 
 /**
