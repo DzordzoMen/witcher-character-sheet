@@ -97,6 +97,7 @@
                 color="primary"
                 class="mx-auto d-flex"
                 :disabled="!form.name || !form.school"
+                @click="createWitcher()"
               >
                 Stwórz postać
               </v-btn>
@@ -132,6 +133,7 @@ import BaseSelect from '../components/base/Select.vue';
 
 // methods
 import { availableSchools, schoolBonuses } from '../methods/availableSchools';
+import { createNewWitcher } from '../database';
 
 export default {
   name: 'Home',
@@ -176,6 +178,20 @@ export default {
       const { form: { school } } = this;
       const bonuses = schoolBonuses(school);
       return bonuses || [];
+    },
+  },
+  methods: {
+    async createWitcher() {
+      const {
+        name,
+        origin,
+        level,
+        school,
+        bonuses,
+        history,
+      } = this.form;
+      // TODO promise?
+      await createNewWitcher(name, origin, school, history, bonuses, level);
     },
   },
 };
