@@ -3,9 +3,13 @@ import sgnSkills from '../Types/SignsSkillType';
 
 import { SignsSkill } from '../database';
 
+import initState from './methods/initState';
+
 const signSkillsModule = {
   namespaced: true,
-  state: {},
+  state: {
+    ...initState(sgnSkills),
+  },
   getters: {
     SIGN_SKILL_INFO: (_state, getters) => ({
       primarySkillLvl: getters.SIGNS_SKILL,

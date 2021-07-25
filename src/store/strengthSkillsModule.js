@@ -3,9 +3,13 @@ import strSkills from '../Types/StrengthSkillType';
 
 import { StrengthSkill } from '../database';
 
+import initState from './methods/initState';
+
 const strengthSkillsModule = {
   namespaced: true,
-  state: {},
+  state: {
+    ...initState(strSkills),
+  },
   getters: {
     STRENGTH_SKILL_INFO: (_state, getters) => ({
       primarySkillLvl: getters.STRENGTH_SKILL,

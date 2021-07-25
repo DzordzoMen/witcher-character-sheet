@@ -3,9 +3,13 @@ import herbT from '../Types/HerbType';
 
 import { Herbs } from '../database';
 
+import initState from './methods/initState';
+
 const herbsModule = {
   namespaced: true,
-  state: {},
+  state: {
+    ...initState(herbT),
+  },
   getters: {
     HERBS_ARRAY: (_state, getters) => [
       {

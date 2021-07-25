@@ -3,9 +3,13 @@ import mindSkills from '../Types/MindSkill';
 
 import { MindSkill } from '../database';
 
+import initState from './methods/initState';
+
 const mindSkillsModule = {
   namespaced: true,
-  state: {},
+  state: {
+    ...initState(mindSkills),
+  },
   getters: {
     MIND_SKILL_INFO: (_state, getters) => ({
       primarySkillLvl: getters.MIND_SKILL,

@@ -3,9 +3,13 @@ import dexSkills from '../Types/DexteritySkillType';
 
 import { DexteritySkill } from '../database';
 
+import initState from './methods/initState';
+
 const dexteritySkillsModule = {
   namespaced: true,
-  state: {},
+  state: {
+    ...initState(dexSkills),
+  },
   getters: {
     DEXTERITY_SKILL_INFO: (_state, getters) => ({
       primarySkillLvl: getters.DEXTERITY_SKILL,
