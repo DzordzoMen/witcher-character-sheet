@@ -4,6 +4,7 @@ const witcherInfoType = {
   School: 'School',
   Origin: 'Origin',
   Level: 'Level',
+  AvailableSkillPoints: 'AvailableSkillPoints',
   Reputation: 'Reputation',
   Gold: 'Gold',
   History: 'History',
