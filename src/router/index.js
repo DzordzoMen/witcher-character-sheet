@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import store from '../store';
 import Home from '../views/Home.vue';
+import WitcherCard from '../views/WitcherCard.vue';
 
 Vue.use(VueRouter);
 
@@ -15,18 +16,11 @@ const routes = [
     path: '/card/:id',
     name: 'WitcherCard',
     props: true,
+    component: WitcherCard,
     beforeEnter: (to, from, next) => {
-      store.dispatch('UPDATE_WITCHER_ID', to.params.id);
+      store.dispatch('UPDATE_WITCHER_ID', Number(to.params.id));
       next();
     },
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
 ];
 
