@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import WitcherInfo from './witcherInfoModule';
 import HerbModule from './herbsModule';
 import StrengthSkill from './strengthSkillsModule';
 import DexteritySkill from './dexteritySkillsModule';
@@ -27,6 +28,7 @@ export default new Vuex.Store({
   actions: {
     UPDATE_WITCHER_ID: ({ commit, dispatch }, newId) => {
       commit('SET_WITCHER_ID', newId);
+      dispatch('WitcherInfo/SET_WITCHER_INFO');
       dispatch('HerbModule/SET_WITCHER_HERBS');
       dispatch('StrengthSkill/SET_WITCHER_STRENGTH_SKILLS');
       dispatch('DexteritySkill/SET_WITCHER_DEXTERITY_SKILLS');
@@ -35,6 +37,7 @@ export default new Vuex.Store({
     },
   },
   modules: {
+    WitcherInfo,
     HerbModule,
     StrengthSkill,
     DexteritySkill,
