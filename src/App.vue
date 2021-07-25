@@ -16,8 +16,15 @@ export default {
   components: {
     TheHeader,
   },
-  data: () => ({
-    //
-  }),
 };
 </script>
+
+<style lang="scss">
+  .absolute {
+    position: absolute
+  }
+
+  .relative {
+    position: relative;
+  }
+</style>
