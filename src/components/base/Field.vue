@@ -19,7 +19,6 @@ export default {
   props: {
     value: {
       type: [String, Number],
-      required: true,
     },
     disabled: {
       type: Boolean,
@@ -56,16 +55,16 @@ export default {
 
     .v-input {
       border-radius: inherit;
-      font-size: 14px;
+      font-size: 16px;
       margin: 0;
       padding: 6px 0 0 ;
       width: 100%;
       height: 100%;
 
       &--is-disabled {
-        color: rgba(0, 0, 0, 0.87) !important;
+        color: rgba(84, 84, 84, 0.93) !important;
         & input {
-          color: rgba(0, 0, 0, 0.87) !important;
+          color: rgba(84, 84, 84, 0.93) !important;
         }
       }
 
