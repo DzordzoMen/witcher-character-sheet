@@ -111,6 +111,12 @@
         <v-divider class="home-divider" />
       </v-col>
 
+      <v-col cols="12" lg="10">
+        <h2 class="text-center">
+          Twoje karty postaci
+        </h2>
+      </v-col>
+
       <v-col cols="12" lg="8">
         <v-container>
           <v-row dense>
