@@ -120,9 +120,13 @@
       <v-col cols="12" lg="8">
         <v-container>
           <v-row dense>
-            <template v-for="witcher in witchers">
-              <v-col cols="6" lg="3" :key="witcher.id">
-                <home-card v-bind="witcher" />
+            <template v-for="(witcher, index) in witchers">
+              <v-col cols="6" lg="3" :key="index">
+                <!-- TODO debug id -->
+                <home-card
+                  v-bind="witcher"
+                  :id="index"
+                />
               </v-col>
             </template>
           </v-row>
@@ -139,7 +143,7 @@ import BaseSelect from '../components/base/Select.vue';
 
 // methods
 import { availableSchools, schoolBonuses } from '../methods/availableSchools';
-import { createNewWitcher } from '../database';
+import { createNewWitcher, WitcherInfo } from '../database';
 
 export default {
   name: 'Home',
@@ -158,22 +162,7 @@ export default {
       bonuses: [],
       history: '',
     },
-    witchers: [
-      {
-        id: 0,
-        name: 'Wojtek',
-        level: 1,
-        title: '',
-        school: 'Cech kota',
-      },
-      {
-        id: 1,
-        name: 'Szymek',
-        level: 1,
-        title: 'Pogromca',
-        school: 'Cech wilka',
-      },
-    ],
+    witchers: [],
   }),
   computed: {
     schools() {
@@ -186,8 +175,13 @@ export default {
       return bonuses || [];
     },
   },
+  created() {
+    WitcherInfo.getAll().then((data) => {
+      this.witchers = data;
+    });
+  },
   methods: {
-    async createWitcher() {
+    createWitcher() {
       const {
         name,
         origin,
@@ -196,8 +190,9 @@ export default {
         bonuses,
         history,
       } = this.form;
-      // TODO promise?
-      await createNewWitcher(name, origin, school, history, bonuses, level);
+      createNewWitcher(name, origin, school, history, bonuses, level).then((witcherId) => {
+        this.$router.push({ name: 'WitcherCard', params: { id: witcherId } });
+      });
     },
   },
 };

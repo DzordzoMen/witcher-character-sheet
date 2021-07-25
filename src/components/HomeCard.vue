@@ -12,16 +12,16 @@
 
       <v-row no-gutters class="flex-column text-center">
         <v-col cols="12" class="title font-weight-regular black--text">
-          {{ name }}
+          {{ Name }}
         </v-col>
-        <v-col cols="12" class="body-2" v-if="!!title">
-          {{ title }}
-        </v-col>
-        <v-col cols="12" class="black--text">
-          {{ school }}
+        <v-col cols="12" class="body-2" v-if="!!Title">
+          {{ Title }}
         </v-col>
         <v-col cols="12" class="black--text">
-          Poziom {{ level }}
+          {{ School }}
+        </v-col>
+        <v-col cols="12" class="black--text">
+          Poziom {{ Level }}
         </v-col>
       </v-row>
 
@@ -44,20 +44,20 @@ export default {
       type: Number,
       required: true,
     },
-    name: {
+    Name: {
       type: String,
       required: true,
     },
-    level: {
+    Level: {
       type: Number,
       required: true,
     },
-    title: {
+    Title: {
       type: String,
       required: true,
       default: '',
     },
-    school: {
+    School: {
       type: String,
       required: true,
     },
