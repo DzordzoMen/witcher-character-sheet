@@ -1,0 +1,151 @@
+[
+  {
+    "name": "Jaskółka",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 2
+      },
+      {
+        "name": "Rebis",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Kot",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Biała mewa",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Rebis",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Wilga",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 2
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Puszczyk",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Filtr Petreigo",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 2
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Orka",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Grom",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 2
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Zamieć",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 2
+      },
+      {
+        "name": "Rebis",
+        "amount": 2
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  }
+]
