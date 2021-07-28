@@ -146,8 +146,24 @@
 
       <v-col cols="12"></v-col>
 
-      <v-col cols="3" class="primary--text text-center">
-        Pas na eliksiry
+      <v-col cols="3">
+        <v-row dense class="flex-column">
+          <v-col cols="12" class="primary--text text-center">
+            Pas na eliksiry
+          </v-col>
+
+          <template v-for="elixir in elixirs">
+            <v-col
+              cols="12"
+              :key="elixir.id"
+            >
+              <the-select-elixir
+                v-model="elixir.name"
+                :elixir-id="elixir.id"
+              />
+            </v-col>
+          </template>
+        </v-row>
       </v-col>
       <!-- skills -->
       <v-col cols="9"></v-col>
@@ -160,11 +176,13 @@
 import { mapGetters } from 'vuex';
 
 import BaseField from '../components/base/Field.vue';
+import TheSelectElixir from '../components/TheSelectElixir.vue';
 
 export default {
   name: 'WitcherCard',
   components: {
     BaseField,
+    TheSelectElixir,
   },
   data: () => ({
     placeholder: '',
