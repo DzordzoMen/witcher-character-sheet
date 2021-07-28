@@ -129,7 +129,7 @@ export default {
   text-align: center;
   flex-direction: row;
   flex-grow: 1;
-  border-radius: 9px;
+  border-radius: 8px;
   align-items: center;
   position: relative;
   user-select: none;

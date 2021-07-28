@@ -50,47 +50,47 @@ export default {
 </script>
 
 <style lang="scss">
-  .base-field {
-    border: 1px solid black;
+.base-field {
+  border: 1px solid black;
 
-    .v-input {
-      border-radius: inherit;
-      font-size: 16px;
-      margin: 0;
-      padding: 6px 0 0 ;
-      width: 100%;
-      height: 100%;
+  .v-input {
+    border-radius: inherit;
+    font-size: 16px;
+    margin: 0;
+    padding: 6px 0 0 ;
+    width: 100%;
+    height: 100%;
 
-      &--is-disabled {
+    &--is-disabled {
+      color: rgba(84, 84, 84, 0.93) !important;
+      & input {
         color: rgba(84, 84, 84, 0.93) !important;
-        & input {
-          color: rgba(84, 84, 84, 0.93) !important;
-        }
-      }
-
-      &__slot:after, &__slot:before {
-        content: none !important;
-      }
-
-      .v-text-field__slot {
-        padding: 0 12px; // TODO how it works with character skill inputs
-
-        input {
-          text-align: center;
-        }
-      }
-
-      &:hover {
-        outline: none;
-        outline-style: none;
-        box-shadow: none;
       }
     }
-    .field-label {
-      background: #fff;
-      top: -10px;
-      left: 12px;
-      padding: 0 4px;
+
+    &__slot:after, &__slot:before {
+      content: none !important;
+    }
+
+    .v-text-field__slot {
+      padding: 0 12px; // TODO how it works with character skill inputs
+
+      input {
+        text-align: center;
+      }
+    }
+
+    &:hover {
+      outline: none;
+      outline-style: none;
+      box-shadow: none;
     }
   }
+  .field-label {
+    background: #fff;
+    top: -10px;
+    left: 12px;
+    padding: 0 4px;
+  }
+}
 </style>
