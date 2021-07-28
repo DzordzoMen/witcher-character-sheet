@@ -59,7 +59,7 @@ const witcherInfoModule = {
     SET_WITCHER_ELIXIR(state, { id, name }) {
       // TODO rename
       const { Elixirs } = state;
-      state.Elixirs = Elixirs.filter((elx) => {
+      state.Elixirs = Elixirs.map((elx) => {
         if (elx.id === id) {
           return {
             id: elx.id,
