@@ -11,7 +11,7 @@ const herbsModule = {
     ...initState(herbT),
   },
   getters: {
-    HERBS_ARRAY: (_state, getters) => [
+    HERBS: (_state, getters) => [
       {
         name: 'Vitriol',
         amount: getters.VITRIOL,
@@ -70,38 +70,38 @@ const herbsModule = {
     },
   },
   actions: {
-    SET_WITCHER_HERBS: ({ commit, rootGetters }) => {
+    SET_WITCHER_HERBS: async ({ commit, rootGetters }) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.getObjectWithId(witcherId).then((data) => {
         commit('SET_HERBS', data);
       });
     },
-    UPDATE_VITRIOL: ({ commit, rootGetters }, amount) => {
+    UPDATE_VITRIOL: async ({ commit, rootGetters }, amount) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.setParamValue(witcherId, herbT.Vitriol, amount);
       commit('SET_VITRIOL', amount);
     },
-    UPDATE_REBIS: ({ commit, rootGetters }, amount) => {
+    UPDATE_REBIS: async ({ commit, rootGetters }, amount) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.setParamValue(witcherId, herbT.Rebis, amount);
       commit('SET_REBIS', amount);
     },
-    UPDATE_AETHER: ({ commit, rootGetters }, amount) => {
+    UPDATE_AETHER: async ({ commit, rootGetters }, amount) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.setParamValue(witcherId, herbT.Aether, amount);
       commit('SET_AETHER', amount);
     },
-    UPDATE_QUEBRITH: ({ commit, rootGetters }, amount) => {
+    UPDATE_QUEBRITH: async ({ commit, rootGetters }, amount) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.setParamValue(witcherId, herbT.Quebrith, amount);
       commit('SET_QUEBRITH', amount);
     },
-    UPDATE_HYDRAGENUM: ({ commit, rootGetters }, amount) => {
+    UPDATE_HYDRAGENUM: async ({ commit, rootGetters }, amount) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.setParamValue(witcherId, herbT.Hydragenum, amount);
       commit('SET_HYDRAGENUM', amount);
     },
-    UPDATE_VERMILION: ({ commit, rootGetters }, amount) => {
+    UPDATE_VERMILION: async ({ commit, rootGetters }, amount) => {
       const witcherId = rootGetters.WITCHER_ID;
       Herbs.setParamValue(witcherId, herbT.Vermilion, amount);
       commit('SET_VERMILION', amount);
