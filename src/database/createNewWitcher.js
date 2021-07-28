@@ -54,7 +54,13 @@ async function createNewWitcher(name, origin, school, history, schoolBonuses = [
   newWitcher[witcherInfo.AvailableSkillPoints] = level * 6;
   newWitcher[witcherInfo.Reputation] = 0;
   newWitcher[witcherInfo.Gold] = 0;
-  newWitcher[witcherInfo.Elixirs] = [];
+  newWitcher[witcherInfo.Elixirs] = [
+    { id: 1, name: '' },
+    { id: 2, name: '' },
+    { id: 3, name: '' },
+    { id: 4, name: '' },
+    { id: 5, name: '' },
+  ];
   const witcherId = addNewObjectToLocalStorage(tables.WitcherInfo, newWitcher);
 
   const witcherHerbs = createObjectWithKeys(herb, 0);
