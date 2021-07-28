@@ -125,6 +125,7 @@ export default {
 .select {
   display: flex;
   height: 100%;
+  min-height: 42px;
   padding: 8px;
   text-align: center;
   flex-direction: row;
