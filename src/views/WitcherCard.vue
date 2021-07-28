@@ -4,7 +4,7 @@
 
       <v-col cols="3">
         <base-field
-          v-model="level"
+          v-model.number="level"
           disabled
         >
           <template #label>
@@ -44,7 +44,7 @@
 
       <v-col cols="3">
         <base-field
-          v-model="availableSkillPoints"
+          v-model.number="availableSkillPoints"
           disabled
         >
           <template #label>
@@ -56,7 +56,7 @@
         <v-row dense>
           <v-col cols="6">
             <base-field
-              v-model="healthPoints"
+              v-model.number="healthPoints"
               disabled
             >
               <template #label>
@@ -66,7 +66,7 @@
           </v-col>
           <v-col cols="6">
             <base-field
-              v-model="manaPoints"
+              v-model.number="manaPoints"
               disabled
             >
               <template #label>
@@ -78,7 +78,7 @@
       </v-col>
       <v-col cols="3">
         <base-field
-          v-model="witcherGold"
+          v-model.number="witcherGold"
           inputType="number"
         >
           <template #label>
@@ -104,7 +104,7 @@
       </v-col>
       <v-col cols="3">
         <base-field
-          v-model="baseLightArmor"
+          v-model.number="baseLightArmor"
           disabled
         >
           <template #label>
@@ -114,7 +114,7 @@
       </v-col>
       <v-col cols="3">
         <base-field
-          v-model="baseHeavyArmor"
+          v-model.number="baseHeavyArmor"
           disabled
         >
           <template #label>
@@ -124,7 +124,7 @@
       </v-col>
       <v-col cols="3">
         <base-field
-          v-model="baseMagicResists"
+          v-model.number="baseMagicResists"
           disabled
         >
           <template #label>
@@ -135,8 +135,8 @@
 
       <v-col cols="3">
         <base-field
-          v-model="reputation"
-          disabled
+          v-model.number="reputation"
+          inputType="number"
         >
           <template #label>
             Reputacja
