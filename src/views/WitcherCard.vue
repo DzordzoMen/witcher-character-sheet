@@ -4,8 +4,11 @@
 
       <v-col cols="3">
         <base-field
-          v-model.number="level"
+          v-model.number="witcherLevel"
           disabled
+          :min="1"
+          :disable-decrease-btn="availableSkillPoints < 6"
+          show-btns
         >
           <template #label>
             Poziom
@@ -280,6 +283,18 @@ export default {
       },
       set(val) {
         this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_GOLD', Number(val));
+      },
+    },
+    witcherLevel: {
+      get() {
+        return this.level;
+      },
+      set(val) {
+        if (this.level > val) {
+          this.$store.dispatch('WitcherInfo/DECREASE_WITCHER_LEVEL', Number(val));
+        } else {
+          this.$store.dispatch('WitcherInfo/INCREASE_WITCHER_LEVEL', Number(val));
+        }
       },
     },
   },
