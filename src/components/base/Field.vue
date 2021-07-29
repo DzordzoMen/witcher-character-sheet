@@ -4,18 +4,43 @@
       <slot name="label" />
     </div>
     <slot name="default">
-      <v-text-field
-        v-model="fieldValue"
-        hide-details
-        :disabled="disabled"
-      />
+      <v-row no-gutters class="align-center">
+        <v-col class="shrink" v-if="showBtns">
+          <v-btn
+            @click="decreaseValue"
+            elevation="0"
+            :disabled="disableDecreaseBtn || +fieldValue === min"
+          >
+            <minus-icon />
+          </v-btn>
+        </v-col>
+        <v-col class="grow">
+          <v-text-field
+            v-model="fieldValue"
+            hide-details
+            :disabled="disabled"
+          />
+        </v-col>
+        <v-col class="shrink" v-if="showBtns">
+          <v-btn @click="increaseValue" elevation="0">
+            <plus-icon />
+          </v-btn>
+        </v-col>
+      </v-row>
     </slot>
   </div>
 </template>
 
 <script>
+import PlusIcon from '../Icons/PlusIcon.vue';
+import MinusIcon from '../Icons/MinusIcon.vue';
+
 export default {
   name: 'Field',
+  components: {
+    PlusIcon,
+    MinusIcon,
+  },
   props: {
     value: {
       type: [String, Number],
@@ -31,6 +56,21 @@ export default {
       default: 'text',
       validator: (prop) => ['number', 'text'].includes(prop),
     },
+    showBtns: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    min: {
+      required: false,
+      type: Number,
+      default: 0,
+    },
+    disableDecreaseBtn: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     fieldValue: {
@@ -44,6 +84,16 @@ export default {
         }
         this.$emit('input', value);
       },
+    },
+  },
+  methods: {
+    increaseValue() {
+      const val = this.fieldValue;
+      this.fieldValue = (+val) + 1;
+    },
+    decreaseValue() {
+      const val = this.fieldValue;
+      this.fieldValue = (+val) - 1;
     },
   },
 };
@@ -86,6 +136,25 @@ export default {
       box-shadow: none;
     }
   }
+
+  .v-btn {
+    height: unset !important;
+    min-width: unset !important;
+    padding: unset !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    display: flex;
+    margin: 4px;
+
+    &--disabled {
+      background-color: transparent !important;
+    }
+  }
+
+  .theme--light.v-btn.v-btn--disabled.v-btn--has-bg {
+      background-color: transparent !important;
+  }
+
   .field-label {
     background: #fff;
     top: -10px;
