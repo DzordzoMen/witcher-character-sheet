@@ -47,8 +47,7 @@ const witcherInfoModule = {
       state.Level = newLevel;
     },
     SET_WITCHER_AVA_SKILL_POINTS(state, newSkillPoints) {
-      // TODO debug
-      state.AvailableSkillPoints += newSkillPoints;
+      state.AvailableSkillPoints = newSkillPoints;
     },
     SET_WITCHER_REPUTATION(state, newReputation) {
       state.Reputation = newReputation;
@@ -102,14 +101,40 @@ const witcherInfoModule = {
       WitcherInfo.setParamValue(witcherId, witcherInfoType.Gold, gold);
       commit('SET_WITCHER_GOLD', gold);
     },
-    UPDATE_WITCHER_LEVEL: ({ commit, rootGetters }, level) => {
+    INCREASE_WITCHER_LEVEL: (
+      {
+        commit,
+        dispatch,
+        getters,
+        rootGetters,
+      },
+      level,
+    ) => {
       const witcherId = rootGetters.WITCHER_ID;
-      WitcherInfo.setParamValue(witcherId, witcherInfoType.Level, level);
-      commit('SET_WITCHER_LEVEL', level);
+      WitcherInfo.setParamValue(witcherId, witcherInfoType.Level, level).then(() => {
+        const skillPoitns = getters.WITCHER_AVA_SKILL_POINTS;
+        const result = skillPoitns + 6;
+        dispatch('UPDATE_WITCHER_AVA_SKILL_POINTS', result);
+        commit('SET_WITCHER_LEVEL', level);
+      });
+    },
+    DECREASE_WITCHER_LEVEL: (
+      {
+        commit,
+        dispatch,
+        getters,
+        rootGetters,
+      },
+      level,
+    ) => {
+      const witcherId = rootGetters.WITCHER_ID;
+      WitcherInfo.setParamValue(witcherId, witcherInfoType.Level, level).then(() => {
+        const skillPoitns = getters.WITCHER_AVA_SKILL_POINTS;
+        dispatch('UPDATE_WITCHER_AVA_SKILL_POINTS', skillPoitns - 6);
+        commit('SET_WITCHER_LEVEL', level);
+      });
     },
     UPDATE_WITCHER_AVA_SKILL_POINTS: ({ commit, rootGetters }, skillPoints) => {
-      // TODO refactor this should be emited from
-      // update lvl and take old skillPoints and increase by 6
       const witcherId = rootGetters.WITCHER_ID;
       WitcherInfo.setParamValue(witcherId, witcherInfoType.AvailableSkillPoints, skillPoints);
       commit('SET_WITCHER_AVA_SKILL_POINTS', skillPoints);
