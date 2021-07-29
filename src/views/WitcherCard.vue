@@ -166,6 +166,13 @@
               />
             </v-col>
           </template>
+
+          <v-col cols="12" class="primary--text text-center">
+            Składniki
+          </v-col>
+          <v-col cols="12">
+            <the-witcher-card-herbs />
+          </v-col>
         </v-row>
       </v-col>
       <!-- skills -->
@@ -180,12 +187,14 @@ import { mapGetters } from 'vuex';
 
 import BaseField from '../components/base/Field.vue';
 import TheSelectElixir from '../components/TheSelectElixir.vue';
+import TheWitcherCardHerbs from '../components/TheWitcherCardHerbs.vue';
 
 export default {
   name: 'WitcherCard',
   components: {
     BaseField,
     TheSelectElixir,
+    TheWitcherCardHerbs,
   },
   data: () => ({
     placeholder: '',
