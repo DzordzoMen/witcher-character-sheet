@@ -6,7 +6,10 @@
           {{ herb.name }}
         </v-col>
         <v-col class="shrink">
-          {{ herb.amount }}
+          <square-field
+            v-model.number="herb.amount"
+            @input="(amount) => onInputEvent(amount, herb.name)"
+          />
         </v-col>
       </v-row>
     </template>
@@ -16,12 +19,22 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import SquareField from './base/SquareField.vue';
+
 export default {
   name: 'WitcherCardHerbs',
+  components: {
+    SquareField,
+  },
   computed: {
     ...mapGetters('HerbModule', {
       userHerbs: 'HERBS',
     }),
+  },
+  methods: {
+    onInputEvent(val, name) {
+      this.$store.dispatch(`HerbModule/UPDATE_${name.toUpperCase()}`, val);
+    },
   },
 };
 </script>
@@ -33,10 +46,12 @@ export default {
   .row:not(:last-child) {
     border-bottom: 1px solid black;
   }
-
+  // TODO recactor to --success --error and elixirs
+  // TODO refactor contrast
   .herb__success {
     background-color: #A5D6A7;
-    color: #388E3C;
+    color: #388E3C; // TODO ask team about this
+    // TODO idea without text color change
 
     &:first-child {
       border-top-left-radius: inherit;
@@ -50,7 +65,8 @@ export default {
   }
   .herb__error {
     background-color: #EF9A9A;
-    color: #D32F2F;
+    color: #D32F2F; // TODO ask team about this
+    // TODO idea without text color change
 
     &:first-child {
       border-top-left-radius: inherit;
