@@ -136,21 +136,22 @@
         </base-field>
       </v-col>
 
-      <v-col cols="3">
-        <base-field
-          v-model.number="reputation"
-          inputType="number"
-        >
-          <template #label>
-            Reputacja
-          </template>
-        </base-field>
-      </v-col>
-
       <v-col cols="12"></v-col>
 
       <v-col cols="3">
         <v-row dense class="flex-column">
+          <!-- TODO remove spend btn and set this field here? -->
+          <v-col cols="12">
+            <base-field
+              v-model.number="reputation"
+              inputType="number"
+            >
+              <template #label>
+                Reputacja
+              </template>
+            </base-field>
+          </v-col>
+
           <v-col cols="12" class="primary--text text-center">
             Pas na eliksiry
           </v-col>
@@ -176,7 +177,19 @@
         </v-row>
       </v-col>
       <!-- skills -->
-      <v-col cols="9"></v-col>
+      <v-col cols="9">
+        <v-row dense>
+          <v-col cols="6">
+            <the-witcher-card-strength-three />
+          </v-col>
+          <v-col cols="6">
+          </v-col>
+          <v-col cols="6">
+          </v-col>
+          <v-col cols="6">
+          </v-col>
+        </v-row>
+      </v-col>
 
     </v-row>
   </v-container>
@@ -188,6 +201,7 @@ import { mapGetters } from 'vuex';
 import BaseField from '../components/base/Field.vue';
 import TheSelectElixir from '../components/TheSelectElixir.vue';
 import TheWitcherCardHerbs from '../components/TheWitcherCardHerbs.vue';
+import TheWitcherCardStrengthThree from '../components/TheWitcherCardStrengthTree.vue';
 
 export default {
   name: 'WitcherCard',
@@ -195,6 +209,7 @@ export default {
     BaseField,
     TheSelectElixir,
     TheWitcherCardHerbs,
+    TheWitcherCardStrengthThree,
   },
   data: () => ({
     placeholder: '',
