@@ -1,34 +1,38 @@
 <template>
-  <div class="base-field rounded-lg relative">
-    <div class="absolute field-label primary--text">
-      <slot name="label" />
-    </div>
-    <slot name="default">
-      <v-row no-gutters class="align-center">
-        <v-col class="shrink" v-if="showBtns">
-          <v-btn
-            @click="decreaseValue"
-            elevation="0"
-            :disabled="disableDecreaseBtn || +fieldValue === min"
-          >
-            <minus-icon />
-          </v-btn>
-        </v-col>
-        <v-col class="grow">
-          <v-text-field
-            v-model="fieldValue"
-            hide-details
-            :disabled="disabled"
-          />
-        </v-col>
-        <v-col class="shrink" v-if="showBtns">
-          <v-btn @click="increaseValue" elevation="0">
-            <plus-icon />
-          </v-btn>
-        </v-col>
-      </v-row>
-    </slot>
-  </div>
+  <v-row
+    no-gutters
+    class="align-center square-field flex-nowrap"
+  >
+    <v-col class="shrink" v-if="showBtns">
+      <v-btn
+        :class="showBtnBorder && 'v-btn__left'"
+        elevation="0"
+        :tile="showBtnBorder"
+        @click="decreaseValue"
+        :disabled="disableDecreaseBtn || +fieldValue === min"
+      >
+        <minus-icon />
+      </v-btn>
+    </v-col>
+    <v-col class="rounded shrink square-field__border">
+      <v-text-field
+        v-model.number="fieldValue"
+        hide-details
+        :disabled="disabled"
+      />
+    </v-col>
+    <v-col class="shrink" v-if="showBtns">
+      <v-btn
+        :class="showBtnBorder && 'v-btn__right'"
+        elevation="0"
+        :tile="showBtnBorder"
+        @click="increaseValue"
+        :disabled="disableIncreaseBtn || +fieldValue === max"
+      >
+        <plus-icon />
+      </v-btn>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -36,27 +40,26 @@ import PlusIcon from '../Icons/PlusIcon.vue';
 import MinusIcon from '../Icons/MinusIcon.vue';
 
 export default {
-  name: 'Field',
+  name: 'SquareField',
   components: {
     PlusIcon,
     MinusIcon,
   },
   props: {
     value: {
-      type: [String, Number],
+      type: [Number, String],
     },
     disabled: {
       type: Boolean,
       required: false,
       default: false,
     },
-    inputType: {
-      required: false,
-      type: String,
-      default: 'text',
-      validator: (prop) => ['number', 'text'].includes(prop),
-    },
     showBtns: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    showBtnBorder: {
       required: false,
       type: Boolean,
       default: false,
@@ -66,7 +69,17 @@ export default {
       type: Number,
       default: 0,
     },
+    max: {
+      required: false,
+      type: Number,
+      default: 100,
+    },
     disableDecreaseBtn: {
+      required: false,
+      type: Boolean,
+      default: false,
+    },
+    disableIncreaseBtn: {
       required: false,
       type: Boolean,
       default: false,
@@ -78,10 +91,6 @@ export default {
         return this.value;
       },
       set(value) {
-        if (this.inputType === 'number') {
-          const formatedVal = Number(value);
-          this.$emit('input', formatedVal);
-        }
         this.$emit('input', value);
       },
     },
@@ -100,16 +109,18 @@ export default {
 </script>
 
 <style lang="scss">
-.base-field {
-  border: 1px solid black;
+.square-field {
+  &__border {
+    border: 1px solid black;
+  }
 
   .v-input {
     border-radius: inherit;
     font-size: 16px;
     margin: 0;
-    padding: 6px 0 0 ;
-    width: 100%;
-    height: 100%;
+    padding: 0;
+    width: 24px;
+    height: 24px;
 
     &--is-disabled {
       color: rgba(84, 84, 84, 0.93) !important;
@@ -123,10 +134,11 @@ export default {
     }
 
     .v-text-field__slot {
-      padding: 0 12px; // TODO how it works with character skill inputs
+      padding: 0; // TODO how it works with character skill inputs
 
       input {
         text-align: center;
+        padding: 2px 0;
       }
     }
 
@@ -144,7 +156,25 @@ export default {
     background: transparent !important;
     background-color: transparent !important;
     display: flex;
-    margin: 4px;
+    margin: 0px;
+
+    &__left, &__right {
+      border: 1px solid black;
+    }
+
+    &__left {
+      border-right: none;
+      margin-right: -2px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    &__right {
+      border-left: none;
+      margin-left: -2px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
 
     &--disabled {
       background-color: transparent !important;
@@ -154,12 +184,6 @@ export default {
   .theme--light.v-btn.v-btn--disabled.v-btn--has-bg {
     background-color: transparent !important;
   }
-
-  .field-label {
-    background: #fff;
-    top: -10px;
-    left: 12px;
-    padding: 0 4px;
-  }
 }
+
 </style>
