@@ -90,10 +90,12 @@ export default {
     increaseValue() {
       const val = this.fieldValue;
       this.fieldValue = (+val) + 1;
+      this.$emit('onIncreaseClick');
     },
     decreaseValue() {
       const val = this.fieldValue;
       this.fieldValue = (+val) - 1;
+      this.$emit('onDecreaseClick');
     },
   },
 };
