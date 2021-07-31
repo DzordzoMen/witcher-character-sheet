@@ -26,14 +26,14 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    UPDATE_WITCHER_ID: ({ commit, dispatch }, newId) => {
+    UPDATE_WITCHER_ID: async ({ commit, dispatch }, newId) => {
       commit('SET_WITCHER_ID', newId);
-      dispatch('WitcherInfo/SET_WITCHER_INFO');
-      dispatch('HerbModule/SET_WITCHER_HERBS');
-      dispatch('StrengthSkill/SET_WITCHER_STRENGTH_SKILLS');
-      dispatch('DexteritySkill/SET_WITCHER_DEXTERITY_SKILLS');
-      dispatch('SignSkill/SET_WITCHER_SIGNS_SKILLS');
-      dispatch('MindSkill/SET_WITCHER_MIND_SKILLS');
+      await dispatch('WitcherInfo/SET_WITCHER_INFO');
+      await dispatch('HerbModule/SET_WITCHER_HERBS');
+      await dispatch('StrengthSkill/SET_WITCHER_STRENGTH_SKILLS');
+      await dispatch('DexteritySkill/SET_WITCHER_DEXTERITY_SKILLS');
+      await dispatch('SignSkill/SET_WITCHER_SIGNS_SKILLS');
+      await dispatch('MindSkill/SET_WITCHER_MIND_SKILLS');
     },
   },
   modules: {
