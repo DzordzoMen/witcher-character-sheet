@@ -12,6 +12,10 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.strength"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :min="strength"
+              :disableIncreaseBtn="skillPoints === 0"
               disabled
               showBtns
             />
@@ -27,10 +31,15 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.heavyArmor"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.strength"
               :min="heavyArmor"
               disabled
-              :disableIncreaseBtn="witcher.heavyArmor > witcher.strength"
+              :disableIncreaseBtn="
+                witcher.heavyArmor > witcher.strength ||
+                skillPoints === 0
+              "
               showBtns
             />
           </v-col>
@@ -44,10 +53,15 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.heavyWeapon"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.strength"
               :min="heavyWeapon"
               disabled
-              :disableIncreaseBtn="witcher.heavyWeapon > witcher.strength"
+              :disableIncreaseBtn="
+                witcher.heavyWeapon > witcher.strength ||
+                skillPoints === 0
+              "
               showBtns
             />
           </v-col>
@@ -61,10 +75,15 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.fistFight"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.strength"
               :min="fistFight"
               disabled
-              :disableIncreaseBtn="witcher.fistFight > witcher.strength"
+              :disableIncreaseBtn="
+                witcher.fistFight > witcher.strength ||
+                skillPoints === 0
+              "
               showBtns
             />
           </v-col>
@@ -78,10 +97,15 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.wholesomness"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.strength"
               :min="wholesomness"
               disabled
-              :disableIncreaseBtn="witcher.wholesomness > witcher.strength"
+              :disableIncreaseBtn="
+                witcher.wholesomness > witcher.strength ||
+                skillPoints === 0
+              "
               showBtns
             />
           </v-col>
@@ -95,10 +119,15 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.endurance"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.strength"
               :min="endurance"
               disabled
-              :disableIncreaseBtn="witcher.endurance > witcher.strength"
+              :disableIncreaseBtn="
+                witcher.endurance > witcher.strength ||
+                skillPoints === 0
+              "
               showBtns
             />
           </v-col>
@@ -112,10 +141,15 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.elixirTolerance"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.strength"
               :min="elixirTolerance"
               disabled
-              :disableIncreaseBtn="witcher.elixirTolerance > witcher.strength"
+              :disableIncreaseBtn="
+                witcher.elixirTolerance > witcher.strength ||
+                skillPoints === 0
+              "
               showBtns
             />
           </v-col>
@@ -129,10 +163,15 @@
           <v-col class="shrink">
             <square-field
               v-model.number="witcher.bullying"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.strength"
               :min="bullying"
               disabled
-              :disableIncreaseBtn="witcher.bullying > witcher.strength"
+              :disableIncreaseBtn="
+                witcher.bullying > witcher.strength ||
+                skillPoints === 0
+              "
               showBtns
             />
           </v-col>
@@ -175,6 +214,9 @@ export default {
       elixirTolerance: 'ELIXIR_TOLERANCE_SKILL',
       bullying: 'BULLYING_SKILL',
     }),
+    ...mapGetters('WitcherInfo', {
+      skillPoints: 'WITCHER_AVA_SKILL_POINTS',
+    }),
   },
   // TODO remove?
   // debug user switching
@@ -204,6 +246,12 @@ export default {
         elixirTolerance,
         bullying,
       };
+    },
+    decreaseWitcherSkillPoints() {
+      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints - 1);
+    },
+    increaseWitcherSkillPoints() {
+      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints + 1);
     },
   },
   created() {
