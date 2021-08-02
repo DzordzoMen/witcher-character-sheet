@@ -3,7 +3,7 @@
     <v-row dense>
       <v-col cols="12" class="pb-3 dexterity-tree__title">
         <v-row no-gutters>
-          <v-col class="grow">
+          <v-col class="grow font-weight-bold">
             Zręczność
           </v-col>
           <v-col class="shrink">
@@ -20,160 +20,160 @@
         </v-row>
       </v-col>
 
-    <v-col cols="12">
-      <v-row no-gutters>
-        <v-col class="grow">
-          Lekki pancerz
-        </v-col>
-        <v-col class="shrink">
-          <square-field
-            v-model.number="witcher.lightArmor"
-            @onIncreaseClick="decreaseWitcherSkillPoints"
-            @onDecreaseClick="increaseWitcherSkillPoints"
-            :max="witcher.dexterity"
-            :min="lightArmor"
-            disabled
-            :disableIncreaseBtn="
-              witcher.lightArmor > witcher.dexterity ||
-              skillPoints === 0
-            "
-            showBtns
-          />
-        </v-col>
-      </v-row>
-    </v-col>
-    <v-col cols="12">
-      <v-row no-gutters>
-        <v-col class="grow">
-          Broń lekka
-        </v-col>
-        <v-col class="shrink">
-          <square-field
-            v-model.number="witcher.lightWeapon"
-            @onIncreaseClick="decreaseWitcherSkillPoints"
-            @onDecreaseClick="increaseWitcherSkillPoints"
-            :max="witcher.dexterity"
-            :min="lightWeapon"
-            disabled
-            :disableIncreaseBtn="
-              witcher.lightWeapon > witcher.dexterity ||
-              skillPoints === 0
-            "
-            showBtns
-          />
-        </v-col>
-      </v-row>
-    </v-col>
-    <v-col cols="12">
-      <v-row no-gutters>
-        <v-col class="grow">
-          Inicjatywa
-        </v-col>
-        <v-col class="shrink">
-          <square-field
-            v-model.number="witcher.initiative"
-            @onIncreaseClick="decreaseWitcherSkillPoints"
-            @onDecreaseClick="increaseWitcherSkillPoints"
-            :max="witcher.dexterity"
-            :min="initiative"
-            disabled
-            :disableIncreaseBtn="
-              witcher.initiative > witcher.dexterity ||
-              skillPoints === 0
-            "
-            showBtns
-          />
-        </v-col>
-      </v-row>
-    </v-col>
-    <v-col cols="12">
-      <v-row no-gutters>
-        <v-col class="grow">
-          Skradanie się
-        </v-col>
-        <v-col class="shrink">
-          <square-field
-            v-model.number="witcher.stelth"
-            @onIncreaseClick="decreaseWitcherSkillPoints"
-            @onDecreaseClick="increaseWitcherSkillPoints"
-            :max="witcher.dexterity"
-            :min="stelth"
-            disabled
-            :disableIncreaseBtn="
-              witcher.stelth > witcher.dexterity ||
-              skillPoints === 0
-            "
-            showBtns
-          />
-        </v-col>
-      </v-row>
-    </v-col>
-    <v-col cols="12">
-      <v-row no-gutters>
-        <v-col class="grow">
-          Uniki
-        </v-col>
-        <v-col class="shrink">
-          <square-field
-            v-model.number="witcher.dodge"
-            @onIncreaseClick="decreaseWitcherSkillPoints"
-            @onDecreaseClick="increaseWitcherSkillPoints"
-            :max="witcher.dexterity"
-            :min="dodge"
-            disabled
-            :disableIncreaseBtn="
-              witcher.dodge > witcher.dexterity ||
-              skillPoints === 0
-            "
-            showBtns
-          />
-        </v-col>
-      </v-row>
-    </v-col>
-    <v-col cols="12">
-      <v-row no-gutters>
-        <v-col class="grow">
-          Broń miotana
-        </v-col>
-        <v-col class="shrink">
-          <square-field
-            v-model.number="witcher.throwingWeapon"
-            @onIncreaseClick="decreaseWitcherSkillPoints"
-            @onDecreaseClick="increaseWitcherSkillPoints"
-            :max="witcher.dexterity"
-            :min="throwingWeapon"
-            disabled
-            :disableIncreaseBtn="
-              witcher.throwingWeapon > witcher.dexterity ||
-              skillPoints === 0
-            "
-            showBtns
-          />
-        </v-col>
-      </v-row>
-    </v-col>
-    <v-col cols="12">
-      <v-row no-gutters>
-        <v-col class="grow">
-          Broń dystansowa
-        </v-col>
-        <v-col class="shrink">
-          <square-field
-            v-model.number="witcher.rangeWeapon"
-            @onIncreaseClick="decreaseWitcherSkillPoints"
-            @onDecreaseClick="increaseWitcherSkillPoints"
-            :max="witcher.dexterity"
-            :min="rangeWeapon"
-            disabled
-            :disableIncreaseBtn="
-              witcher.rangeWeapon > witcher.dexterity ||
-              skillPoints === 0
-            "
-            showBtns
-          />
-        </v-col>
-      </v-row>
-    </v-col>
+      <v-col cols="12">
+        <v-row no-gutters>
+          <v-col class="grow">
+            Lekki pancerz
+          </v-col>
+          <v-col class="shrink">
+            <square-field
+              v-model.number="witcher.lightArmor"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :max="witcher.dexterity"
+              :min="lightArmor"
+              disabled
+              :disableIncreaseBtn="
+                witcher.lightArmor > witcher.dexterity ||
+                skillPoints === 0
+              "
+              showBtns
+            />
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12">
+        <v-row no-gutters>
+          <v-col class="grow">
+            Broń lekka
+          </v-col>
+          <v-col class="shrink">
+            <square-field
+              v-model.number="witcher.lightWeapon"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :max="witcher.dexterity"
+              :min="lightWeapon"
+              disabled
+              :disableIncreaseBtn="
+                witcher.lightWeapon > witcher.dexterity ||
+                skillPoints === 0
+              "
+              showBtns
+            />
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12">
+        <v-row no-gutters>
+          <v-col class="grow">
+            Inicjatywa
+          </v-col>
+          <v-col class="shrink">
+            <square-field
+              v-model.number="witcher.initiative"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :max="witcher.dexterity"
+              :min="initiative"
+              disabled
+              :disableIncreaseBtn="
+                witcher.initiative > witcher.dexterity ||
+                skillPoints === 0
+              "
+              showBtns
+            />
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12">
+        <v-row no-gutters>
+          <v-col class="grow">
+            Skradanie się
+          </v-col>
+          <v-col class="shrink">
+            <square-field
+              v-model.number="witcher.stelth"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :max="witcher.dexterity"
+              :min="stelth"
+              disabled
+              :disableIncreaseBtn="
+                witcher.stelth > witcher.dexterity ||
+                skillPoints === 0
+              "
+              showBtns
+            />
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12">
+        <v-row no-gutters>
+          <v-col class="grow">
+            Uniki
+          </v-col>
+          <v-col class="shrink">
+            <square-field
+              v-model.number="witcher.dodge"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :max="witcher.dexterity"
+              :min="dodge"
+              disabled
+              :disableIncreaseBtn="
+                witcher.dodge > witcher.dexterity ||
+                skillPoints === 0
+              "
+              showBtns
+            />
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12">
+        <v-row no-gutters>
+          <v-col class="grow">
+            Broń miotana
+          </v-col>
+          <v-col class="shrink">
+            <square-field
+              v-model.number="witcher.throwingWeapon"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :max="witcher.dexterity"
+              :min="throwingWeapon"
+              disabled
+              :disableIncreaseBtn="
+                witcher.throwingWeapon > witcher.dexterity ||
+                skillPoints === 0
+              "
+              showBtns
+            />
+          </v-col>
+        </v-row>
+      </v-col>
+      <v-col cols="12">
+        <v-row no-gutters>
+          <v-col class="grow">
+            Broń dystansowa
+          </v-col>
+          <v-col class="shrink">
+            <square-field
+              v-model.number="witcher.rangeWeapon"
+              @onIncreaseClick="decreaseWitcherSkillPoints"
+              @onDecreaseClick="increaseWitcherSkillPoints"
+              :max="witcher.dexterity"
+              :min="rangeWeapon"
+              disabled
+              :disableIncreaseBtn="
+                witcher.rangeWeapon > witcher.dexterity ||
+                skillPoints === 0
+              "
+              showBtns
+            />
+          </v-col>
+        </v-row>
+      </v-col>
     </v-row>
   </v-container>
 </template>

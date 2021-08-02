@@ -3,7 +3,7 @@
     <v-row dense>
       <v-col cols="12" class="pb-3 signs-tree__title">
         <v-row no-gutters>
-          <v-col class="grow">
+          <v-col class="grow font-weight-bold">
             Znajomość magii
           </v-col>
           <v-col class="shrink">
