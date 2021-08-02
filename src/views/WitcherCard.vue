@@ -180,13 +180,16 @@
       <v-col cols="9">
         <v-row dense>
           <v-col cols="6">
-            <the-witcher-card-strength-three />
+            <the-witcher-card-strength-tree />
           </v-col>
           <v-col cols="6">
+            <the-witcher-card-dexterity-tree />
           </v-col>
           <v-col cols="6">
+            <the-witcher-card-signs-tree />
           </v-col>
           <v-col cols="6">
+            <the-witcher-card-mind-tree />
           </v-col>
         </v-row>
       </v-col>
@@ -201,7 +204,10 @@ import { mapGetters } from 'vuex';
 import BaseField from '../components/base/Field.vue';
 import TheSelectElixir from '../components/TheSelectElixir.vue';
 import TheWitcherCardHerbs from '../components/TheWitcherCardHerbs.vue';
-import TheWitcherCardStrengthThree from '../components/TheWitcherCardStrengthTree.vue';
+import TheWitcherCardStrengthTree from '../components/TheWitcherCardStrengthTree.vue';
+import TheWitcherCardDexterityTree from '../components/TheWitcherCardDexterityTree.vue';
+import TheWitcherCardSignsTree from '../components/TheWitcherCardSignsTree.vue';
+import TheWitcherCardMindTree from '../components/TheWitcherCardMindTree.vue';
 
 export default {
   name: 'WitcherCard',
@@ -209,7 +215,10 @@ export default {
     BaseField,
     TheSelectElixir,
     TheWitcherCardHerbs,
-    TheWitcherCardStrengthThree,
+    TheWitcherCardMindTree,
+    TheWitcherCardSignsTree,
+    TheWitcherCardStrengthTree,
+    TheWitcherCardDexterityTree,
   },
   data: () => ({
     placeholder: '',
