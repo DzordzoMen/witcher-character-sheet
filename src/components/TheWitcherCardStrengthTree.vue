@@ -1,10 +1,7 @@
 <template>
   <v-container class="strength-tree rounded-lg">
     <v-row dense>
-      <v-col
-        cols="12"
-        class="pb-3 strength-tree__title"
-      >
+      <v-col cols="12" class="pb-3 strength-tree__title">
         <v-row no-gutters>
           <v-col class="grow">
             Siła
