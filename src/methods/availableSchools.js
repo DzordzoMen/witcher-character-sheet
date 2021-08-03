@@ -12,7 +12,7 @@ const schoolBonusesDirectory = new Map([
   ]],
   ['Cech wilka', [
     [StrengthSkillType.Strength, DexteritySkillType.Dexterity],
-    [SignsSkillType.Signs, MindSkillType.Mind],
+    [SignsSkillType.KnowledgeOfMagic, MindSkillType.Mind],
     [MindSkillType.Crafting, MindSkillType.MonsterKnowledge],
     [MindSkillType.Rhetoric, StrengthSkillType.Bullying],
   ]],
@@ -24,7 +24,7 @@ const schoolBonusesDirectory = new Map([
   ]],
   ['Cech gryfa', [
     [MindSkillType.Mind],
-    [SignsSkillType.Signs],
+    [SignsSkillType.KnowledgeOfMagic],
     [
       SignsSkillType.Somne,
       SignsSkillType.Heliotrop,
