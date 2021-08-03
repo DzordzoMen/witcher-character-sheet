@@ -122,6 +122,12 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 1264px) {
+  .options__item {
+    line-height: 25px !important;
+  }
+}
+
 .select {
   display: flex;
   height: 100%;
@@ -174,7 +180,11 @@ export default {
   animation: shake-it 0.33s ease-in-out;
 }
 .options__item {
-  line-height: 25px;
+  line-height: 40px;
+}
+.options__item:last-child {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
 }
 .options__item:hover {
   cursor: pointer;
