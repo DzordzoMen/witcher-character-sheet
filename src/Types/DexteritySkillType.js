@@ -3,7 +3,7 @@ const dexteritySkillType = {
   LightArmor: 'LightArmor',
   LightWeapon: 'LightWeapon',
   Initiative: 'Initiative',
-  Stelth: 'Stelth',
+  Stealth: 'Stealth',
   Dodge: 'Dodge',
   ThrowingWeapon: 'ThrowingWeapon',
   RangeWeapon: 'RangeWeapon',

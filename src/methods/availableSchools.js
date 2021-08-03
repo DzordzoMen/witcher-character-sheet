@@ -38,7 +38,7 @@ const schoolBonusesDirectory = new Map([
   ]],
   ['Cech żmiji', [
     [DexteritySkillType.Dexterity],
-    [DexteritySkillType.Stelth],
+    [DexteritySkillType.Stealth],
     [StrengthSkillType.Bullying, DexteritySkillType.RangeWeapon],
     [MindSkillType.WorldKnowledge],
   ]],

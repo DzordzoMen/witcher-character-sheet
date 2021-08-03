@@ -281,7 +281,7 @@ export default {
       lightArmor: 'LIGHT_ARMOR_SKILL',
       lightWeapon: 'LIGHT_WEAPON_SKILL',
       initiative: 'INITIATIVE_SKILL',
-      stealth: 'STELTH_SKILL',
+      stealth: 'STEALTH_SKILL',
       dodge: 'DODGE_SKILL',
       throwingWeapon: 'THROWING_WEAPON_SKILL',
       rangeWeapon: 'RANGE_WEAPON_SKILL',

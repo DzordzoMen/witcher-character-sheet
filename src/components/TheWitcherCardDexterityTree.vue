@@ -93,14 +93,14 @@
           </v-col>
           <v-col class="shrink">
             <square-field
-              v-model.number="witcher.stelth"
+              v-model.number="witcher.stealth"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.dexterity"
-              :min="stelth"
+              :min="stealth"
               disabled
               :disableIncreaseBtn="
-                witcher.stelth > witcher.dexterity ||
+                witcher.stealth > witcher.dexterity ||
                 skillPoints === 0
               "
               showBtns
@@ -194,7 +194,7 @@ export default {
       lightArmor: 0,
       lightWeapon: 0,
       initiative: 0,
-      stelth: 0,
+      stealth: 0,
       dodge: 0,
       throwingWeapon: 0,
       rangeWeapon: 0,
@@ -206,7 +206,7 @@ export default {
       lightArmor: 'LIGHT_ARMOR_SKILL',
       lightWeapon: 'LIGHT_WEAPON_SKILL',
       initiative: 'INITIATIVE_SKILL',
-      stelth: 'STELTH_SKILL',
+      stealth: 'STEALTH_SKILL',
       dodge: 'DODGE_SKILL',
       throwingWeapon: 'THROWING_WEAPON_SKILL',
       rangeWeapon: 'RANGE_WEAPON_SKILL',
@@ -226,7 +226,7 @@ export default {
         lightArmor,
         lightWeapon,
         initiative,
-        stelth,
+        stealth,
         dodge,
         throwingWeapon,
         rangeWeapon,
@@ -237,7 +237,7 @@ export default {
         lightArmor,
         lightWeapon,
         initiative,
-        stelth,
+        stealth,
         dodge,
         throwingWeapon,
         rangeWeapon,

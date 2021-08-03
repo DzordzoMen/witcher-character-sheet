@@ -27,8 +27,8 @@ const dexteritySkillsModule = {
           lvl: getters.INITIATIVE_SKILL,
         },
         {
-          name: dexSkills.Stelth,
-          lvl: getters.STELTH_SKILL,
+          name: dexSkills.Stealth,
+          lvl: getters.STEALTH_SKILL,
         },
         {
           name: dexSkills.Dodge,
@@ -48,7 +48,7 @@ const dexteritySkillsModule = {
     LIGHT_ARMOR_SKILL: (state) => state.LightArmor,
     LIGHT_WEAPON_SKILL: (state) => state.LightWeapon,
     INITIATIVE_SKILL: (state) => state.Initiative,
-    STELTH_SKILL: (state) => state.Stelth,
+    STEALTH_SKILL: (state) => state.Stealth,
     DODGE_SKILL: (state) => state.Dodge,
     THROWING_WEAPON_SKILL: (state) => state.ThrowingWeapon,
     RANGE_WEAPON_SKILL: (state) => state.RangeWeapon,
@@ -71,8 +71,8 @@ const dexteritySkillsModule = {
     SET_INITIATIVE_SKILL(state, newLevel) {
       state.Initiative = newLevel;
     },
-    SET_STELTH_SKILL(state, newLevel) {
-      state.Stelth = newLevel;
+    SET_STEALTH_SKILL(state, newLevel) {
+      state.Stealth = newLevel;
     },
     SET_DODGE_SKILL(state, newLevel) {
       state.Dodge = newLevel;
@@ -111,10 +111,10 @@ const dexteritySkillsModule = {
       DexteritySkill.setParamValue(witcherId, dexSkills.Initiative, level);
       commit('SET_INITIATIVE_SKILL', level);
     },
-    UPDATE_STELTH_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_STEALTH_SKILL: ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.Stelth, level);
-      commit('SET_STELTH_SKILL', level);
+      DexteritySkill.setParamValue(witcherId, dexSkills.Stealth, level);
+      commit('SET_STEALTH_SKILL', level);
     },
     UPDATE_DODGE_SKILL: ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
