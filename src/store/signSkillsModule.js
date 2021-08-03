@@ -15,8 +15,8 @@ const signSkillsModule = {
       primarySkillLvl: getters.SIGNS_SKILL,
       subSkills: [
         {
-          name: sgnSkills.Somme,
-          lvl: getters.SOMME_SKILL,
+          name: sgnSkills.Somne,
+          lvl: getters.SOMNE_SKILL,
         },
         {
           name: sgnSkills.Heliotrop,
@@ -45,7 +45,7 @@ const signSkillsModule = {
       ],
     }),
     SIGNS_SKILL: (state) => state.Signs,
-    SOMME_SKILL: (state) => state.Somme,
+    SOMNE_SKILL: (state) => state.Somne,
     HELIOTROP_SKILL: (state) => state.Heliotrop,
     AARD_SKILL: (state) => state.Aard,
     IGNI_SKILL: (state) => state.Igni,
@@ -62,8 +62,8 @@ const signSkillsModule = {
     SET_SIGNS_SKILL(state, newLevel) {
       state.Signs = newLevel;
     },
-    SET_SOMME_SKILL(state, newLevel) {
-      state.Somme = newLevel;
+    SET_SOMNE_SKILL(state, newLevel) {
+      state.Somne = newLevel;
     },
     SET_HELIOTROP_SKILL(state, newLevel) {
       state.Heliotrop = newLevel;
@@ -96,10 +96,10 @@ const signSkillsModule = {
       SignsSkill.setParamValue(witcherId, sgnSkills.Signs, level);
       commit('SET_SIGNS_SKILL', level);
     },
-    UPDATE_SOMME_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_SOMNE_SKILL: ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Somme, level);
-      commit('SET_SOMME_SKILL', level);
+      SignsSkill.setParamValue(witcherId, sgnSkills.Somne, level);
+      commit('SET_SOMNE_SKILL', level);
     },
     UPDATE_HELIOTROP_SKILL: ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;

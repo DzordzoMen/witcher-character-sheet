@@ -202,7 +202,7 @@ export default {
   computed: {
     ...mapGetters('SignSkill', {
       signs: 'SIGNS_SKILL',
-      somne: 'SOMME_SKILL',
+      somne: 'SOMNE_SKILL',
       heliotrop: 'HELIOTROP_SKILL',
       aard: 'AARD_SKILL',
       igni: 'IGNI_SKILL',

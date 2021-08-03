@@ -26,7 +26,7 @@ const schoolBonusesDirectory = new Map([
     [MindSkillType.Mind],
     [SignsSkillType.Signs],
     [
-      SignsSkillType.Somme,
+      SignsSkillType.Somne,
       SignsSkillType.Heliotrop,
       SignsSkillType.Aard,
       SignsSkillType.Igni,

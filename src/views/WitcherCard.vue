@@ -288,7 +288,7 @@ export default {
     }),
     ...mapGetters('SignSkill', {
       signs: 'SIGNS_SKILL',
-      somme: 'SOMME_SKILL',
+      somne: 'SOMNE_SKILL',
       heliotrop: 'HELIOTROP_SKILL',
       aard: 'AARD_SKILL',
       igni: 'IGNI_SKILL',
