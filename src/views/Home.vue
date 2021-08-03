@@ -23,7 +23,7 @@
 
       <v-expand-transition>
         <!-- TODO debug col size on small and extra large -->
-        <v-col cols="12" md="10" lg="6" class="pa-0 px-1" v-show="showForm">
+        <v-col cols="12" md="10" lg="7" class="pa-0 px-1" v-show="showForm">
           <v-row dense class="justify-center mt-5 mb-2">
             <v-col cols="4">
               <base-field v-model="form.name">
