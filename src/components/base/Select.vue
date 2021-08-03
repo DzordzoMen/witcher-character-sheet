@@ -36,6 +36,8 @@
           @click="selectItem(item)"
           @mouseover="mouseOverHandler(item)"
           @mouseleave="mouseLeaveHandler(item)"
+          @touchstart="mouseOverHandler(item)"
+          @touchend="mouseLeaveHandler(item)"
           :aria-disabled="disableItem(item)"
           :class="{
             'options__item-selected': itemIsSelected(item.name),
