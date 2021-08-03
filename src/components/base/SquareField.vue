@@ -18,6 +18,9 @@
       <v-text-field
         v-model.number="fieldValue"
         hide-details
+        pattern="[0-9]*"
+        inputmode="numeric"
+        type="number"
         :disabled="disabled"
       />
     </v-col>
@@ -138,9 +141,18 @@ export default {
     .v-text-field__slot {
       padding: 0; // TODO how it works with character skill inputs
 
-      input {
+      input, input[type=number] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+        -webkit-appearance: none;
         text-align: center;
         padding: 2px 0;
+      }
+
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
       }
     }
 
