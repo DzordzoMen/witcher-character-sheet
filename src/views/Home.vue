@@ -66,7 +66,8 @@
                   hide-details
                   class="pa-0 ma-0"
                   mandatory
-                  row
+                  :column="$vuetify.breakpoint.smAndDown"
+                  :row="!$vuetify.breakpoint.smAndDown"
                 >
                   <template v-for="(bonus, bonusKey) in bonuses">
                     <v-radio
