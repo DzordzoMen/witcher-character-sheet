@@ -4,11 +4,15 @@
     "recipe": [
       {
         "name": "Vitriol",
-        "amount": 2
+        "amount": 1
       },
       {
         "name": "Rebis",
-        "amount": 2
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
       }
     ]
   },
@@ -16,12 +20,16 @@
     "name": "Kot",
     "recipe": [
       {
-        "name": "Rebis",
+        "name": "Aether",
         "amount": 1
       },
       {
         "name": "Quebrith",
-        "amount": 2
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
       }
     ]
   },
@@ -43,10 +51,14 @@
     "recipe": [
       {
         "name": "Aether",
-        "amount": 2
+        "amount": 1
       },
       {
         "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
         "amount": 1
       }
     ]
@@ -63,8 +75,8 @@
         "amount": 1
       },
       {
-        "name": "Aether",
-        "amount": 2
+        "name": "Vermilion",
+        "amount": 1
       }
     ]
   },
@@ -73,7 +85,7 @@
     "recipe": [
       {
         "name": "Rebis",
-        "amount": 2
+        "amount": 1
       },
       {
         "name": "Quebrith",
@@ -97,12 +109,29 @@
         "amount": 1
       },
       {
+        "name": "Hydragenum",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Skała",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
         "name": "Quebrith",
         "amount": 1
       },
       {
         "name": "Hydragenum",
-        "amount": 2
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
       }
     ]
   },
@@ -111,7 +140,7 @@
     "recipe": [
       {
         "name": "Aether",
-        "amount": 2
+        "amount": 1
       },
       {
         "name": "Quebrith",
@@ -123,7 +152,7 @@
       },
       {
         "name": "Vermilion",
-        "amount": 2
+        "amount": 1
       }
     ]
   },
@@ -131,19 +160,19 @@
     "name": "Zamieć",
     "recipe": [
       {
-        "name": "Vitriol",
-        "amount": 2
+        "name": "Aether",
+        "amount": 1
       },
       {
         "name": "Rebis",
-        "amount": 2
+        "amount": 1
       },
       {
         "name": "Quebrith",
         "amount": 1
       },
       {
-        "name": "Vermilion",
+        "name": "Hydragenum",
         "amount": 1
       }
     ]
