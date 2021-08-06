@@ -13,6 +13,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     selectedWitcherId: null,
+    loading: false,
   },
   getters: {
     WITCHER_ID: (state) => state.selectedWitcherId,
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     CLEAR_WITCHER_ID(state) {
       state.selectedWitcherId = null;
+    },
+    SET_LOADING(state, newState) {
+      state.loading = newState;
     },
   },
   actions: {

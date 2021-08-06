@@ -1,6 +1,8 @@
 <template>
-  <v-container>
-    <v-row dense>
+  <v-container class="fill-height">
+    <loading-screen v-if="loading" />
+
+    <v-row dense v-else>
 
       <v-col cols="6" md="3" order-md="1" order="3">
         <base-field
@@ -231,6 +233,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import LoadingScreen from '../components/LoadingScreen.vue';
 import BaseField from '../components/base/Field.vue';
 import TheSelectElixir from '../components/TheSelectElixir.vue';
 import TheWitcherCardHerbs from '../components/TheWitcherCardHerbs.vue';
@@ -243,6 +246,7 @@ export default {
   name: 'WitcherCard',
   components: {
     BaseField,
+    LoadingScreen,
     TheSelectElixir,
     TheWitcherCardHerbs,
     TheWitcherCardMindTree,
@@ -277,7 +281,9 @@ export default {
       magicResists: 'MAGIC_RESISTS_SKILL',
       magicPower: 'MAGIC_POWER_SKILL',
     }),
-    // TODO herbs in another component?
+    loading() {
+      return this.$store.state.loading;
+    },
     healthPoints() {
       const baseHealth = 8;
       const { level, wholesomness } = this;

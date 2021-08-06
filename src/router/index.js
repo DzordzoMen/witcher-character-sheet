@@ -18,8 +18,9 @@ const routes = [
     props: true,
     component: WitcherCard,
     beforeEnter: (to, from, next) => {
+      store.commit('SET_LOADING', true);
       store.dispatch('UPDATE_WITCHER_ID', Number(to.params.id)).then(() => {
-        // TODO loading
+        store.commit('SET_LOADING', false);
         next();
       });
     },
