@@ -74,7 +74,11 @@
                       :key="bonusKey"
                       :label="bonus"
                       :value="bonus"
-                    />
+                    >
+                    <template #label>
+                      {{ takeTranslate(bonus) }}
+                    </template>
+                    </v-radio>
                   </template>
                 </v-radio-group>
                 <v-divider class="my-3" />
@@ -148,6 +152,7 @@ import LoadingScreen from '../components/LoadingScreen.vue';
 // methods
 import { availableSchools, schoolBonuses } from '../methods/availableSchools';
 import { createNewWitcher, WitcherInfo } from '../database';
+import takeTranslate from '../dictionary/pl';
 
 export default {
   name: 'Home',
@@ -189,6 +194,7 @@ export default {
     });
   },
   methods: {
+    takeTranslate,
     createWitcher() {
       const {
         name,
