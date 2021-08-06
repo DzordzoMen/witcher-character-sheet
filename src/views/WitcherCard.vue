@@ -156,7 +156,7 @@
           disabled
         >
           <template #label>
-            {{ $vuetify.breakpoint.smAndDown ? 'Odp. magiczna' : 'Odporność magiczna' }}
+            Odporność magiczna
           </template>
         </base-field>
       </v-col>
