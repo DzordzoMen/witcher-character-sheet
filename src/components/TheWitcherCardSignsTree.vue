@@ -4,14 +4,14 @@
       <v-col cols="12" class="pb-3 signs-tree__title">
         <v-row no-gutters>
           <v-col class="grow font-weight-bold">
-            Znajomość magii
+            Znaki
           </v-col>
           <v-col class="shrink">
             <square-field
-              v-model.number="witcher.knowledgeOfMagic"
+              v-model.number="witcher.signs"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :min="knowledgeOfMagic"
+              :min="signs"
               :disableIncreaseBtn="skillPoints === 0"
               disabled
               showBtns
@@ -29,11 +29,11 @@
               v-model.number="witcher.somne"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :max="witcher.knowledgeOfMagic"
+              :max="witcher.signs"
               :min="somne"
               disabled
               :disableIncreaseBtn="
-                witcher.somne > witcher.knowledgeOfMagic ||
+                witcher.somne > witcher.signs ||
                 skillPoints === 0
               "
               showBtns
@@ -51,11 +51,11 @@
               v-model.number="witcher.heliotrop"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :max="witcher.knowledgeOfMagic"
+              :max="witcher.signs"
               :min="heliotrop"
               disabled
               :disableIncreaseBtn="
-                witcher.heliotrop > witcher.knowledgeOfMagic ||
+                witcher.heliotrop > witcher.signs ||
                 skillPoints === 0
               "
               showBtns
@@ -73,11 +73,11 @@
               v-model.number="witcher.aard"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :max="witcher.knowledgeOfMagic"
+              :max="witcher.signs"
               :min="aard"
               disabled
               :disableIncreaseBtn="
-                witcher.aard > witcher.knowledgeOfMagic ||
+                witcher.aard > witcher.signs ||
                 skillPoints === 0
               "
               showBtns
@@ -95,11 +95,11 @@
               v-model.number="witcher.igni"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :max="witcher.knowledgeOfMagic"
+              :max="witcher.signs"
               :min="igni"
               disabled
               :disableIncreaseBtn="
-                witcher.igni > witcher.knowledgeOfMagic ||
+                witcher.igni > witcher.signs ||
                 skillPoints === 0
               "
               showBtns
@@ -117,11 +117,11 @@
               v-model.number="witcher.axii"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :max="witcher.knowledgeOfMagic"
+              :max="witcher.signs"
               :min="axii"
               disabled
               :disableIncreaseBtn="
-                witcher.axii > witcher.knowledgeOfMagic ||
+                witcher.axii > witcher.signs ||
                 skillPoints === 0
               "
               showBtns
@@ -139,11 +139,11 @@
               v-model.number="witcher.yrden"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :max="witcher.knowledgeOfMagic"
+              :max="witcher.signs"
               :min="yrden"
               disabled
               :disableIncreaseBtn="
-                witcher.yrden > witcher.knowledgeOfMagic ||
+                witcher.yrden > witcher.signs ||
                 skillPoints === 0
               "
               showBtns
@@ -161,11 +161,11 @@
               v-model.number="witcher.quen"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
-              :max="witcher.knowledgeOfMagic"
+              :max="witcher.signs"
               :min="quen"
               disabled
               :disableIncreaseBtn="
-                witcher.quen > witcher.knowledgeOfMagic ||
+                witcher.quen > witcher.signs ||
                 skillPoints === 0
               "
               showBtns
@@ -189,7 +189,7 @@ export default {
   },
   data: () => ({
     wticher: {
-      knowledgeOfMagic: 0,
+      signs: 0,
       somne: 0,
       heliotrop: 0,
       aard: 0,
@@ -201,7 +201,7 @@ export default {
   }),
   computed: {
     ...mapGetters('SignSkill', {
-      knowledgeOfMagic: 'KNOWLEDEGE_OF_MAGIC_SKILL',
+      signs: 'SIGNS_SKILL',
       somne: 'SOMNE_SKILL',
       heliotrop: 'HELIOTROP_SKILL',
       aard: 'AARD_SKILL',
@@ -216,12 +216,12 @@ export default {
   },
   // TODO remove?
   watch: {
-    knowledgeOfMagic: 'setValues',
+    signs: 'setValues',
   },
   methods: {
     setValues() {
       const {
-        knowledgeOfMagic,
+        signs,
         somne,
         heliotrop,
         aard,
@@ -232,7 +232,7 @@ export default {
       } = this;
 
       this.witcher = {
-        knowledgeOfMagic,
+        signs,
         somne,
         heliotrop,
         aard,

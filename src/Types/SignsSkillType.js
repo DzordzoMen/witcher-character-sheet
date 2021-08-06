@@ -1,5 +1,5 @@
 const signsSkillType = {
-  KnowledgeOfMagic: 'KnowledgeOfMagic',
+  Signs: 'Signs',
   Somne: 'Somne',
   Heliotrop: 'Heliotrop',
   Aard: 'Aard',
