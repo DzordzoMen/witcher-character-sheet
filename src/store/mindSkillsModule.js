@@ -39,8 +39,8 @@ const mindSkillsModule = {
           lvl: getters.MAGIC_RESISTS_SKILL,
         },
         {
-          name: mindSkills.MagicPower,
-          lvl: getters.MAGIC_POWER_SKILL,
+          name: mindSkills.Arcana,
+          lvl: getters.ARCANA_SKILL,
         },
       ],
     }),
@@ -51,7 +51,7 @@ const mindSkillsModule = {
     RHETORIC_SKILL: (state) => state.Rhetoric,
     WITCHER_SENSES_SKILL: (state) => state.WitcherSenses,
     MAGIC_RESISTS_SKILL: (state) => state.MagicResists,
-    MAGIC_POWER_SKILL: (state) => state.MagicPower,
+    ARCANA_SKILL: (state) => state.Arcana,
   },
   mutations: {
     SET_SKILL_TREE(state, skillTree) {
@@ -80,8 +80,8 @@ const mindSkillsModule = {
     SET_MAGIC_RESISTS_SKILL(state, newLevel) {
       state.MagicResists = newLevel;
     },
-    SET_MAGIC_POWER_SKILL(state, newLevel) {
-      state.MagicPower = newLevel;
+    SET_ARCANA_SKILL(state, newLevel) {
+      state.Arcana = newLevel;
     },
   },
   actions: {
@@ -126,10 +126,10 @@ const mindSkillsModule = {
       MindSkill.setParamValue(witcherId, mindSkills.MagicResists, level);
       commit('SET_MAGIC_RESISTS_SKILL', level);
     },
-    UPDATE_MAGIC_POWER_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_ARCANA_SKILL: ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.MagicPower, level);
-      commit('SET_MAGIC_POWER_SKILL', level);
+      MindSkill.setParamValue(witcherId, mindSkills.Arcana, level);
+      commit('SET_ARCANA_SKILL', level);
     },
   },
 };

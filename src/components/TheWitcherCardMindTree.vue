@@ -154,18 +154,18 @@
       <v-col cols="12">
         <v-row no-gutters>
           <v-col class="grow">
-            Moc magiczna
+            Arkana
           </v-col>
           <v-col class="shrink">
             <square-field
-              v-model.number="witcher.magicPower"
+              v-model.number="witcher.arcana"
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
               :max="witcher.mind"
-              :min="magicPower"
+              :min="arcana"
               disabled
               :disableIncreaseBtn="
-                witcher.magicPower > witcher.mind ||
+                witcher.arcana > witcher.mind ||
                 skillPoints === 0
               "
               showBtns
@@ -196,7 +196,7 @@ export default {
       rhetoric: 0,
       witcherSenses: 0,
       magicResists: 0,
-      magicPower: 0,
+      arcana: 0,
     },
   }),
   computed: {
@@ -208,7 +208,7 @@ export default {
       rhetoric: 'RHETORIC_SKILL',
       witcherSenses: 'WITCHER_SENSES_SKILL',
       magicResists: 'MAGIC_RESISTS_SKILL',
-      magicPower: 'MAGIC_POWER_SKILL',
+      arcana: 'ARCANA_SKILL',
     }),
     ...mapGetters('WitcherInfo', {
       skillPoints: 'WITCHER_AVA_SKILL_POINTS',
@@ -228,7 +228,7 @@ export default {
         rhetoric,
         witcherSenses,
         magicResists,
-        magicPower,
+        arcana,
       } = this;
 
       this.witcher = {
@@ -239,7 +239,7 @@ export default {
         rhetoric,
         witcherSenses,
         magicResists,
-        magicPower,
+        arcana,
       };
     },
     decreaseWitcherSkillPoints() {

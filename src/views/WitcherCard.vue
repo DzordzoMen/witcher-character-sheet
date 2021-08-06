@@ -277,9 +277,11 @@ export default {
     ...mapGetters('DexteritySkill', {
       lightArmor: 'LIGHT_ARMOR_SKILL',
     }),
+    ...mapGetters('SignSkill', {
+      signs: 'SIGNS_SKILL',
+    }),
     ...mapGetters('MindSkill', {
       magicResists: 'MAGIC_RESISTS_SKILL',
-      magicPower: 'MAGIC_POWER_SKILL',
     }),
     loading() {
       return this.$store.state.loading;
@@ -291,8 +293,8 @@ export default {
     },
     manaPoints() {
       const baseMana = 1;
-      const { magicPower } = this;
-      return baseMana + magicPower;
+      const { signs } = this;
+      return baseMana + signs;
     },
     baseMagicResists() {
       const baseRess = 0;

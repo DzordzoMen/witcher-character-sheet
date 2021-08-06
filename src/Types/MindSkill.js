@@ -6,7 +6,7 @@ const mindSkillType = {
   Rhetoric: 'Rhetoric',
   WitcherSenses: 'WitcherSenses',
   MagicResists: 'MagicResists',
-  MagicPower: 'MagicPower',
+  Arcana: 'Arcana',
 };
 
 export default mindSkillType;
