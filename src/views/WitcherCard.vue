@@ -2,7 +2,7 @@
   <v-container class="fill-height">
     <loading-screen v-if="loading" />
 
-    <v-row dense v-else>
+    <v-row dense class="align-self-baseline" v-else>
 
       <v-col cols="6" md="3" order-md="1" order="3">
         <base-field
