@@ -215,10 +215,8 @@ export default {
       skillPoints: 'WITCHER_AVA_SKILL_POINTS',
     }),
   },
-  // TODO remove?
-  // debug user switching
-  watch: {
-    strength: 'setValues',
+  created() {
+    this.setValues();
   },
   methods: {
     setValues() {
@@ -244,15 +242,42 @@ export default {
         bullying,
       };
     },
+    // TODO mixin
     decreaseWitcherSkillPoints() {
       this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints - 1);
     },
     increaseWitcherSkillPoints() {
       this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints + 1);
     },
-  },
-  created() {
-    this.setValues();
+    saveSkills() {
+      // TODO refactor
+      const {
+        strength,
+        heavyArmor,
+        heavyWeapon,
+        fistFight,
+        wholesomness,
+        endurance,
+        elixirTolerance,
+        bullying,
+      } = this.witcher;
+
+      this.$store.dispatch('StrengthSkill/UPDATE_STRENGTH_SKILL', strength).then(() => {
+        this.$store.dispatch('StrengthSkill/UPDATE_HEAVY_ARMOR_SKILL', heavyArmor).then(() => {
+          this.$store.dispatch('StrengthSkill/UPDATE_HEAVY_WEAPON_SKILL', heavyWeapon).then(() => {
+            this.$store.dispatch('StrengthSkill/UPDATE_FIST_FIGHT_SKILL', fistFight).then(() => {
+              this.$store.dispatch('StrengthSkill/UPDATE_WHOLESOMNESS_SKILL', wholesomness).then(() => {
+                this.$store.dispatch('StrengthSkill/UPDATE_ENDURANCE_SKILL', endurance).then(() => {
+                  this.$store.dispatch('StrengthSkill/UPDATE_ELIXIR_TOLERANCE_SKILL', elixirTolerance).then(() => {
+                    this.$store.dispatch('StrengthSkill/UPDATE_BULLYING_SKILL', bullying);
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    },
   },
 };
 

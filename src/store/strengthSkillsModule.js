@@ -91,45 +91,45 @@ const strengthSkillsModule = {
         commit('SET_SKILL_TREE', data);
       });
     },
-    UPDATE_STRENGTH_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_STRENGTH_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.Strength, level);
       commit('SET_STRENGTH_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.Strength, level);
     },
-    UPDATE_HEAVY_ARMOR_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_HEAVY_ARMOR_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.HeavyArmor, level);
       commit('SET_HEAVY_ARMOR_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.HeavyArmor, level);
     },
-    UPDATE_HEAVY_WEAPON_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_HEAVY_WEAPON_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.HeavyWeapon, level);
       commit('SET_HEAVY_WEAPON_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.HeavyWeapon, level);
     },
-    UPDATE_FIST_FIGHT_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_FIST_FIGHT_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.FistFight, level);
       commit('SET_FIST_FIGHT_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.FistFight, level);
     },
-    UPDATE_WHOLESOMNESS_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_WHOLESOMNESS_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.Wholesomness, level);
       commit('SET_WHOLESOMNESS_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.Wholesomness, level);
     },
-    UPDATE_ENDURANCE_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_ENDURANCE_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.Endurance, level);
       commit('SET_ENDURANCE_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.Endurance, level);
     },
-    UPDATE_ELIXIR_TOLERANCE_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_ELIXIR_TOLERANCE_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.ElixirTolerance, level);
       commit('SET_ELIXIR_TOLERANCE_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.ElixirTolerance, level);
     },
-    UPDATE_BULLYING_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_BULLYING_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      StrengthSkill.setParamValue(witcherId, strSkills.Bullying, level);
       commit('SET_BULLYING_SKILL', level);
+      return StrengthSkill.setParamValue(witcherId, strSkills.Bullying, level);
     },
   },
 };
