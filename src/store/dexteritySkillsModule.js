@@ -91,45 +91,45 @@ const dexteritySkillsModule = {
         commit('SET_SKILL_TREE', data);
       });
     },
-    UPDATE_DEXTERITY_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_DEXTERITY_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.Dexterity, level);
       commit('SET_DEXTERITY_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.Dexterity, level);
     },
-    UPDATE_LIGHT_ARMOR_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_LIGHT_ARMOR_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.LightArmor, level);
       commit('SET_LIGHT_ARMOR_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.LightArmor, level);
     },
-    UPDATE_LIGHT_WEAPON_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_LIGHT_WEAPON_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.LightWeapon, level);
       commit('SET_LIGHT_WEAPON_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.LightWeapon, level);
     },
-    UPDATE_INITIATIVE_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_INITIATIVE_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.Initiative, level);
       commit('SET_INITIATIVE_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.Initiative, level);
     },
-    UPDATE_STEALTH_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_STEALTH_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.Stealth, level);
       commit('SET_STEALTH_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.Stealth, level);
     },
-    UPDATE_DODGE_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_DODGE_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.Dodge, level);
       commit('SET_DODGE_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.Dodge, level);
     },
-    UPDATE_THROWING_WEAPON_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_THROWING_WEAPON_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.ThrowingWeapon, level);
       commit('SET_THROWING_WEAPON_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.ThrowingWeapon, level);
     },
-    UPDATE_RANGE_WEAPON_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_RANGE_WEAPON_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      DexteritySkill.setParamValue(witcherId, dexSkills.RangeWeapon, level);
       commit('SET_RANGE_WEAPON_SKILL', level);
+      return DexteritySkill.setParamValue(witcherId, dexSkills.RangeWeapon, level);
     },
   },
 };

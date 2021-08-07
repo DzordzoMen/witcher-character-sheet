@@ -215,9 +215,8 @@ export default {
       skillPoints: 'WITCHER_AVA_SKILL_POINTS',
     }),
   },
-  // TODO remove?
-  watch: {
-    dexterity: 'setValues',
+  created() {
+    this.setValues();
   },
   methods: {
     setValues() {
@@ -249,9 +248,34 @@ export default {
     increaseWitcherSkillPoints() {
       this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints + 1);
     },
-  },
-  created() {
-    this.setValues();
+    saveSkills() {
+      const {
+        dexterity,
+        lightArmor,
+        lightWeapon,
+        initiative,
+        stealth,
+        dodge,
+        throwingWeapon,
+        rangeWeapon,
+      } = this.witcher;
+
+      this.$store.dispatch('DexteritySkill/UPDATE_DEXTERITY_SKILL', dexterity).then(() => {
+        this.$store.dispatch('DexteritySkill/UPDATE_LIGHT_ARMOR_SKILL', lightArmor).then(() => {
+          this.$store.dispatch('DexteritySkill/UPDATE_LIGHT_WEAPON_SKILL', lightWeapon).then(() => {
+            this.$store.dispatch('DexteritySkill/UPDATE_INITIATIVE_SKILL', initiative).then(() => {
+              this.$store.dispatch('DexteritySkill/UPDATE_STEALTH_SKILL', stealth).then(() => {
+                this.$store.dispatch('DexteritySkill/UPDATE_DODGE_SKILL', dodge).then(() => {
+                  this.$store.dispatch('DexteritySkill/UPDATE_THROWING_WEAPON_SKILL', throwingWeapon).then(() => {
+                    this.$store.dispatch('DexteritySkill/UPDATE_RANGE_WEAPON_SKILL', rangeWeapon);
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    },
   },
 };
 </script>
