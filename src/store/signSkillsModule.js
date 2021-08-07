@@ -91,45 +91,45 @@ const signSkillsModule = {
         commit('SET_SKILL_TREE', data);
       });
     },
-    UPDATE_SIGNS_SKILL_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_SIGNS_SKILL_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Signs, level);
       commit('SET_SIGNS_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Signs, level);
     },
-    UPDATE_SOMNE_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_SOMNE_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Somne, level);
       commit('SET_SOMNE_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Somne, level);
     },
-    UPDATE_HELIOTROP_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_HELIOTROP_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Heliotrop, level);
       commit('SET_HELIOTROP_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Heliotrop, level);
     },
-    UPDATE_AARD_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_AARD_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Aard, level);
       commit('SET_AARD_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Aard, level);
     },
-    UPDATE_IGNI_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_IGNI_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Igni, level);
       commit('SET_IGNI_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Igni, level);
     },
-    UPDATE_AXII_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_AXII_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Axii, level);
       commit('SET_AXII_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Axii, level);
     },
-    UPDATE_YRDEN_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_YRDEN_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Yrden, level);
       commit('SET_YRDEN_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Yrden, level);
     },
-    UPDATE_QUEN_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_QUEN_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      SignsSkill.setParamValue(witcherId, sgnSkills.Quen, level);
       commit('SET_QUEN_SKILL', level);
+      return SignsSkill.setParamValue(witcherId, sgnSkills.Quen, level);
     },
   },
 };

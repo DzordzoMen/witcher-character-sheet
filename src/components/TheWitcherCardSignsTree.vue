@@ -214,9 +214,8 @@ export default {
       skillPoints: 'WITCHER_AVA_SKILL_POINTS',
     }),
   },
-  // TODO remove?
-  watch: {
-    signs: 'setValues',
+  created() {
+    this.setValues();
   },
   methods: {
     setValues() {
@@ -248,9 +247,34 @@ export default {
     increaseWitcherSkillPoints() {
       this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints + 1);
     },
-  },
-  created() {
-    this.setValues();
+    saveSkills() {
+      const {
+        signs,
+        somne,
+        heliotrop,
+        aard,
+        igni,
+        axii,
+        yrden,
+        quen,
+      } = this.witcher;
+
+      this.$store.dispatch('SignSkill/UPDATE_SIGNS_SKILL_SKILL', signs).then(() => {
+        this.$store.dispatch('SignSkill/UPDATE_SOMNE_SKILL', somne).then(() => {
+          this.$store.dispatch('SignSkill/UPDATE_HELIOTROP_SKILL', heliotrop).then(() => {
+            this.$store.dispatch('SignSkill/UPDATE_AARD_SKILL', aard).then(() => {
+              this.$store.dispatch('SignSkill/UPDATE_IGNI_SKILL', igni).then(() => {
+                this.$store.dispatch('SignSkill/UPDATE_AXII_SKILL', axii).then(() => {
+                  this.$store.dispatch('SignSkill/UPDATE_YRDEN_SKILL', yrden).then(() => {
+                    this.$store.dispatch('SignSkill/UPDATE_QUEN_SKILL', quen);
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    },
   },
 };
 </script>
