@@ -65,7 +65,7 @@
 
       <v-col cols="6" md="3" order-md="5" order="5">
         <base-field
-          v-model.number="availableSkillPoints"
+          v-model.number="skillPoints"
           disabled
         >
           <template #label>
@@ -131,7 +131,7 @@
           block
           depressed
           @click="saveWitcherSkills()"
-          disabled
+          :disabled="!availableSkillPoints"
         >
           Rozdaj
         </v-btn>
@@ -284,6 +284,9 @@ export default {
       history: 'WITCHER_HISTORY',
       elixirs: 'WITCHER_ELIXIRS',
     }),
+    ...mapGetters({
+      skillPoints: 'SKIll_POINTS',
+    }),
     ...mapGetters('StrengthSkill', {
       heavyArmor: 'HEAVY_ARMOR_SKILL',
       wholesomness: 'WHOLESOMNESS_SKILL',
@@ -360,6 +363,8 @@ export default {
       this.$refs.dexterityTree.saveSkills();
       this.$refs.signsTree.saveSkills();
       this.$refs.mindTree.saveSkills();
+
+      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints);
     },
   },
 };
