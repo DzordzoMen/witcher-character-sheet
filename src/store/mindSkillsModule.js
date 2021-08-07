@@ -91,45 +91,45 @@ const mindSkillsModule = {
         commit('SET_SKILL_TREE', data);
       });
     },
-    UPDATE_MIND_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_MIND_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.Mind, level);
       commit('SET_MIND_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.Mind, level);
     },
-    UPDATE_CRAFTING_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_CRAFTING_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.Crafting, level);
       commit('SET_CRAFTING_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.Crafting, level);
     },
-    UPDATE_MONSTER_KNOWLEDGE_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_MONSTER_KNOWLEDGE_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.MonsterKnowledge, level);
       commit('SET_MONSTER_KNOWLEDGE_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.MonsterKnowledge, level);
     },
-    UPDATE_WORLD_KNOWLEDGE_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_WORLD_KNOWLEDGE_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.WorldKnowledge, level);
       commit('SET_WORLD_KNOWLEDGE_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.WorldKnowledge, level);
     },
-    UPDATE_RHETORIC_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_RHETORIC_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.Rhetoric, level);
       commit('SET_RHETORIC_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.Rhetoric, level);
     },
-    UPDATE_WITCHER_SENSES_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_WITCHER_SENSES_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.WitcherSenses, level);
       commit('SET_WITCHER_SENSES_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.WitcherSenses, level);
     },
-    UPDATE_MAGIC_RESISTS_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_MAGIC_RESISTS_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.MagicResists, level);
       commit('SET_MAGIC_RESISTS_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.MagicResists, level);
     },
-    UPDATE_ARCANA_SKILL: ({ commit, rootGetters }, level) => {
+    UPDATE_ARCANA_SKILL: async ({ commit, rootGetters }, level) => {
       const witcherId = rootGetters.WITCHER_ID;
-      MindSkill.setParamValue(witcherId, mindSkills.Arcana, level);
       commit('SET_ARCANA_SKILL', level);
+      return MindSkill.setParamValue(witcherId, mindSkills.Arcana, level);
     },
   },
 };

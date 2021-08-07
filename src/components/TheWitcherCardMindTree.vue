@@ -179,6 +179,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import skillPointsMixin from '../mixins/skillPoints';
 
 import SquareField from './base/SquareField.vue';
 
@@ -187,6 +188,7 @@ export default {
   components: {
     SquareField,
   },
+  mixins: [skillPointsMixin],
   data: () => ({
     witcher: {
       mind: 0,
@@ -210,13 +212,9 @@ export default {
       magicResists: 'MAGIC_RESISTS_SKILL',
       arcana: 'ARCANA_SKILL',
     }),
-    ...mapGetters('WitcherInfo', {
-      skillPoints: 'WITCHER_AVA_SKILL_POINTS',
-    }),
   },
-  // TODO remove?
-  watch: {
-    mind: 'setValues',
+  created() {
+    this.setValues();
   },
   methods: {
     setValues() {
@@ -242,15 +240,34 @@ export default {
         arcana,
       };
     },
-    decreaseWitcherSkillPoints() {
-      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints - 1);
+    saveSkills() {
+      const {
+        mind,
+        crafting,
+        monsterKnowledge,
+        worldKnowledge,
+        rhetoric,
+        witcherSenses,
+        magicResists,
+        arcana,
+      } = this.witcher;
+
+      this.$store.dispatch('MindSkill/UPDATE_MIND_SKILL', mind).then(() => {
+        this.$store.dispatch('MindSkill/UPDATE_CRAFTING_SKILL', crafting).then(() => {
+          this.$store.dispatch('MindSkill/UPDATE_MONSTER_KNOWLEDGE_SKILL', monsterKnowledge).then(() => {
+            this.$store.dispatch('MindSkill/UPDATE_WORLD_KNOWLEDGE_SKILL', worldKnowledge).then(() => {
+              this.$store.dispatch('MindSkill/UPDATE_RHETORIC_SKILL', rhetoric).then(() => {
+                this.$store.dispatch('MindSkill/UPDATE_WITCHER_SENSES_SKILL', witcherSenses).then(() => {
+                  this.$store.dispatch('MindSkill/UPDATE_MAGIC_RESISTS_SKILL', magicResists).then(() => {
+                    this.$store.dispatch('MindSkill/UPDATE_ARCANA_SKILL', arcana);
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
     },
-    increaseWitcherSkillPoints() {
-      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints + 1);
-    },
-  },
-  created() {
-    this.setValues();
   },
 };
 </script>
