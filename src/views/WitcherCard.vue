@@ -126,7 +126,13 @@
       />
 
       <v-col cols="6" md="3" order-md="9" order="6">
-        <v-btn color="primary" block depressed disabled>
+        <v-btn
+          color="primary"
+          block
+          depressed
+          @click="saveWitcherSkills()"
+          disabled
+        >
           Rozdaj
         </v-btn>
       </v-col>
@@ -212,16 +218,24 @@
       <v-col cols="12" md="9" order-md="15" order="17">
         <v-row dense>
           <v-col cols="12" md="6">
-            <the-witcher-card-strength-tree />
+            <the-witcher-card-strength-tree
+              ref="strengthTree"
+            />
           </v-col>
           <v-col cols="12" md="6">
-            <the-witcher-card-dexterity-tree />
+            <the-witcher-card-dexterity-tree
+              ref="dexterityTree"
+            />
           </v-col>
           <v-col cols="12" md="6">
-            <the-witcher-card-signs-tree />
+            <the-witcher-card-signs-tree
+              ref="signsTree"
+            />
           </v-col>
           <v-col cols="12" md="6">
-            <the-witcher-card-mind-tree />
+            <the-witcher-card-mind-tree
+              ref="mindTree"
+            />
           </v-col>
         </v-row>
       </v-col>
@@ -338,6 +352,14 @@ export default {
           this.$store.dispatch('WitcherInfo/INCREASE_WITCHER_LEVEL', Number(val));
         }
       },
+    },
+  },
+  methods: {
+    saveWitcherSkills() {
+      this.$refs.strengthTree.saveSkills();
+      this.$refs.dexterityTree.saveSkills();
+      this.$refs.signsTree.saveSkills();
+      this.$refs.mindTree.saveSkills();
     },
   },
 };
