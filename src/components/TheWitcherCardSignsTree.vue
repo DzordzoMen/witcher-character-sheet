@@ -179,6 +179,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import skillPointsMixin from '../mixins/skillPoints';
 
 import SquareField from './base/SquareField.vue';
 
@@ -187,6 +188,7 @@ export default {
   components: {
     SquareField,
   },
+  mixins: [skillPointsMixin],
   data: () => ({
     wticher: {
       signs: 0,
@@ -209,9 +211,6 @@ export default {
       axii: 'AXII_SKILL',
       yrden: 'YRDEN_SKILL',
       quen: 'QUEN_SKILL',
-    }),
-    ...mapGetters('WitcherInfo', {
-      skillPoints: 'WITCHER_AVA_SKILL_POINTS',
     }),
   },
   created() {
@@ -240,12 +239,6 @@ export default {
         yrden,
         quen,
       };
-    },
-    decreaseWitcherSkillPoints() {
-      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints - 1);
-    },
-    increaseWitcherSkillPoints() {
-      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints + 1);
     },
     saveSkills() {
       const {

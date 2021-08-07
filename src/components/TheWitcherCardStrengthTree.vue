@@ -180,6 +180,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import skillPointsMixin from '../mixins/skillPoints';
 
 import SquareField from './base/SquareField.vue';
 
@@ -188,6 +189,7 @@ export default {
   components: {
     SquareField,
   },
+  mixins: [skillPointsMixin],
   data: () => ({
     witcher: {
       strength: 0,
@@ -210,9 +212,6 @@ export default {
       endurance: 'ENDURANCE_SKILL',
       elixirTolerance: 'ELIXIR_TOLERANCE_SKILL',
       bullying: 'BULLYING_SKILL',
-    }),
-    ...mapGetters('WitcherInfo', {
-      skillPoints: 'WITCHER_AVA_SKILL_POINTS',
     }),
   },
   created() {
@@ -241,13 +240,6 @@ export default {
         elixirTolerance,
         bullying,
       };
-    },
-    // TODO mixin
-    decreaseWitcherSkillPoints() {
-      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints - 1);
-    },
-    increaseWitcherSkillPoints() {
-      this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_AVA_SKILL_POINTS', this.skillPoints + 1);
     },
     saveSkills() {
       // TODO refactor
