@@ -5,6 +5,7 @@
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    :style="`color: ${color}`"
   >
     <g id="WitcherLogo animation">
       <path
@@ -35,7 +36,7 @@
           20.5984 10.6434 20.5429 10.5858 20.4853L3.51471 13.4142C3.45713 13.3567 3.40166
           13.2978 3.34832 13.2376C3.29994 14.0631 3.59111 14.9048 4.22183 15.5356L8.46447
           19.7782C9.0952 20.4089 9.93689 20.7001 10.7624 20.6517Z"
-        fill="black"
+        fill="currentColor"
       />
       <path
         id="inside-square"
@@ -64,7 +65,7 @@
           15.3232 9.20675ZM14.4482 15.3232C14.4081 15.3256 14.3677 15.3268 14.327 15.3268L9.32796
           15.3268C9.28725 15.3268 9.24682 15.3256 9.20671 15.3232C9.48142 15.6321 9.88187 15.8267
           10.3278 15.8267L13.3272 15.8267C13.7731 15.8267 14.1735 15.6321 14.4482 15.3232Z"
-        fill="black"
+        fill="currentColor"
       />
     </g>
   </svg>
@@ -85,6 +86,11 @@ export default {
       type: [Number, String],
       required: false,
       default: 24,
+    },
+    color: {
+      type: String,
+      required: false,
+      default: 'black',
     },
   },
 };

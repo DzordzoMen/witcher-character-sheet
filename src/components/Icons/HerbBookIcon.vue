@@ -5,6 +5,7 @@
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    :style="`color: ${color}`"
   >
     <path
       fill-rule="evenodd"
@@ -32,7 +33,7 @@
         10.4698C9.67565 10.4938 9.89546 10.7234 9.87121 10.9826ZM13.5012 12.0942C13.2717 12.2062
         11.8503 12.5989 11.7273 12.3226C11.6044 12.0463 12.8264 11.2057 13.0558 11.0937C13.2853
         10.9817 13.571 11.1149 13.6939 11.3912C13.8169 11.6675 13.7306 11.9822 13.5012 12.0942Z"
-      fill="black"
+      fill="currentColor"
     />
   </svg>
 </template>
@@ -50,6 +51,11 @@ export default {
       type: [Number, String],
       required: false,
       default: 24,
+    },
+    color: {
+      type: String,
+      required: false,
+      default: 'black',
     },
   },
 };

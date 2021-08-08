@@ -5,13 +5,14 @@
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    :style="`color: ${color}`"
   >
-    <circle cx="13.5" cy="6.10001" r="3.5" stroke="black"/>
+    <circle cx="13.5" cy="6.10001" r="3.5" stroke="currentColor"/>
     <path
       d="M21 19.9C21 20.2758 20.9827 20.6463 20.9492 21.0104C20.9299 21.22 20.7434 21.4 20.4893
         21.4H6.51074C6.2566 21.4 6.0701 21.22 6.05079 21.0104C6.01726 20.6463 6 20.2758 6 19.9C6
         14.5434 9.45621 10.4 13.5 10.4C17.5438 10.4 21 14.5434 21 19.9Z"
-      stroke="black"
+      stroke="currentColor"
     />
     <path
       fill-rule="evenodd"
@@ -26,16 +27,16 @@
         4.97917C4.07222 4.76209 3.89625 4.58611 3.67917 4.58611C3.46209 4.58611 3.28611
         4.76209 3.28611 4.97917C3.28611 5.19625 3.46209 5.37223 3.67917 5.37223C3.89625 5.37223
         4.07222 5.19625 4.07222 4.97917Z"
-      fill="black"
+      fill="currentColor"
     />
     <path
       d="M20.4999 21.7999C20.4998 21.7999 20.4999 21.7999 20.4999 21.7999Z"
-      fill="black"
+      fill="currentColor"
     />
     <path
       d="M9.79895 10.9322C9.73206 10.9759 9.66573 11.0207 9.59997 11.0667L7.52635 8.9931L7.69311
       8.82634L9.79895 10.9322Z"
-      fill="black"
+      fill="currentColor"
     />
   </svg>
 </template>
@@ -53,6 +54,11 @@ export default {
       type: [Number, String],
       required: false,
       default: 24,
+    },
+    color: {
+      type: String,
+      required: false,
+      default: 'black',
     },
   },
 };
