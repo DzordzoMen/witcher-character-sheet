@@ -23,9 +23,17 @@
             :class="isItemActive('WitcherCard') && 'v-list-item--active'"
             :disabled="isItemActive('WitcherCard')"
           >
-            <v-list-item-icon>
-              <witcher-icon />
-            </v-list-item-icon>
+            <v-tooltip left nudge-left="8px">
+              <template #activator="{ on }">
+                <v-list-item-icon v-on="on">
+                  <witcher-icon />
+                </v-list-item-icon>
+              </template>
+
+              <span>
+                Karta postaci
+              </span>
+            </v-tooltip>
           </v-list-item>
         </v-list-item-group>
       </v-list>
