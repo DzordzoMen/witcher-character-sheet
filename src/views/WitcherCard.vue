@@ -131,7 +131,7 @@
           block
           depressed
           @click="saveWitcherSkills()"
-          :disabled="!availableSkillPoints"
+          :disabled="skillPoints === availableSkillPoints"
         >
           Rozdaj
         </v-btn>
