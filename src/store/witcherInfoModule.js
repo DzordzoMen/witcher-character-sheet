@@ -112,9 +112,10 @@ const witcherInfoModule = {
     ) => {
       const witcherId = rootGetters.WITCHER_ID;
       WitcherInfo.setParamValue(witcherId, witcherInfoType.Level, level).then(() => {
-        const skillPoitns = getters.WITCHER_AVA_SKILL_POINTS;
-        const result = skillPoitns + 6;
-        dispatch('UPDATE_WITCHER_AVA_SKILL_POINTS', result);
+        const avaSkillPoints = getters.WITCHER_AVA_SKILL_POINTS;
+        const skillPoints = rootGetters.SKILL_POINTS;
+        dispatch('UPDATE_WITCHER_AVA_SKILL_POINTS', avaSkillPoints + 6);
+        dispatch('UPDATE_SKILL_POINTS', skillPoints + 6, { root: true });
         commit('SET_WITCHER_LEVEL', level);
       });
     },
@@ -129,8 +130,10 @@ const witcherInfoModule = {
     ) => {
       const witcherId = rootGetters.WITCHER_ID;
       WitcherInfo.setParamValue(witcherId, witcherInfoType.Level, level).then(() => {
-        const skillPoitns = getters.WITCHER_AVA_SKILL_POINTS;
-        dispatch('UPDATE_WITCHER_AVA_SKILL_POINTS', skillPoitns - 6);
+        const avaSkillPoints = getters.WITCHER_AVA_SKILL_POINTS;
+        const skillPoints = rootGetters.SKILL_POINTS;
+        dispatch('UPDATE_WITCHER_AVA_SKILL_POINTS', avaSkillPoints - 6);
+        dispatch('UPDATE_SKILL_POINTS', skillPoints - 6, { root: true });
         commit('SET_WITCHER_LEVEL', level);
       });
     },
