@@ -12,7 +12,10 @@
               @onIncreaseClick="decreaseWitcherSkillPoints"
               @onDecreaseClick="increaseWitcherSkillPoints"
               :min="mind"
-              :disableIncreaseBtn="skillPoints === 0"
+              :disableIncreaseBtn="
+                witcher.mind === witcherLevel ||
+                skillPoints === 0
+              "
               disabled
               showBtns
             />

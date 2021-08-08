@@ -5,6 +5,9 @@ export default {
     ...mapGetters({
       skillPoints: 'SKILL_POINTS',
     }),
+    ...mapGetters('WitcherInfo', {
+      witcherLevel: 'WITCHER_LEVEL',
+    }),
   },
   methods: {
     decreaseWitcherSkillPoints() {
