@@ -26,12 +26,37 @@
             <v-tooltip left nudge-left="8px">
               <template #activator="{ on }">
                 <v-list-item-icon v-on="on">
-                  <witcher-icon />
+                  <witcher-icon
+                    :width="32"
+                    :height="32"
+                  />
                 </v-list-item-icon>
               </template>
 
               <span>
                 Karta postaci
+              </span>
+            </v-tooltip>
+          </v-list-item>
+
+          <v-list-item
+            link
+            @click="goTo('RecipeInfo')"
+            :class="isItemActive('RecipeInfo') && 'v-list-item--active'"
+            :disabled="isItemActive('RecipeInfo')"
+          >
+            <v-tooltip left nudge-left="8px">
+              <template #activator="{ on }">
+                <v-list-item-icon v-on="on">
+                  <herb-book-icon
+                    :width="32"
+                    :height="32"
+                  />
+                </v-list-item-icon>
+              </template>
+
+              <span>
+                Przepisy
               </span>
             </v-tooltip>
           </v-list-item>
@@ -49,12 +74,14 @@
 import TheHeader from './components/TheHeader.vue';
 
 import WitcherIcon from './components/Icons/WitcherIcon.vue';
+import HerbBookIcon from './components/Icons/HerbBookIcon.vue';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
     WitcherIcon,
+    HerbBookIcon,
   },
   computed: {
     showNavigationDrawer() {
@@ -112,8 +139,15 @@ export default {
 }
 
 .sidebar-list {
+  & .v-list-item {
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
   & .v-list-item__icon {
-    margin: 8px 0 !important;
+    margin: 4px 0 !important;
+    min-height: 32px;
+    min-width: 32px;
   }
 }
 </style>
