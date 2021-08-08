@@ -18,7 +18,7 @@ export default new Vuex.Store({
   },
   getters: {
     WITCHER_ID: (state) => state.selectedWitcherId,
-    SKIll_POINTS: (state) => state.skillPoints,
+    SKILL_POINTS: (state) => state.skillPoints,
   },
   mutations: {
     SET_WITCHER_ID(state, witcherId) {

@@ -9,7 +9,7 @@
           v-model.number="witcherLevel"
           disabled
           :min="1"
-          :disable-decrease-btn="availableSkillPoints < 6"
+          :disable-decrease-btn="skillPoints < 6"
           show-btns
         >
           <template #label>
@@ -285,7 +285,7 @@ export default {
       elixirs: 'WITCHER_ELIXIRS',
     }),
     ...mapGetters({
-      skillPoints: 'SKIll_POINTS',
+      skillPoints: 'SKILL_POINTS',
     }),
     ...mapGetters('StrengthSkill', {
       heavyArmor: 'HEAVY_ARMOR_SKILL',

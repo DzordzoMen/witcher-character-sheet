@@ -180,7 +180,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import skillPointsMixin from '../mixins/skillPoints';
+import skillTree from '../mixins/skillTree';
 
 import SquareField from './base/SquareField.vue';
 
@@ -189,7 +189,7 @@ export default {
   components: {
     SquareField,
   },
-  mixins: [skillPointsMixin],
+  mixins: [skillTree],
   data: () => ({
     witcher: {
       dexterity: 0,
