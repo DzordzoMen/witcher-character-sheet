@@ -2,6 +2,35 @@
   <v-app>
     <the-header />
 
+    <v-navigation-drawer
+      v-if="showNavigationDrawer"
+      app
+      clipped
+      right
+      mini-variant
+      color="primary"
+      dark
+    >
+      <v-list
+        dense
+        nav
+        class="sidebar-list"
+      >
+        <v-list-item-group>
+          <v-list-item
+            link
+            @click="goTo('WitcherCard')"
+            :class="isItemActive('WitcherCard') && 'v-list-item--active'"
+            :disabled="isItemActive('WitcherCard')"
+          >
+            <v-list-item-icon>
+              <witcher-icon />
+            </v-list-item-icon>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-main>
       <router-view :key="$route.fullPath" />
     </v-main>
@@ -11,10 +40,28 @@
 <script>
 import TheHeader from './components/TheHeader.vue';
 
+import WitcherIcon from './components/Icons/WitcherIcon.vue';
+
 export default {
   name: 'App',
   components: {
     TheHeader,
+    WitcherIcon,
+  },
+  computed: {
+    showNavigationDrawer() {
+      return this.$route.path.includes('/card/');
+    },
+  },
+  methods: {
+    isItemActive(endpointName) {
+      const { name } = this.$route;
+      return name === endpointName;
+    },
+    goTo(endpointName) {
+      const { id } = this.$route.params;
+      this.$router.push({ name: endpointName, params: { id } });
+    },
   },
 };
 </script>
@@ -56,4 +103,9 @@ export default {
   order: 17 !important
 }
 
+.sidebar-list {
+  & .v-list-item__icon {
+    margin: 8px 0 !important;
+  }
+}
 </style>
