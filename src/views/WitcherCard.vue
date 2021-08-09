@@ -238,6 +238,22 @@
             />
           </v-col>
         </v-row>
+
+        <v-row dense>
+          <v-col cols="12" class="primary--text text-center">
+            Ekwipunek podręczny
+          </v-col>
+          <template v-for="(row, index) in equipment">
+            <v-col cols="12" md="6" :key="index">
+              <the-equipment-card
+                :id="index"
+                :type="row.type"
+                :name="row.name"
+                :description="row.description"
+              />
+            </v-col>
+          </template>
+        </v-row>
       </v-col>
 
     </v-row>
@@ -251,6 +267,7 @@ import LoadingScreen from '../components/LoadingScreen.vue';
 import BaseField from '../components/base/Field.vue';
 import TheSelectElixir from '../components/TheSelectElixir.vue';
 import TheWitcherCardHerbs from '../components/TheWitcherCardHerbs.vue';
+import TheEquipmentCard from '../components/TheEquipmentCard.vue';
 import TheWitcherCardStrengthTree from '../components/TheWitcherCardStrengthTree.vue';
 import TheWitcherCardDexterityTree from '../components/TheWitcherCardDexterityTree.vue';
 import TheWitcherCardSignsTree from '../components/TheWitcherCardSignsTree.vue';
@@ -262,6 +279,7 @@ export default {
     BaseField,
     LoadingScreen,
     TheSelectElixir,
+    TheEquipmentCard,
     TheWitcherCardHerbs,
     TheWitcherCardMindTree,
     TheWitcherCardSignsTree,
@@ -286,6 +304,9 @@ export default {
     }),
     ...mapGetters({
       skillPoints: 'SKILL_POINTS',
+    }),
+    ...mapGetters('LargeTables', {
+      equipment: 'EQUIPMENT_TABLE',
     }),
     ...mapGetters('StrengthSkill', {
       heavyArmor: 'HEAVY_ARMOR_SKILL',
