@@ -6,7 +6,7 @@ const objectStoreTypes = {
   DexteritySkills: 'DexteritySkills',
   SignsSkills: 'SignsSkills',
   LargeTables: 'LargeTables', // TODO remove
-  Equpment: 'Equpment',
+  Equipment: 'Equipment',
   Saddlebags: 'Saddlebags',
 };
 
