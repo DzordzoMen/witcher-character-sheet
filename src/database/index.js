@@ -5,4 +5,5 @@ export { default as DexteritySkill } from './Tables/DexteritySkill';
 export { default as SignsSkill } from './Tables/SignsSkill';
 export { default as MindSkill } from './Tables/MindSkill';
 export { default as LargeTables } from './Tables/LargeTables';
+export { default as Equipment } from './Tables/Equipment';
 export { default as createNewWitcher } from './createNewWitcher';
