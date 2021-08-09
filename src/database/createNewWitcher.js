@@ -35,6 +35,18 @@ function setWitcherBonuses(skillTree, bonuses) {
   return skillTree;
 }
 
+function createBigTable(schema, size = 10, defaultValue = '') {
+  const bigTable = [];
+  for (let i = 0; i < size; i += 1) {
+    const row = {};
+    Object.keys(schema).forEach((type) => {
+      row[type] = defaultValue;
+    });
+    bigTable.push(row);
+  }
+  return bigTable;
+}
+
 /**
  * @param {String} name
  * @param {String} origin
@@ -83,6 +95,8 @@ async function createNewWitcher(name, origin, school, history, schoolBonuses = [
   addNewObjectToLocalStorage(tables.MindSkills, witcherMindSkills, witcherId);
 
   // TODO large tables
+  const eqTable = createBigTable({ type: null, name: null, description: null }, 10, '');
+  addNewObjectToLocalStorage(tables.Equipment, eqTable, witcherId);
 
   return witcherId;
 }
