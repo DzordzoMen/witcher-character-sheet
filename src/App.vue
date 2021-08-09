@@ -29,6 +29,7 @@
                   <witcher-icon
                     :width="32"
                     :height="32"
+                    color="#fff"
                   />
                 </v-list-item-icon>
               </template>
@@ -51,6 +52,7 @@
                   <herb-book-icon
                     :width="32"
                     :height="32"
+                    color="#fff"
                   />
                 </v-list-item-icon>
               </template>
