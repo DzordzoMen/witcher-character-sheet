@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Samum",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 2
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Iskrownik",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Gwiazda Tańcząca",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 2
+      }
+    ]
+  }
+]
