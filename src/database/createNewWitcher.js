@@ -94,9 +94,11 @@ async function createNewWitcher(name, origin, school, history, schoolBonuses = [
   witcherMindSkills = setWitcherBonuses(witcherMindSkills, schoolBonuses);
   addNewObjectToLocalStorage(tables.MindSkills, witcherMindSkills, witcherId);
 
-  // TODO large tables
   const eqTable = createBigTable({ type: null, name: null, description: null }, 10, '');
   addNewObjectToLocalStorage(tables.Equipment, eqTable, witcherId);
+
+  const saddlebagsTable = createBigTable({ name: null, description: null }, 30, '');
+  addNewObjectToLocalStorage(tables.Saddlebags, saddlebagsTable, witcherId);
 
   return witcherId;
 }

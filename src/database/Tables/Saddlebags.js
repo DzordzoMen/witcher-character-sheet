@@ -1,5 +1,3 @@
-// TODO refactor move all large tables to separate table
-
 import tables from '../../Types/ObjectStoreType';
 
 import {
@@ -10,7 +8,7 @@ import {
   getDataForWitcherId,
 } from '../methods';
 
-const tableName = tables.LargeTables;
+const tableName = tables.Saddlebags;
 
 function setWitcherTable() {
   setLocalStorageItem(tableName, []);
@@ -28,20 +26,15 @@ async function getObjectWithId(witcherId) {
 
 /**
  * @param {Number} witcherId
- * @param {*} paramName
+ * @param {Number} paramKey - row id
+ * @param {String} newName
+ * @param {String} newDescription
  */
-function getParamValue(witcherId, paramName) {
-  const parsedObject = getObjectWithId(witcherId);
-  return parsedObject[paramName];
-}
-
-/**
- * @param {Number} witcherId
- * @param {*} paramKey
- * @param {*} paramValue
- */
-async function setParamValue(witcherId, paramKey, paramValue) {
-  patchLocalStorageItem(witcherId, tableName, paramKey, paramValue);
+async function setParamValue(witcherId, paramKey, newName, newDescription) {
+  patchLocalStorageItem(witcherId, tableName, paramKey, {
+    name: newName,
+    description: newDescription,
+  });
 }
 
 if (!checkIfObjectExists(tableName)) setWitcherTable();
@@ -49,6 +42,5 @@ if (!checkIfObjectExists(tableName)) setWitcherTable();
 export default {
   getAll,
   getObjectWithId,
-  getParamValue,
   setParamValue,
 };
