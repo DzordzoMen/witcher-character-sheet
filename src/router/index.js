@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import store from '../store';
 import Home from '../views/Home.vue';
 import WitcherCard from '../views/WitcherCard.vue';
+import Saddlebags from '../views/Saddlebags.vue';
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,17 @@ const routes = [
         next();
       });
     },
+  },
+  {
+    path: '/card/:id/saddlebags',
+    name: 'Saddlebags',
+    props: true,
+    component: Saddlebags,
+  },
+  {
+    path: '/card/:id/recipe',
+    name: 'RecipeInfo',
+    props: true,
   },
 ];
 
