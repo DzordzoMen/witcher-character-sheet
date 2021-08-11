@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Jad Wisielców",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw wampirom",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw insektoidom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw upiorom",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw zwierzętom",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw przeklętym",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw ogrowatym",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw reliktom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw hybrydom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw drakonidom",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw istotom magicznym",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Olej przeciw trupojadom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      }
+    ]
+  }
+]
