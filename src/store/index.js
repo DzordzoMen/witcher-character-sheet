@@ -48,6 +48,7 @@ export default new Vuex.Store({
       await dispatch('SignSkill/SET_WITCHER_SIGNS_SKILLS');
       await dispatch('MindSkill/SET_WITCHER_MIND_SKILLS');
       await dispatch('LargeTables/SET_WITCHER_EQUIPMENT_TABLE');
+      await dispatch('LargeTables/SET_WITCHER_SADDLEBAGS_TABLE');
     },
     UPDATE_SKILL_POINTS: ({ commit }, skillPoints) => {
       commit('SET_SKILL_POINTS', skillPoints);

@@ -1,4 +1,7 @@
-import { Equipment as EquipmentDB } from '../database';
+import {
+  Equipment as EquipmentDB,
+  Saddlebags as SaddlebagsDB,
+} from '../database';
 
 const largeTablesModule = {
   namespaced: true,
@@ -29,16 +32,19 @@ const largeTablesModule = {
       const row = Equipment[rowId];
       row.description = description;
     },
-    // SET_SADDLEBAG_TABLE_NAME(state, { rowId, name }) {
-    //   const { Saddlebags } = state;
-    //   const [table] = findTableWithID(Saddlebags, rowId);
-    //   table.name = name;
-    // },
-    // SET_SADDLEBAG_TABLE_DESCRIPTION(state, { rowId, description }) {
-    //   const { Saddlebags } = state;
-    //   const [table] = findTableWithID(Saddlebags, rowId);
-    //   table.description = description;
-    // },
+    SET_SADDLEBAGS_TABLE(state, newSaddlebagsTable) {
+      state.Saddlebags = newSaddlebagsTable;
+    },
+    SET_SADDLEBAGS_TABLE_NAME(state, { rowId, name }) {
+      const { Saddlebags } = state;
+      const table = Saddlebags[rowId];
+      table.name = name;
+    },
+    SET_SADDLEBAGS_TABLE_DESCRIPTION(state, { rowId, description }) {
+      const { Saddlebags } = state;
+      const table = Saddlebags[rowId];
+      table.description = description;
+    },
   },
   actions: {
     SET_WITCHER_EQUIPMENT_TABLE: async ({ commit, rootGetters }) => {
@@ -47,7 +53,6 @@ const largeTablesModule = {
         commit('SET_EQUIPMENT_TABLE', data);
       });
     },
-    // TODO debug
     UPDATE_EQUIPMENT_TABLE_TYPE: ({ commit, getters, rootGetters }, { rowId, type }) => {
       commit('SET_EQUIPMENT_TABLE_TYPE', { rowId, type });
       const witcherId = rootGetters.WITCHER_ID;
@@ -71,6 +76,28 @@ const largeTablesModule = {
       const row = eqTable[rowId];
       row.description = desc;
       EquipmentDB.setParamValue(witcherId, rowId, row.type, row.name, row.description);
+    },
+    SET_WITCHER_SADDLEBAGS_TABLE: async ({ commit, rootGetters }) => {
+      const witcherId = rootGetters.WITCHER_ID;
+      SaddlebagsDB.getObjectWithId(witcherId).then((data) => {
+        commit('SET_SADDLEBAGS_TABLE', data);
+      });
+    },
+    UPDATE_SADDLEBAGS_NAME: ({ commit, getters, rootGetters }, { rowId, name }) => {
+      commit('SET_SADDLEBAGS_TABLE_NAME', { rowId, name });
+      const witcherId = rootGetters.WITCHER_ID;
+      const saddlebagsTable = getters.SADDLEBAGS_TABLE;
+      const row = saddlebagsTable[rowId];
+      row.name = name;
+      SaddlebagsDB.setParamValue(witcherId, rowId, row.name, row.description);
+    },
+    UPDATE_SADDLEBAGS_DESCRIPTION: ({ commit, getters, rootGetters }, { rowId, desc }) => {
+      commit('SET_SADDLEBAGS_TABLE_DESCRIPTION', { rowId, desc });
+      const witcherId = rootGetters.WITCHER_ID;
+      const saddlebagsTable = getters.SADDLEBAGS_TABLE;
+      const row = saddlebagsTable[rowId];
+      row.description = desc;
+      SaddlebagsDB.setParamValue(witcherId, rowId, row.name, row.description);
     },
   },
 };
