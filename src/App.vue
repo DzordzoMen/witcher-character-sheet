@@ -1,13 +1,18 @@
 <template>
   <v-app>
-    <the-header />
+    <the-header
+      @onNavIconClick="showDrawer = !showDrawer"
+    />
 
     <v-navigation-drawer
+      v-model="showDrawer"
       v-if="showNavigationDrawer"
       app
       clipped
       right
-      mini-variant
+      :permanent="$vuetify.breakpoint.mdAndUp"
+      :mini-variant="$vuetify.breakpoint.mdAndUp"
+      :class="$vuetify.breakpoint.smAndDown && 'v-navigation-drawer--center'"
       color="primary"
       dark
     >
@@ -36,6 +41,29 @@
 
               <span>
                 Karta postaci
+              </span>
+            </v-tooltip>
+          </v-list-item>
+
+          <v-list-item
+            link
+            @click="goTo('Saddlebags')"
+            :class="isItemActive('Saddlebags') && 'v-list-item--active'"
+            :disabled="isItemActive('Saddlebags')"
+          >
+            <v-tooltip left nudge-left="8px">
+              <template #activator="{ on }">
+                <v-list-item-icon v-on="on">
+                  <herb-book-icon
+                    :width="32"
+                    :height="32"
+                    color="#fff"
+                  />
+                </v-list-item-icon>
+              </template>
+
+              <span>
+                Juki
               </span>
             </v-tooltip>
           </v-list-item>
@@ -85,6 +113,9 @@ export default {
     WitcherIcon,
     HerbBookIcon,
   },
+  data: () => ({
+    showDrawer: false,
+  }),
   computed: {
     showNavigationDrawer() {
       return this.$route.path.includes('/card/');
@@ -140,7 +171,17 @@ export default {
   order: 17 !important
 }
 
+.v-navigation-drawer--center {
+  & > .v-navigation-drawer__content {
+    justify-items: center;
+    align-items: center;
+    display: flex;
+  }
+}
+
 .sidebar-list {
+  width: 100%;
+
   & .v-list-item {
     padding: 0 !important;
     display: flex;

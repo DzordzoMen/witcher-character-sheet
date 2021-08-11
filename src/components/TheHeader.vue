@@ -13,6 +13,11 @@
       </v-col>
       <h2 class="pl-5 hidden-sm-and-down">Witcher character sheet</h2>
     </v-row>
+
+    <v-app-bar-nav-icon
+      @click="$emit('onNavIconClick')"
+      v-if="$vuetify.breakpoint.smAndDown"
+    />
   </v-app-bar>
 </template>
 
