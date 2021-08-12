@@ -54,7 +54,7 @@
             <v-tooltip left nudge-left="8px">
               <template #activator="{ on }">
                 <v-list-item-icon v-on="on">
-                  <herb-book-icon
+                  <saddlebags-icon
                     :width="32"
                     :height="32"
                     color="#fff"
@@ -105,6 +105,7 @@ import TheHeader from './components/TheHeader.vue';
 
 import WitcherIcon from './components/Icons/WitcherIcon.vue';
 import HerbBookIcon from './components/Icons/HerbBookIcon.vue';
+import SaddlebagsIcon from './components/Icons/SaddlebagsIcon.vue';
 
 export default {
   name: 'App',
@@ -112,6 +113,7 @@ export default {
     TheHeader,
     WitcherIcon,
     HerbBookIcon,
+    SaddlebagsIcon,
   },
   data: () => ({
     showDrawer: false,
