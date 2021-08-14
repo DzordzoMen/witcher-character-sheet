@@ -140,6 +140,7 @@ export default {
   flex-grow: 1;
   border-radius: 8px;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   user-select: none;
 }
@@ -148,6 +149,7 @@ export default {
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: center;
+  max-width: 80%;
 }
 .select__icon, .select__clear {
   display: flex;
@@ -183,6 +185,7 @@ export default {
 }
 .options__item {
   line-height: 40px;
+  padding: 2px 4px;
 }
 .options__item:last-child {
   border-bottom-left-radius: inherit;
