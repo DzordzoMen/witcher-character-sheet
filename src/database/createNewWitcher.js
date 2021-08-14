@@ -35,6 +35,20 @@ function setWitcherBonuses(skillTree, bonuses) {
   return skillTree;
 }
 
+function createTableWithIncrementedId(schema, size = 6, defaultValue = '') {
+  const table = [];
+
+  for (let i = 0; i < size; i += 1) {
+    const row = { id: i + 1 };
+    Object.keys(schema).forEach((type) => {
+      row[type] = defaultValue;
+    });
+    table.push(row);
+  }
+
+  return table;
+}
+
 function createBigTable(schema, size = 10, defaultValue = '') {
   const bigTable = [];
   for (let i = 0; i < size; i += 1) {
@@ -93,6 +107,9 @@ async function createNewWitcher(name, origin, school, history, schoolBonuses = [
   let witcherMindSkills = createObjectWithKeys(mindSkill, 0);
   witcherMindSkills = setWitcherBonuses(witcherMindSkills, schoolBonuses);
   addNewObjectToLocalStorage(tables.MindSkills, witcherMindSkills, witcherId);
+
+  const bombsTable = createTableWithIncrementedId({ name: null }, 6, '');
+  addNewObjectToLocalStorage(tables.Bombs, bombsTable, witcherId);
 
   const eqTable = createBigTable({ type: null, name: null, description: null }, 10, '');
   addNewObjectToLocalStorage(tables.Equipment, eqTable, witcherId);
