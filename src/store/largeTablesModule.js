@@ -2,6 +2,7 @@ import {
   Equipment as EquipmentDB,
   Saddlebags as SaddlebagsDB,
   Bombs as BombsDB,
+  Oils as OilsDB,
 } from '../database';
 
 const largeTablesModule = {
@@ -10,11 +11,13 @@ const largeTablesModule = {
     Equipment: [],
     Saddlebags: [],
     Bombs: [],
+    Oils: [],
   },
   getters: {
     EQUIPMENT_TABLE: (state) => state.Equipment,
     SADDLEBAGS_TABLE: (state) => state.Saddlebags,
     BOMBS_TABLE: (state) => state.Bombs,
+    OILS_TABLE: (state) => state.Oils,
   },
   mutations: {
     SET_EQUIPMENT_TABLE(state, newEqTable) {
@@ -54,6 +57,14 @@ const largeTablesModule = {
     SET_BOMBS_TABLE_NAME(state, { rowId, newName }) {
       const { Bombs } = state;
       const table = Bombs[rowId];
+      table.name = newName;
+    },
+    SET_OILS_TABLE(state, newOils) {
+      state.Oils = newOils;
+    },
+    SET_OILS_TABLE_NAME(state, { rowId, newName }) {
+      const { Oils } = state;
+      const table = Oils[rowId];
       table.name = newName;
     },
   },
@@ -123,6 +134,20 @@ const largeTablesModule = {
       const row = bombsTable[rowId];
       row.name = name;
       BombsDB.setParamValue(witcherId, rowId, row.id, row.name);
+    },
+    SET_WITCHER_OILS_TABLE: async ({ commit, rootGetters }) => {
+      const witcherId = rootGetters.WITCHER_ID;
+      OilsDB.getObjectWithId(witcherId).then((data) => {
+        commit('SET_OILS_TABLE', data);
+      });
+    },
+    UPDATE_OILS_NAME: ({ commit, getters, rootGetters }, { rowId, name }) => {
+      commit('SET_OILS_TABLE_NAME', { rowId, name });
+      const witcherId = rootGetters.WITCHER_ID;
+      const oilsTable = getters.OILS_TABLE;
+      const row = oilsTable[rowId];
+      row.name = name;
+      OilsDB.setParamValue(witcherId, rowId, row.id, row.name);
     },
   },
 };

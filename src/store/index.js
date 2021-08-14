@@ -51,6 +51,7 @@ export default new Vuex.Store({
       await dispatch('LargeTables/SET_WITCHER_EQUIPMENT_TABLE');
       await dispatch('LargeTables/SET_WITCHER_SADDLEBAGS_TABLE');
       await dispatch('LargeTables/SET_WITCHER_BOMBS_TABLE');
+      await dispatch('LargeTables/SET_WITCHER_OILS_TABLE');
       commit('SET_LOADING', false);
     },
     UPDATE_SKILL_POINTS: ({ commit }, skillPoints) => {
