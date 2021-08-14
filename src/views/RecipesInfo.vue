@@ -2,7 +2,10 @@
   <loading-screen>
     <template #resolved>
       <v-row dense class="align-self-baseline">
-        <v-col cols="12" class="primary--text text-center recipe-title">
+        <v-col
+          cols="12"
+          class="primary--text text-center recipe-title title font-weight-regular"
+        >
           Eliksiry
         </v-col>
 
@@ -15,7 +18,10 @@
             />
           </v-col>
         </template>
-        <v-col cols="12" class="primary--text text-center recipe-title">
+        <v-col
+          cols="12"
+          class="primary--text text-center recipe-title title font-weight-regular"
+        >
           Oleje
         </v-col>
 
@@ -28,7 +34,10 @@
             />
           </v-col>
         </template>
-        <v-col cols="12" class="primary--text text-center recipe-title">
+        <v-col
+          cols="12"
+          class="primary--text text-center recipe-title title font-weight-regular"
+        >
           Petardy
         </v-col>
 
