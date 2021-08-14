@@ -40,7 +40,7 @@
         <v-col cols="12" md="9">
           <v-row dense>
             <v-col cols="12" class="primary--text text-center">
-              Ekwipunek na koniu
+              Ekwipunek przy koniu
             </v-col>
             <template v-for="(bag, id) in saddlebags">
               <v-col cols="6" md="4" :key="id">
