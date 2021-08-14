@@ -4,6 +4,7 @@ import store from '../store';
 import Home from '../views/Home.vue';
 import WitcherCard from '../views/WitcherCard.vue';
 import Saddlebags from '../views/Saddlebags.vue';
+import RecipesInfo from '../views/RecipesInfo.vue';
 
 Vue.use(VueRouter);
 
@@ -32,6 +33,7 @@ const routes = [
     name: 'RecipeInfo',
     props: true,
     meta: { hasId: true },
+    component: RecipesInfo,
   },
 ];
 
