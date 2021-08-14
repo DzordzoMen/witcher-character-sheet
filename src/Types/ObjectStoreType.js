@@ -5,6 +5,8 @@ const objectStoreTypes = {
   StrengthSkills: 'StrengthSkills',
   DexteritySkills: 'DexteritySkills',
   SignsSkills: 'SignsSkills',
+  Oils: 'Oils',
+  Bombs: 'Bombs',
   Equipment: 'Equipment',
   Saddlebags: 'Saddlebags',
 };

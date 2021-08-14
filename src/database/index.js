@@ -6,4 +6,5 @@ export { default as SignsSkill } from './Tables/SignsSkill';
 export { default as MindSkill } from './Tables/MindSkill';
 export { default as Equipment } from './Tables/Equipment';
 export { default as Saddlebags } from './Tables/Saddlebags';
+export { default as Bombs } from './Tables/Bombs';
 export { default as createNewWitcher } from './createNewWitcher';
