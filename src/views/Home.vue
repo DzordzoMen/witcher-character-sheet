@@ -97,7 +97,7 @@
               </base-field>
             </v-col>
 
-            <v-col cols="4" class="pt-4">
+            <v-col cols="4" class="pt-4 d-flex align-center">
               <v-btn
                 color="primary"
                 class="mx-auto d-flex"
@@ -106,6 +106,12 @@
               >
                 Stwórz postać
               </v-btn>
+
+              <loading
+                v-if="creatingWitcher"
+                :width="36"
+                :height="36"
+              />
             </v-col>
 
           </v-row>
@@ -145,6 +151,7 @@
 import HomeCard from '../components/HomeCard.vue';
 import BaseField from '../components/base/Field.vue';
 import BaseSelect from '../components/base/Select.vue';
+import Loading from '../components/Icons/Loading.vue';
 
 // methods
 import { availableSchools, schoolBonuses } from '../methods/availableSchools';
@@ -154,12 +161,14 @@ import takeTranslate from '../dictionary/pl';
 export default {
   name: 'Home',
   components: {
+    Loading,
     HomeCard,
     BaseField,
     BaseSelect,
   },
   data: () => ({
     showForm: false,
+    creatingWitcher: false,
     form: {
       name: '',
       origin: '',
@@ -189,6 +198,7 @@ export default {
   methods: {
     takeTranslate,
     createWitcher() {
+      this.creatingWitcher = true;
       const {
         name,
         origin,
@@ -197,9 +207,11 @@ export default {
         bonuses,
         history,
       } = this.form;
-      createNewWitcher(name, origin, school, history, bonuses, level).then((witcherId) => {
-        this.$router.push({ name: 'WitcherCard', params: { id: witcherId } });
-      });
+      setTimeout(() => {
+        createNewWitcher(name, origin, school, history, bonuses, level).then((witcherId) => {
+          this.$router.push({ name: 'WitcherCard', params: { id: witcherId } });
+        });
+      }, 0);
     },
   },
 };
