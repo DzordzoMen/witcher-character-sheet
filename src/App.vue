@@ -145,6 +145,10 @@ export default {
   position: relative;
 }
 
+.border-black {
+  border: 1px solid black;
+}
+
 @media (min-width: 960px) {
   .v-application .order-md-13 {
     order: 13 !important

@@ -4,7 +4,7 @@
     :items="Elixirs"
     :mouseOverHandler="enterHoverOptionItem"
     :mouseLeaveHandler="leaveHoverOptionItem"
-    class="select-elixir"
+    class="border-black"
     :disableItem="itemIsDisabled"
   />
 </template>
@@ -40,7 +40,6 @@ export default {
       },
       set(name) {
         const { elixirId: id } = this;
-        // TODO select elixir should remove herbs amount from elixir recipe
         this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_ELIXIR', { id, name });
         this.updateHerbs(name);
       },
@@ -104,9 +103,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.select-elixir {
-  border: 1px solid black;
-}
-</style>
