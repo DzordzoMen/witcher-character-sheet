@@ -111,6 +111,7 @@
                 v-if="creatingWitcher"
                 :width="36"
                 :height="36"
+                color="rgba(0, 0, 0, .87)"
               />
             </v-col>
 
