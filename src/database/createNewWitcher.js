@@ -111,6 +111,9 @@ async function createNewWitcher(name, origin, school, history, schoolBonuses = [
   const bombsTable = createTableWithIncrementedId({ name: null }, 6, '');
   addNewObjectToLocalStorage(tables.Bombs, bombsTable, witcherId);
 
+  const oilsTable = createTableWithIncrementedId({ name: null }, 6, '');
+  addNewObjectToLocalStorage(tables.Oils, oilsTable, witcherId);
+
   const eqTable = createBigTable({ type: null, name: null, description: null }, 10, '');
   addNewObjectToLocalStorage(tables.Equipment, eqTable, witcherId);
 
