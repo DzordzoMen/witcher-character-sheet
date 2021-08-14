@@ -1,0 +1,234 @@
+[
+  {
+    "name": "Jaskółka",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Regeneruje życie w jedną godzinę",
+      "Trwa cały dzień",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Kot",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Pozwala widzieć w ciemnościach",
+      "Trwa cały dzień",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Biała mewa",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Rebis",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Prosty alkohol wiedźminów",
+      "Trwa cały dzień",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Wilga",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Uodparnia na trucizny",
+      "Trwa kilka godzin",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Puszczyk",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Dodaje + 3 punkty mocy",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Filtr Petriego",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Dodaje + 3 do poziomu wszystkich znaków",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Orka",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 2
+      }
+    ],
+    "properties": [
+      "Umożliwia oddychanie pod wodą",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Skała",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Utwardza skórę",
+      "Dodaje + 3 do pancerza",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Grom",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Wprowadza w szał",
+      "Dodaje + 3 do ataku",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Zamieć",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "Zwiększa refleks",
+      "Dodaje + 3 do uników",
+      "Dodaje + 3 do inicjatywy",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
+    ]
+  }
+]

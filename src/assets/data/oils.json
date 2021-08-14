@@ -1,0 +1,263 @@
+[
+  {
+    "name": "Jad Wisielców",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko ludziom",
+      "+ 2k6 obrażeń przeciwko nieludzion",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw wampirom",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko wampirom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw insektoidom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko insektoidom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw upiorom",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko upiorom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw zwierzętom",
+    "recipe": [
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko zwierzętom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw przeklętym",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko przeklętym",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw ogrowatym",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko ogrowatym",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw reliktom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko reliktom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw hybrydom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Hydragenum",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko hybrydom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw drakonidom",
+    "recipe": [
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Quebrith",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko drakonidom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw istotom magicznym",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vermilion",
+        "amount": 2
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko istotom magicznym",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  },
+  {
+    "name": "Olej przeciw trupojadom",
+    "recipe": [
+      {
+        "name": "Rebis",
+        "amount": 1
+      },
+      {
+        "name": "Vitriol",
+        "amount": 1
+      },
+      {
+        "name": "Aether",
+        "amount": 1
+      }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko trupojadom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
+    ]
+  }
+]
