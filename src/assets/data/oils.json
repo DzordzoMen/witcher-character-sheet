@@ -14,6 +14,12 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko ludziom",
+      "+ 2k6 obrażeń przeciwko nieludzion",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -31,6 +37,11 @@
         "name": "Hydragenum",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko wampirom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -48,6 +59,11 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko insektoidom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -65,6 +81,11 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko upiorom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -82,6 +103,11 @@
         "name": "Hydragenum",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko zwierzętom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -99,6 +125,11 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko przeklętym",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -116,6 +147,11 @@
         "name": "Hydragenum",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko ogrowatym",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -133,6 +169,11 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko reliktom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -150,6 +191,11 @@
         "name": "Hydragenum",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko hybrydom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -167,6 +213,11 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko drakonidom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -180,6 +231,11 @@
         "name": "Vermilion",
         "amount": 2
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko istotom magicznym",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -197,6 +253,11 @@
         "name": "Aether",
         "amount": 1
       }
+    ],
+    "properties": [
+      "+ 2k6 obrażeń przeciwko trupojadom",
+      "Trwa jedną walkę",
+      "Na + ma dwa użycia"
     ]
   }
 ]
