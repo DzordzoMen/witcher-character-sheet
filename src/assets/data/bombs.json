@@ -10,6 +10,11 @@
         "name": "Aether",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Oślepia wszystkie istoty",
+      "Czas trwania 1 tura (jeżeli jest na + 1k4)",
+      "Średnica 6m"
     ]
   },
   {
@@ -23,6 +28,11 @@
         "name": "Hydragenum",
         "amount": 2
       }
+    ],
+    "properties": [
+      "Poraża prądem za 1k6",
+      "Dodatkowo 1k6 za każde 2 poziomy Wytwarzania",
+      "Jeżeli jest na +, to rzut wykonuje się k8"
     ]
   },
   {
@@ -36,6 +46,11 @@
         "name": "Quebrith",
         "amount": 2
       }
+    ],
+    "properties": [
+      "Eksplouje ogniem za 1k6",
+      "Dodatkowo 1k6 za każde 2 poziomy Wytwarzania",
+      "Jeżeli jest na +, to rzut wykonuje się k8"
     ]
   }
 ]
