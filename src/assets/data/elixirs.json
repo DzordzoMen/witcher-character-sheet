@@ -14,6 +14,11 @@
         "name": "Aether",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Regeneruje życie w jedną godzinę",
+      "Trwa cały dzień",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -31,6 +36,11 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Pozwala widzieć w ciemnościach",
+      "Trwa cały dzień",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -44,6 +54,11 @@
         "name": "Rebis",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Prosty alkohol wiedźminów",
+      "Trwa cały dzień",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -61,6 +76,11 @@
         "name": "Hydragenum",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Uodparnia na trucizny",
+      "Trwa kilka godzin",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -78,10 +98,15 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Dodaje + 3 punkty mocy",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
     ]
   },
   {
-    "name": "Filtr Petreigo",
+    "name": "Filtr Petriego",
     "recipe": [
       {
         "name": "Rebis",
@@ -99,6 +124,11 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Dodaje + 3 do poziomu wszystkich znaków",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -112,6 +142,11 @@
         "name": "Hydragenum",
         "amount": 2
       }
+    ],
+    "properties": [
+      "Umożliwia oddychanie pod wodą",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -133,6 +168,12 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Utwardza skórę",
+      "Dodaje + 3 do pancerza",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -154,6 +195,12 @@
         "name": "Vermilion",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Wprowadza w szał",
+      "Dodaje + 3 do ataku",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
     ]
   },
   {
@@ -175,6 +222,13 @@
         "name": "Hydragenum",
         "amount": 1
       }
+    ],
+    "properties": [
+      "Zwiększa refleks",
+      "Dodaje + 3 do uników",
+      "Dodaje + 3 do inicjatywy",
+      "Trwa kilkanaście minut",
+      "Na + ma dwa użycia"
     ]
   }
 ]
