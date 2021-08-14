@@ -1,5 +1,5 @@
 <template>
-  <loading>
+  <loading-screen>
     <template #resolved>
       <v-row dense class="align-self-baseline">
         <v-col cols="12" md="3">
@@ -55,13 +55,13 @@
         </v-col>
       </v-row>
     </template>
-  </loading>
+  </loading-screen>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 
-import Loading from '../components/Loading.vue';
+import LoadingScreen from '../components/LoadingScreen.vue';
 import SaddlebagCard from '../components/TheSaddlebagCard.vue';
 import TheSelectOil from '../components/TheSelectOil.vue';
 import TheSelectBomb from '../components/TheSelectBomb.vue';
@@ -69,7 +69,7 @@ import TheSelectBomb from '../components/TheSelectBomb.vue';
 export default {
   name: 'Saddlebags',
   components: {
-    Loading,
+    LoadingScreen,
     TheSelectOil,
     TheSelectBomb,
     SaddlebagCard,

@@ -1,5 +1,5 @@
 <template>
-  <loading>
+  <loading-screen>
     <template #resolved>
       <v-row dense class="align-self-baseline">
         <v-col cols="6" md="3" order-md="1" order="3">
@@ -255,13 +255,13 @@
         </v-col>
       </v-row>
     </template>
-  </loading>
+  </loading-screen>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 
-import Loading from '../components/Loading.vue';
+import LoadingScreen from '../components/LoadingScreen.vue';
 import BaseField from '../components/base/Field.vue';
 import TheSelectElixir from '../components/TheSelectElixir.vue';
 import TheWitcherCardHerbs from '../components/TheWitcherCardHerbs.vue';
@@ -274,7 +274,7 @@ import TheWitcherCardMindTree from '../components/TheWitcherCardMindTree.vue';
 export default {
   name: 'WitcherCard',
   components: {
-    Loading,
+    LoadingScreen,
     BaseField,
     TheSelectElixir,
     TheEquipmentCard,
