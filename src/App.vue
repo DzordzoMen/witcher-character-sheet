@@ -44,6 +44,12 @@
                 Karta postaci
               </span>
             </v-tooltip>
+
+            <v-list-item-content>
+              <v-list-item-title>
+                Karta postaci
+              </v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <v-list-item
@@ -67,6 +73,12 @@
                 Juki
               </span>
             </v-tooltip>
+
+            <v-list-item-content>
+              <v-list-item-title>
+                Juki
+              </v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
 
           <v-list-item
@@ -90,6 +102,12 @@
                 Przepisy
               </span>
             </v-tooltip>
+
+            <v-list-item-content>
+              <v-list-item-title>
+                Przepisy
+              </v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -189,15 +207,25 @@ export default {
 .sidebar-list {
   width: 100%;
 
-  & .v-list-item {
-    padding: 0 !important;
-    display: flex;
-    justify-content: center;
-  }
   & .v-list-item__icon {
-    margin: 4px 0 !important;
+    margin: 4px 32px 4px 0 !important;
     min-height: 32px;
     min-width: 32px;
+  }
+}
+
+@media (min-width: 1264px) {
+  .sidebar-list {
+    & .v-list-item {
+      padding: 0 !important;
+      display: flex;
+      justify-content: center;
+    }
+    & .v-list-item__icon {
+      margin: 4px 0 !important;
+      min-height: 32px;
+      min-width: 32px;
+    }
   }
 }
 </style>
