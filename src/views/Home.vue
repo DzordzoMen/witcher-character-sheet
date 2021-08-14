@@ -1,8 +1,6 @@
 <template>
-  <v-container class="fill-height">
-    <loading-screen v-if="loading" />
-
-    <v-row class="justify-center align-self-baseline" v-else>
+  <v-container>
+    <v-row class="justify-center align-self-baseline">
       <v-col cols="12" lg="10" class="about-section pb-0">
         <h1 class="text-center pb-5">
           Witaj w wirtualnej Karcie postaci do Wiedzmina
@@ -147,7 +145,6 @@
 import HomeCard from '../components/HomeCard.vue';
 import BaseField from '../components/base/Field.vue';
 import BaseSelect from '../components/base/Select.vue';
-import LoadingScreen from '../components/LoadingScreen.vue';
 
 // methods
 import { availableSchools, schoolBonuses } from '../methods/availableSchools';
@@ -157,7 +154,6 @@ import takeTranslate from '../dictionary/pl';
 export default {
   name: 'Home',
   components: {
-    LoadingScreen,
     HomeCard,
     BaseField,
     BaseSelect,
@@ -175,9 +171,6 @@ export default {
     witchers: [],
   }),
   computed: {
-    loading() {
-      return this.$store.state.loading;
-    },
     schools() {
       const witcherSchools = availableSchools();
       return witcherSchools.map((school) => ({ name: school }));
