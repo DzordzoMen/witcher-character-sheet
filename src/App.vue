@@ -2,6 +2,7 @@
   <v-app>
     <the-header
       @onNavIconClick="showDrawer = !showDrawer"
+      :show-icon="showNavigationDrawer"
     />
 
     <v-navigation-drawer

@@ -16,7 +16,7 @@
 
     <v-app-bar-nav-icon
       @click="$emit('onNavIconClick')"
-      v-if="$vuetify.breakpoint.smAndDown"
+      v-if="showIcon && $vuetify.breakpoint.smAndDown"
     />
   </v-app-bar>
 </template>
@@ -24,5 +24,12 @@
 <script>
 export default {
   name: 'TheHeader',
+  props: {
+    showIcon: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
 };
 </script>
