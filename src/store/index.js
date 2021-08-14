@@ -37,6 +37,7 @@ export default new Vuex.Store({
   },
   actions: {
     UPDATE_WITCHER_ID: async ({ commit, getters, dispatch }, newId) => {
+      commit('SET_LOADING', true);
       commit('SET_WITCHER_ID', newId);
       await dispatch('WitcherInfo/SET_WITCHER_INFO').then(() => {
         const avaSkillPoints = getters['WitcherInfo/WITCHER_AVA_SKILL_POINTS'];
@@ -49,6 +50,7 @@ export default new Vuex.Store({
       await dispatch('MindSkill/SET_WITCHER_MIND_SKILLS');
       await dispatch('LargeTables/SET_WITCHER_EQUIPMENT_TABLE');
       await dispatch('LargeTables/SET_WITCHER_SADDLEBAGS_TABLE');
+      commit('SET_LOADING', false);
     },
     UPDATE_SKILL_POINTS: ({ commit }, skillPoints) => {
       commit('SET_SKILL_POINTS', skillPoints);

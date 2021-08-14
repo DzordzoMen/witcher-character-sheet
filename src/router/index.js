@@ -17,25 +17,21 @@ const routes = [
     path: '/card/:id',
     name: 'WitcherCard',
     props: true,
+    meta: { hasId: true },
     component: WitcherCard,
-    beforeEnter: (to, from, next) => {
-      store.commit('SET_LOADING', true);
-      store.dispatch('UPDATE_WITCHER_ID', Number(to.params.id)).then(() => {
-        store.commit('SET_LOADING', false);
-        next();
-      });
-    },
   },
   {
     path: '/card/:id/saddlebags',
     name: 'Saddlebags',
     props: true,
+    meta: { hasId: true },
     component: Saddlebags,
   },
   {
     path: '/card/:id/recipe',
     name: 'RecipeInfo',
     props: true,
+    meta: { hasId: true },
   },
 ];
 
@@ -43,6 +39,14 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta?.hasId && to?.params?.id !== from?.params?.id) {
+    store.dispatch('UPDATE_WITCHER_ID', Number(to.params.id));
+  }
+
+  next();
 });
 
 export default router;
