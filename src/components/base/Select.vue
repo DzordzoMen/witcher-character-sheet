@@ -5,7 +5,7 @@
         <path fill="currentColor" d="M19,13H5V11H19V13Z" />
       </svg>
     </div>
-    <div class="select__selected">
+    <div class="select__selected" @click="showOptions()">
       <slot name="selected" :selected="selected">
         {{ selected }}
       </slot>
@@ -149,6 +149,7 @@ export default {
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: center;
+  height: 100%;
   max-width: 80%;
 }
 .select__icon, .select__clear {
