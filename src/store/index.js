@@ -36,11 +36,10 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    UPDATE_WITCHER_ID: async ({ commit, getters, dispatch }, newId) => {
+    UPDATE_WITCHER_ID: async ({ commit, dispatch }, newId) => {
       commit('SET_LOADING', true);
       commit('SET_WITCHER_ID', newId);
-      await dispatch('WitcherInfo/SET_WITCHER_INFO').then(() => {
-        const avaSkillPoints = getters['WitcherInfo/WITCHER_AVA_SKILL_POINTS'];
+      await dispatch('WitcherInfo/SET_WITCHER_INFO').then((avaSkillPoints) => {
         commit('SET_SKILL_POINTS', avaSkillPoints);
       });
       await dispatch('HerbModule/SET_WITCHER_HERBS');
