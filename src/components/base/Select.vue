@@ -149,6 +149,7 @@ export default {
   flex-grow: 1;
   flex-shrink: 0;
   justify-content: center;
+  min-height: 20px;
   height: 100%;
   max-width: 80%;
 }
