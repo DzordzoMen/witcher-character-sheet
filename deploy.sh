@@ -8,5 +8,5 @@ cd dist
 git init
 git add -A
 git commit -m 'update page'
-git push -f git@github.com:DzordzoMen/witcher-character-sheet.git main:gh-pages
+git push -f https://github.com/DzordzoMen/witcher-character-sheet.git main:gh-pages
 cd -
