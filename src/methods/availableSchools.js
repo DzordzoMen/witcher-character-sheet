@@ -34,7 +34,7 @@ const schoolBonusesDirectory = new Map([
       SignsSkillType.Yrden,
       SignsSkillType.Quen,
     ],
-    [MindSkillType.MonsterKnowledge, MindSkillType.WorldKnowledge],
+    [MindSkillType.Arcana, MindSkillType.WorldKnowledge],
   ]],
   ['Cech żmiji', [
     [DexteritySkillType.Dexterity],
