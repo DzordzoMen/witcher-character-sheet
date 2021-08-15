@@ -70,10 +70,11 @@ const witcherInfoModule = {
     },
   },
   actions: {
-    SET_WITCHER_INFO: ({ commit, rootGetters }) => {
+    SET_WITCHER_INFO: async ({ commit, rootGetters }) => {
       const witcherId = rootGetters.WITCHER_ID;
-      WitcherInfo.getObjectWithId(witcherId).then((data) => {
+      return WitcherInfo.getObjectWithId(witcherId).then((data) => {
         commit('SET_WITCHER_INFO', data);
+        return data.AvailableSkillPoints;
       });
     },
     UPDATE_WITCHER_NAME: ({ commit, rootGetters }, name) => {
