@@ -3,13 +3,14 @@
     <v-row class="justify-center align-self-baseline">
       <v-col cols="12" lg="10" class="about-section pb-0">
         <h1 class="text-center pb-5">
-          Witaj w wirtualnej Karcie postaci do Wiedzmina
+          Witaj w wirtualnej Karcie postaci do Wiedźmina
         </h1>
         <p class="body-2">
-          Jest to fanowska wersja papierowej gry do Wiedzmina, stworzysz tutaj
-          swoją właśna postać, albo przejdziesz do już stworzonej. <br />
+          Jest to fanowska wersja papierowej gry do Wiedźmina, stworzysz tutaj
+          swoją własną postać, albo przejdziesz do już stworzonej. <br />
           Jeżeli nie chcesz używać wirtualnej wersji możesz pobrać
-          papierową i bawić się ze znajomymi.
+          <a href="/character-sheet.pdf" download="character-sheet">papierową wersje</a>
+          i bawić się ze znajomymi.
         </p>
 
         <v-btn
@@ -22,24 +23,23 @@
       </v-col>
 
       <v-expand-transition>
-        <!-- TODO debug col size on small and extra large -->
         <v-col cols="12" md="10" lg="7" class="pa-0 px-1" v-show="showForm">
           <v-row dense class="justify-center mt-5 mb-2">
-            <v-col cols="4">
+            <v-col cols="5" md="4">
               <base-field v-model="form.name">
                 <template #label>
                   Imię
                 </template>
               </base-field>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="5" md="4">
               <base-field v-model="form.origin">
                 <template #label>
                   Pochodzenie
                 </template>
               </base-field>
             </v-col>
-            <v-col cols="8" md="4" lg="4" :class="$vuetify.breakpoint.smAndDown && 'pt-3'">
+            <v-col cols="10" md="4" lg="4" :class="$vuetify.breakpoint.smAndDown && 'pt-3'">
               <base-field v-model="form.school">
                 <template #label>
                   Szkoła
