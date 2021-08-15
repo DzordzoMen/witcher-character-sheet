@@ -5,8 +5,10 @@ set -e
 npm run build
 # navigate into the build output directory
 cd dist
+
 git init
 git add -A
-git commit -m 'update page'
+git commit -m 'deploy'
+
 git push -f git@github.com:DzordzoMen/witcher-character-sheet.git main:gh-pages
 cd -

@@ -1,10 +1,10 @@
 {
   "name": "witcher-character-sheet",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build && cd dist && cp index.html 404.html",
     "lint": "vue-cli-service lint",
     "deploy": "sh deploy.sh"
   },
