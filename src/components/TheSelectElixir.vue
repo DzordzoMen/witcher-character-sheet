@@ -46,16 +46,16 @@ export default {
     },
   },
   methods: {
-    enterHoverOptionItem({ recipe }) {
-      recipe.filter((component) => {
+    enterHoverOptionItem({ ingredients }) {
+      ingredients.filter((component) => {
         const { name, amount } = component;
         const herbAmount = this.getUserHerbAmountByName(name);
         this.setHerbHighlight(name, herbAmount >= amount);
         return component;
       });
     },
-    leaveHoverOptionItem({ recipe }) {
-      recipe.filter((component) => this.clearHerbHighlight(component.name));
+    leaveHoverOptionItem({ ingredients }) {
+      ingredients.filter((component) => this.clearHerbHighlight(component.name));
     },
     setHerbHighlight(herbName, highlightStatus) {
       const herbElement = document.querySelector(`#${herbName}`);
@@ -77,8 +77,8 @@ export default {
       }, 0);
       return herbAmount;
     },
-    itemIsDisabled({ recipe }) {
-      const result = recipe.map((component) => {
+    itemIsDisabled({ ingredients }) {
+      const result = ingredients.map((component) => {
         const { name, amount } = component;
         const herbAmount = this.getUserHerbAmountByName(name);
         return herbAmount >= amount;
@@ -88,9 +88,9 @@ export default {
     // TODO refactor
     async updateHerbs(elixirName) {
       if (elixirName) {
-        const { recipe } = this.Elixirs.filter((elixir) => elixir.name === elixirName)[0];
+        const { ingredients } = this.Elixirs.filter((elixir) => elixir.name === elixirName)[0];
         // eslint-disable-next-line
-        for (const herb of recipe) {
+        for (const herb of ingredients) {
           const actualAmount = this.$store.getters[`HerbModule/${herb.name.toUpperCase()}`];
           // eslint-disable-next-line
           await this.$store.dispatch(
