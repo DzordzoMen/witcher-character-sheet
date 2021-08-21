@@ -36,7 +36,7 @@
               Składniki
             </div>
             <v-list class="body-2">
-              <template v-for="(ingredient, index) in recipe">
+              <template v-for="(ingredient, index) in ingredients">
                 <v-list-item :key="`ingredient-${index}`" class="pa-0">
                   <v-list-item-content>
                     <v-list-item-title>
@@ -61,7 +61,7 @@ export default {
       type: String,
       required: true,
     },
-    recipe: {
+    ingredients: {
       type: Array,
       required: true,
     },

@@ -1,7 +1,7 @@
 [
   {
     "name": "Samum",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 2
@@ -19,7 +19,7 @@
   },
   {
     "name": "Iskrownik",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
@@ -37,7 +37,7 @@
   },
   {
     "name": "Gwiazda Tańcząca",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1

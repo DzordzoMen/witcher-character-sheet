@@ -10,7 +10,7 @@
           <v-col cols="12" md="6" :key="`elixir-${index}`">
             <the-recipe-card
               :name="elixir.name"
-              :recipe="elixir.recipe"
+              :ingredients="elixir.ingredients"
               :properties="elixir.properties"
             />
           </v-col>
@@ -23,7 +23,7 @@
           <v-col cols="12" md="6" :key="`oil-${index}`">
             <the-recipe-card
               :name="oil.name"
-              :recipe="oil.recipe"
+              :ingredients="oil.ingredients"
               :properties="oil.properties"
             />
           </v-col>
@@ -36,7 +36,7 @@
           <v-col cols="12" md="6" :key="`bomb-${index}`">
             <the-recipe-card
               :name="bomb.name"
-              :recipe="bomb.recipe"
+              :ingredients="bomb.ingredients"
               :properties="bomb.properties"
             />
           </v-col>

@@ -1,7 +1,7 @@
 [
   {
     "name": "Jaskółka",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -23,7 +23,7 @@
   },
   {
     "name": "Kot",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
@@ -45,7 +45,7 @@
   },
   {
     "name": "Biała mewa",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -63,7 +63,7 @@
   },
   {
     "name": "Wilga",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
@@ -85,7 +85,7 @@
   },
   {
     "name": "Puszczyk",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -107,7 +107,7 @@
   },
   {
     "name": "Filtr Petriego",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 1
@@ -133,7 +133,7 @@
   },
   {
     "name": "Orka",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
@@ -151,7 +151,7 @@
   },
   {
     "name": "Skała",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
@@ -178,7 +178,7 @@
   },
   {
     "name": "Grom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
@@ -205,7 +205,7 @@
   },
   {
     "name": "Zamieć",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
