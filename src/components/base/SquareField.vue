@@ -154,16 +154,16 @@ export default {
       padding: 0; // TODO how it works with character skill inputs
 
       input, input[type=number] {
-        -moz-appearance: textfield;
-        appearance: textfield;
+        -moz-appearance: textfield !important;
+        appearance: textfield !important;
         -webkit-appearance: none;
         text-align: center;
         padding: 2px 0;
       }
 
-      input[type='number']::-webkit-inner-spin-button,
-      input[type='number']::-webkit-outer-spin-button {
-        -webkit-appearance: none;
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
         margin: 0;
       }
     }
