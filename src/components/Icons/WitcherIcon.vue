@@ -7,12 +7,19 @@
     xmlns="http://www.w3.org/2000/svg"
     :style="`color: ${color}`"
   >
-    <circle cx="13.5" cy="6.10001" r="3.5" stroke="currentColor"/>
+    <circle
+      cx="13.5"
+      cy="6.10001"
+      r="3.5"
+      stroke="currentColor"
+      fill="currentColor"
+    />
     <path
       d="M21 19.9C21 20.2758 20.9827 20.6463 20.9492 21.0104C20.9299 21.22 20.7434 21.4 20.4893
         21.4H6.51074C6.2566 21.4 6.0701 21.22 6.05079 21.0104C6.01726 20.6463 6 20.2758 6 19.9C6
         14.5434 9.45621 10.4 13.5 10.4C17.5438 10.4 21 14.5434 21 19.9Z"
       stroke="currentColor"
+      fill="currentColor"
     />
     <path
       fill-rule="evenodd"
