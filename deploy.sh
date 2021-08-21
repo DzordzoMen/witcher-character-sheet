@@ -3,12 +3,7 @@
 set -e
 # build
 npm run build
-# navigate into the build output directory
-cd dist
-
-git init
-git add -A
-git commit -m 'deploy'
-
-git push -f git@github.com:DzordzoMen/witcher-character-sheet.git main:gh-pages
-cd -
+# add dist to commit and push it to gh-pages branch
+git add dist
+git commit -m 'updating dist subtree'
+git subtree push --prefix dist origin gh-pages
