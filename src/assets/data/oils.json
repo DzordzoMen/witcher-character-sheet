@@ -1,7 +1,7 @@
 [
   {
     "name": "Jad Wisielców",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -24,7 +24,7 @@
   },
   {
     "name": "Olej przeciw wampirom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -46,7 +46,7 @@
   },
   {
     "name": "Olej przeciw insektoidom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 1
@@ -68,7 +68,7 @@
   },
   {
     "name": "Olej przeciw upiorom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -90,7 +90,7 @@
   },
   {
     "name": "Olej przeciw zwierzętom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Aether",
         "amount": 1
@@ -112,7 +112,7 @@
   },
   {
     "name": "Olej przeciw przeklętym",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 1
@@ -134,7 +134,7 @@
   },
   {
     "name": "Olej przeciw ogrowatym",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -156,7 +156,7 @@
   },
   {
     "name": "Olej przeciw reliktom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 1
@@ -178,7 +178,7 @@
   },
   {
     "name": "Olej przeciw hybrydom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 1
@@ -200,7 +200,7 @@
   },
   {
     "name": "Olej przeciw drakonidom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Vitriol",
         "amount": 1
@@ -222,7 +222,7 @@
   },
   {
     "name": "Olej przeciw istotom magicznym",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 1
@@ -240,7 +240,7 @@
   },
   {
     "name": "Olej przeciw trupojadom",
-    "recipe": [
+    "ingredients": [
       {
         "name": "Rebis",
         "amount": 1

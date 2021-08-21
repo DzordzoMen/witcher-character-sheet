@@ -2,6 +2,7 @@
   <v-row
     no-gutters
     class="align-center square-field flex-nowrap"
+    :style="`--size: ${size}px`"
   >
     <v-col class="shrink" v-if="showBtns">
       <v-btn
@@ -21,6 +22,8 @@
         pattern="[0-9]*"
         inputmode="numeric"
         type="number"
+        :min="min"
+        :max="max"
         :disabled="disabled"
       />
     </v-col>
@@ -51,6 +54,11 @@ export default {
   props: {
     value: {
       type: [Number, String],
+    },
+    size: {
+      type: [Number, String],
+      required: false,
+      default: 24,
     },
     disabled: {
       type: Boolean,
@@ -115,6 +123,8 @@ export default {
 
 <style lang="scss">
 .square-field {
+  --size: 24px;
+
   &__border {
     border: 1px solid black;
   }
@@ -124,8 +134,10 @@ export default {
     font-size: 16px;
     margin: 0;
     padding: 0;
-    width: 24px;
-    height: 24px;
+    width: var(--size);
+    height: var(--size);
+    place-items: center;
+    display: grid;
 
     &--is-disabled {
       color: rgba(84, 84, 84, 0.93) !important;
@@ -142,16 +154,16 @@ export default {
       padding: 0; // TODO how it works with character skill inputs
 
       input, input[type=number] {
-        -moz-appearance: textfield;
-        appearance: textfield;
+        -moz-appearance: textfield !important;
+        appearance: textfield !important;
         -webkit-appearance: none;
         text-align: center;
         padding: 2px 0;
       }
 
-      input[type='number']::-webkit-inner-spin-button,
-      input[type='number']::-webkit-outer-spin-button {
-        -webkit-appearance: none;
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
         margin: 0;
       }
     }

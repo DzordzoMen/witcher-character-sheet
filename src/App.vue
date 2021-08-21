@@ -109,6 +109,35 @@
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+
+          <v-list-item
+            link
+            @click="goTo('Laboratory')"
+            :class="isItemActive('Laboratory') && 'v-list-item--active'"
+            :disabled="isItemActive('Laboratory')"
+          >
+            <v-tooltip left nudge-left="8px">
+              <template #activator="{ on }">
+                <v-list-item-icon v-on="on">
+                  <elixir-icon
+                    :width="32"
+                    :height="32"
+                    color="#fff"
+                  />
+                </v-list-item-icon>
+              </template>
+
+              <span>
+                Laboratorium
+              </span>
+            </v-tooltip>
+
+            <v-list-item-content>
+              <v-list-item-title>
+                Laboratorium
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -125,11 +154,13 @@ import TheHeader from './components/TheHeader.vue';
 import WitcherIcon from './components/Icons/WitcherIcon.vue';
 import HerbBookIcon from './components/Icons/HerbBookIcon.vue';
 import SaddlebagsIcon from './components/Icons/SaddlebagsIcon.vue';
+import ElixirIcon from './components/Icons/ElixirIcon.vue';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
+    ElixirIcon,
     WitcherIcon,
     HerbBookIcon,
     SaddlebagsIcon,

@@ -8,6 +8,7 @@
         <v-col class="shrink">
           <square-field
             v-model.number="herb.amount"
+            :min="-10"
             @input="(amount) => onInputEvent(amount, herb.name)"
           />
         </v-col>
