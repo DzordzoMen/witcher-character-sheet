@@ -2,12 +2,9 @@
   <loading-screen>
     <template #resolved>
       <v-row dense class="align-self-baseline">
-        <v-col
-          cols="12"
-          class="primary--text text-center recipe-title title font-weight-regular"
-        >
+        <recipe-title>
           Eliksiry
-        </v-col>
+        </recipe-title>
 
         <template v-for="(elixir, index) in Elixirs">
           <v-col cols="12" md="6" :key="`elixir-${index}`">
@@ -18,12 +15,9 @@
             />
           </v-col>
         </template>
-        <v-col
-          cols="12"
-          class="primary--text text-center recipe-title title font-weight-regular"
-        >
+        <recipe-title>
           Oleje
-        </v-col>
+        </recipe-title>
 
         <template v-for="(oil, index) in Oils">
           <v-col cols="12" md="6" :key="`oil-${index}`">
@@ -34,12 +28,9 @@
             />
           </v-col>
         </template>
-        <v-col
-          cols="12"
-          class="primary--text text-center recipe-title title font-weight-regular"
-        >
+        <recipe-title>
           Petardy
-        </v-col>
+        </recipe-title>
 
         <template v-for="(bomb, index) in Bombs">
           <v-col cols="12" md="6" :key="`bomb-${index}`">
@@ -58,6 +49,7 @@
 <script>
 import LoadingScreen from '../components/LoadingScreen.vue';
 import TheRecipeCard from '../components/TheRecipeCard.vue';
+import RecipeTitle from '../components/RecipeTitle.vue';
 
 import Elixirs from '../assets/data/elixirs.json';
 import Bombs from '../assets/data/bombs.json';
@@ -68,6 +60,7 @@ export default {
   components: {
     LoadingScreen,
     TheRecipeCard,
+    RecipeTitle,
   },
   data: () => ({
     Elixirs,
@@ -76,24 +69,3 @@ export default {
   }),
 };
 </script>
-
-<style lang="scss" scoped>
-.recipe-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &:not(:first-child) {
-    padding-top: 24px;
-  }
-
-  &::before, &::after {
-    content: ' ';
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.47);
-    border-radius: 8px;
-    width: 38%;
-    height: 5px;
-  }
-}
-</style>
