@@ -5,7 +5,7 @@ import Home from '../views/Home.vue';
 import WitcherCard from '../views/WitcherCard.vue';
 import Saddlebags from '../views/Saddlebags.vue';
 import RecipesInfo from '../views/RecipesInfo.vue';
-import Calculator from '../views/Calculator.vue';
+import Laboratory from '../views/Laboratory.vue';
 
 Vue.use(VueRouter);
 
@@ -37,11 +37,11 @@ const routes = [
     component: RecipesInfo,
   },
   {
-    path: '/card/:id/calculator',
-    name: 'Calculator',
+    path: '/card/:id/laboratory',
+    name: 'Laboratory',
     props: true,
     meta: { hasId: true },
-    component: Calculator,
+    component: Laboratory,
   },
 ];
 

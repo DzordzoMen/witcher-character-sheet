@@ -112,9 +112,9 @@
 
           <v-list-item
             link
-            @click="goTo('Calculator')"
-            :class="isItemActive('Calculator') && 'v-list-item--active'"
-            :disabled="isItemActive('Calculator')"
+            @click="goTo('Laboratory')"
+            :class="isItemActive('Laboratory') && 'v-list-item--active'"
+            :disabled="isItemActive('Laboratory')"
           >
             <v-tooltip left nudge-left="8px">
               <template #activator="{ on }">

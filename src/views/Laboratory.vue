@@ -5,7 +5,7 @@
         <v-col cols="12" class="primary--text title font-weight-regular">
           Laboratorium
         </v-col>
-        <v-col cols="12" class="secondary--text body-2 pt-0">
+        <v-col cols="12" class="secondary--text body-2 pt-0 px-3">
           Sprawdź tutaj swoje możliwości alchemiczne
         </v-col>
 
@@ -132,7 +132,7 @@ import herbs from '../Types/HerbType';
 import Api from '../axios/Api';
 
 export default {
-  name: 'Calculator',
+  name: 'Laboratory',
   components: {
     LoadingScreen,
     SquareField,
