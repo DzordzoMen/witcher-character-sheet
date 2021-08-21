@@ -128,13 +128,13 @@
               </template>
 
               <span>
-                Kalkulator
+                Laboratorium
               </span>
             </v-tooltip>
 
             <v-list-item-content>
               <v-list-item-title>
-                Kalkulator
+                Laboratorium
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>

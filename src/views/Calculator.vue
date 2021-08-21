@@ -3,11 +3,14 @@
     <template #resolved>
       <v-row dense class="align-self-baseline">
         <v-col cols="12" class="primary--text title font-weight-regular">
-          Kalkulator wiedźminowy do eliksirów i nie wiem jak go opisać
+          Laboratorium
+        </v-col>
+        <v-col cols="12" class="secondary--text body-2 pt-0">
+          Sprawdź tutaj swoje możliwości alchemiczne
         </v-col>
 
         <v-col cols="12" class="primary--text text-center py-4 subtitle-1 font-weight-bold">
-          Wybierz typ/rodzaj ??
+          Wybierz rodzaj alchemii
         </v-col>
 
         <v-col cols="12">
