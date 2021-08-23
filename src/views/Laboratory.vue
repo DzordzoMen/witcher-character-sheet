@@ -97,7 +97,11 @@
         </recipe-title>
         <template v-for="(potion, index) in result.potions">
           <v-col cols="12" md="6" :key="`potion-${index}`">
-            - {{ potion.name }}
+            <the-recipe-card
+              :name="potion.name"
+              :ingredients="potion.ingredients"
+              :properties="potion.properties"
+            />
           </v-col>
         </template>
 
@@ -106,7 +110,11 @@
         </recipe-title>
         <template v-for="(oil, index) in result.oils">
           <v-col cols="12" md="6" :key="`oil-${index}`">
-            - {{ oil.name }}
+            <the-recipe-card
+              :name="oil.name"
+              :ingredients="oil.ingredients"
+              :properties="oil.properties"
+            />
           </v-col>
         </template>
 
@@ -115,7 +123,11 @@
         </recipe-title>
         <template v-for="(bomb, index) in result.bombs">
           <v-col cols="12" md="6" :key="`bomb-${index}`">
-            - {{ bomb.name }}
+            <the-recipe-card
+              :name="bomb.name"
+              :ingredients="bomb.ingredients"
+              :properties="bomb.properties"
+            />
           </v-col>
         </template>
       </v-row>
@@ -124,6 +136,7 @@
 </template>
 
 <script>
+import TheRecipeCard from '../components/TheRecipeCard.vue';
 import LoadingScreen from '../components/LoadingScreen.vue';
 import SquareField from '../components/base/SquareField.vue';
 import RecipeTitle from '../components/RecipeTitle.vue';
@@ -132,9 +145,14 @@ import Loading from '../components/Icons/Loading.vue';
 import herbs from '../Types/HerbType';
 import Api from '../axios/Api';
 
+import Elixirs from '../assets/data/elixirs.json';
+import Bombs from '../assets/data/bombs.json';
+import Oils from '../assets/data/oils.json';
+
 export default {
   name: 'Laboratory',
   components: {
+    TheRecipeCard,
     LoadingScreen,
     SquareField,
     RecipeTitle,
@@ -184,6 +202,9 @@ export default {
 
       this.ingredients = userIngredients;
     },
+    takeObjectFromArrayByName(array, nameToFind) {
+      return array.filter((item) => item?.name === nameToFind)[0] || null;
+    },
     sendDataToApi() {
       // set loading and clear previous result
       this.loading = true;
@@ -206,9 +227,9 @@ export default {
       }).then(({ data }) => {
         data.forEach((item) => {
           // set data based on type
-          if (item.type === 'Potion') this.result.potions.push(item);
-          if (item.type === 'Bomb') this.result.bombs.push(item);
-          if (item.type === 'Oil') this.result.oils.push(item);
+          if (item.type === 'Potion') this.result.potions.push(this.takeObjectFromArrayByName(Elixirs, item.name));
+          if (item.type === 'Bomb') this.result.bombs.push(this.takeObjectFromArrayByName(Bombs, item.name));
+          if (item.type === 'Oil') this.result.oils.push(this.takeObjectFromArrayByName(Oils, item.name));
         });
       }).catch((e) => {
         console.error(e);
