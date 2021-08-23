@@ -85,8 +85,9 @@
         <v-col cols="12" class="pa-2 justify-center d-flex align-center">
           <loading
             v-if="loading"
-            :height="48"
-            :width="48"
+            :height="64"
+            :width="64"
+            class="pt-4"
             color="rgba(0, 0, 0, .87)"
           />
         </v-col>
