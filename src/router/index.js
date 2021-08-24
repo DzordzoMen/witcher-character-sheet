@@ -30,6 +30,12 @@ const routes = [
     component: Saddlebags,
   },
   {
+    path: '/card/:id/notes',
+    name: 'Notes',
+    props: true,
+    meta: { hasId: true },
+  },
+  {
     path: '/card/:id/recipe',
     name: 'RecipeInfo',
     props: true,
