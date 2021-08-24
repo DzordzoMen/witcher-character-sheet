@@ -8,6 +8,7 @@ import DexteritySkill from './dexteritySkillsModule';
 import SignSkill from './signSkillsModule';
 import MindSkill from './mindSkillsModule';
 import LargeTables from './largeTablesModule';
+import NotesModule from './notesModule';
 
 Vue.use(Vuex);
 
@@ -47,6 +48,7 @@ export default new Vuex.Store({
       await dispatch('DexteritySkill/SET_WITCHER_DEXTERITY_SKILLS');
       await dispatch('SignSkill/SET_WITCHER_SIGNS_SKILLS');
       await dispatch('MindSkill/SET_WITCHER_MIND_SKILLS');
+      await dispatch('NotesModule/SET_WITCHER_NOTES_TABLE');
       await dispatch('LargeTables/SET_WITCHER_EQUIPMENT_TABLE');
       await dispatch('LargeTables/SET_WITCHER_SADDLEBAGS_TABLE');
       await dispatch('LargeTables/SET_WITCHER_BOMBS_TABLE');
@@ -67,5 +69,6 @@ export default new Vuex.Store({
     SignSkill,
     MindSkill,
     LargeTables,
+    NotesModule,
   },
 });
