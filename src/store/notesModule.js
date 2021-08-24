@@ -45,6 +45,12 @@ const notesModule = {
       const boardElements = getters.WITCHER_BOARD;
       NotesT.setParamValue(witcherId, 'board', boardElements);
     },
+    UPDATE_BOARD_ITEM_DONE: ({ commit, getters, rootGetters }, { itemId, isDone = true }) => {
+      const witcherId = rootGetters.WITCHER_ID;
+      commit('SET_BOARD_ITEM_DONE', { itemId, isDone });
+      const boardElements = getters.WITCHER_BOARD;
+      NotesT.setParamValue(witcherId, 'board', boardElements);
+    },
   },
 };
 
