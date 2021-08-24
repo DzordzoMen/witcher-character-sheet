@@ -20,13 +20,13 @@
           Tablica
         </v-col>
         <v-col cols="12" md="9">
-          <base-field v-model="notates">
+          <base-field v-model="witcherNotes">
             <template #label>
               Notatki
             </template>
 
             <v-textarea
-              v-model="notates"
+              v-model="witcherNotes"
               hide-details
               rows="28"
               auto-grow
@@ -48,9 +48,6 @@ export default {
     LoadingScreen,
     BaseField,
   },
-  data: () => ({
-    notates: '',
-  }),
   computed: {
     history: {
       get() {
@@ -58,6 +55,14 @@ export default {
       },
       set(val) {
         this.$store.dispatch('WitcherInfo/UPDATE_WITCHER_HISTORY', val);
+      },
+    },
+    witcherNotes: {
+      get() {
+        return this.$store.getters['NotesModule/WITCHER_NOTES'];
+      },
+      set(val) {
+        this.$store.dispatch('NotesModule/UPDATE_WITCHER_NOTES', val);
       },
     },
   },
