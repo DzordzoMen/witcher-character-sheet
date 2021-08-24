@@ -120,6 +120,9 @@ async function createNewWitcher(name, origin, school, history, schoolBonuses = [
   const saddlebagsTable = createBigTable({ name: null, description: null }, 30, '');
   addNewObjectToLocalStorage(tables.Saddlebags, saddlebagsTable, witcherId);
 
+  const notesTable = { notes: '', board: [] };
+  addNewObjectToLocalStorage(tables.Notes, notesTable, witcherId);
+
   return witcherId;
 }
 
