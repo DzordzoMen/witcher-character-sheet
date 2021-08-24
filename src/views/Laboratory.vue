@@ -239,7 +239,7 @@ export default {
         // if exist scroll page
         if (firstRecipeTtitle) {
           document.querySelector('html').scrollTo({
-            top: this.$el.offsetHeight - firstRecipeTtitle.offsetHeight,
+            top: window.screen.height - firstRecipeTtitle.offsetHeight - 60,
             left: 0,
             behavior: 'smooth',
           });
