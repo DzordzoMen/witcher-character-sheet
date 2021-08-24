@@ -4,6 +4,7 @@ import store from '../store';
 import Home from '../views/Home.vue';
 import WitcherCard from '../views/WitcherCard.vue';
 import Saddlebags from '../views/Saddlebags.vue';
+import Notes from '../views/Notes.vue';
 import RecipesInfo from '../views/RecipesInfo.vue';
 import Laboratory from '../views/Laboratory.vue';
 
@@ -34,6 +35,7 @@ const routes = [
     name: 'Notes',
     props: true,
     meta: { hasId: true },
+    component: Notes,
   },
   {
     path: '/card/:id/recipe',
