@@ -38,7 +38,7 @@
           Ustaw składniki
         </v-col>
 
-        <v-col cols="12">
+        <v-col cols="12" class="border-primary rounded pa-3">
           <v-row dense>
             <template v-for="(ingredient, index) in Object.keys(ingredients)">
               <v-col cols="12" md="6" :key="index" class="pa-2 px-md-4">
