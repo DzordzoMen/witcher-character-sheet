@@ -35,7 +35,7 @@
         </v-col>
 
         <v-col cols="12" class="primary--text text-center py-4 subtitle-1 font-weight-bold">
-          Ustaw składniki
+          Wprowadź ilość składników
         </v-col>
 
         <v-col cols="12" class="border-primary rounded pa-3">
