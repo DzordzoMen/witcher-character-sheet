@@ -47,7 +47,7 @@
             </div>
           </base-field>
 
-          <v-col cols="12">
+          <v-col cols="12" class="px-0 pb-0 pt-3">
             <v-row dense align="center">
               <v-col
                 cols="5"
