@@ -277,7 +277,7 @@ export default {
 
 <style lang="scss" scoped>
 .mind-tree {
-  border: 1px solid black;
+  border: 1px solid #2c3e50;
   width: 100%;
 
   &__title {

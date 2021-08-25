@@ -4,7 +4,7 @@
     :items="Elixirs"
     :mouseOverHandler="enterHoverOptionItem"
     :mouseLeaveHandler="leaveHoverOptionItem"
-    class="border-black"
+    class="border-primary"
     :disableItem="itemIsDisabled"
   />
 </template>

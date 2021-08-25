@@ -175,7 +175,7 @@ export default {
   background-color: #fff;
   width: 90%;
   /* overflow: hidden; */
-  border: 1px solid black;
+  border: 1px solid #2c3e50;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   position: absolute;

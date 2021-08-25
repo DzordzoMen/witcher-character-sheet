@@ -2,7 +2,7 @@
   <base-select
     v-model="selectedBomb"
     :items="Bombs"
-    class="border-black"
+    class="border-primary"
   />
 </template>
 

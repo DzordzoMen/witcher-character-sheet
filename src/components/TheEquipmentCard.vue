@@ -73,7 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 .v-card {
-  border: 1px solid black;
+  border: 1px solid #2c3e50;
 }
 .v-card__text {
   min-height: 72px;

@@ -2,7 +2,7 @@
   <base-select
     v-model="selectedOil"
     :items="Oils"
-    class="border-black"
+    class="border-primary"
   />
 </template>
 
