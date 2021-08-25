@@ -9,6 +9,7 @@ const objectStoreTypes = {
   Bombs: 'Bombs',
   Equipment: 'Equipment',
   Saddlebags: 'Saddlebags',
+  Notes: 'Notes',
 };
 
 export default objectStoreTypes;
