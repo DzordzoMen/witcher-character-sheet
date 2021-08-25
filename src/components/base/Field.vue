@@ -103,7 +103,7 @@ export default {
 
 <style lang="scss">
 .base-field {
-  border: 1px solid black;
+  border: 1px solid #2c3e50;
 
   .v-input {
     border-radius: inherit;

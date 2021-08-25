@@ -126,7 +126,7 @@ export default {
   --size: 24px;
 
   &__border {
-    border: 1px solid black;
+    border: 1px solid #2c3e50;
   }
 
   .v-input {
@@ -185,7 +185,7 @@ export default {
     margin: 0px;
 
     &__left, &__right {
-      border: 1px solid black;
+      border: 1px solid #2c3e50;
     }
 
     &__left {

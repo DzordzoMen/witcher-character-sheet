@@ -42,10 +42,10 @@ export default {
 
 <style lang="scss" scoped>
 .herbs-area {
-  border: 1px solid black;
+  border: 1px solid #2c3e50;
 
   .row:not(:last-child) {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #2c3e50;
   }
   // TODO recactor to --success --error and elixirs
   // TODO refactor contrast

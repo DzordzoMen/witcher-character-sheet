@@ -83,6 +83,35 @@
 
           <v-list-item
             link
+            @click="goTo('Notes')"
+            :class="isItemActive('Notes') && 'v-list-item--active'"
+            :disabled="isItemActive('Notes')"
+          >
+            <v-tooltip left nudge-left="8px">
+              <template #activator="{ on }">
+                <v-list-item-icon v-on="on">
+                  <notes-icon
+                    :width="32"
+                    :height="32"
+                    color="#fff"
+                  />
+                </v-list-item-icon>
+              </template>
+
+              <span>
+                Notatki
+              </span>
+            </v-tooltip>
+
+            <v-list-item-content>
+              <v-list-item-title>
+                Notatki
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item
+            link
             @click="goTo('RecipeInfo')"
             :class="isItemActive('RecipeInfo') && 'v-list-item--active'"
             :disabled="isItemActive('RecipeInfo')"
@@ -155,11 +184,13 @@ import WitcherIcon from './components/Icons/WitcherIcon.vue';
 import HerbBookIcon from './components/Icons/HerbBookIcon.vue';
 import SaddlebagsIcon from './components/Icons/SaddlebagsIcon.vue';
 import ElixirIcon from './components/Icons/ElixirIcon.vue';
+import NotesIcon from './components/Icons/NotesIcon.vue';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
+    NotesIcon,
     ElixirIcon,
     WitcherIcon,
     HerbBookIcon,
@@ -195,8 +226,8 @@ export default {
   position: relative;
 }
 
-.border-black {
-  border: 1px solid black;
+.border-primary {
+  border: 1px solid #2c3e50;
 }
 
 @media (min-width: 960px) {
