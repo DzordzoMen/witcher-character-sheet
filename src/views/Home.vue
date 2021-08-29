@@ -97,6 +97,109 @@
               </base-field>
             </v-col>
 
+            <v-col
+              cols="12"
+              class="primary--text text-center"
+              style="text-decoration: underline; cursor: pointer;"
+              @click="showAdvancedSettings()"
+            >
+              Zaawansowane tworzenie postaci
+            </v-col>
+
+            <v-expand-transition>
+              <v-col cols="12" v-show="showAdvanced" class="pa-0">
+                <v-row no-gutters>
+                  <v-col cols="12" md="6" class="pa-2">
+                    <v-row dense class="pa-2 rounded-lg border-primary">
+                      <v-col cols="12" v-for="type in types.Strength" :key="type">
+                        <v-row no-gutters>
+                          <v-col
+                            class="grow"
+                            :class="type === 'Strength' && 'tree--strength font-weight-bold pb-3'"
+                          >
+                            {{ takeTranslate(type) }}
+                          </v-col>
+                          <v-col class="shrink">
+                            <square-field
+                              v-model.number="advancedForm[type]"
+                              :min="-10"
+                              :max="10"
+                            />
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+
+                  <v-col cols="12" md="6" class="pa-2">
+                    <v-row dense class="pa-2 rounded-lg border-primary">
+                      <v-col cols="12" v-for="type in types.Dexterity" :key="type">
+                        <v-row no-gutters>
+                          <v-col
+                            class="grow"
+                            :class="type === 'Dexterity' && 'tree--dexterity font-weight-bold pb-3'"
+                          >
+                            {{ takeTranslate(type) }}
+                          </v-col>
+                          <v-col class="shrink">
+                            <square-field
+                              v-model.number="advancedForm[type]"
+                              :min="-10"
+                              :max="10"
+                            />
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+
+                  <v-col cols="12" md="6" class="pa-2">
+                    <v-row dense class="pa-2 rounded-lg border-primary">
+                      <v-col cols="12" v-for="type in types.Signs" :key="type">
+                        <v-row no-gutters>
+                          <v-col
+                            class="grow"
+                            :class="type === 'Signs' && 'tree--signs font-weight-bold pb-3'"
+                          >
+                            {{ takeTranslate(type) }}
+                          </v-col>
+                          <v-col class="shrink">
+                            <square-field
+                              v-model.number="advancedForm[type]"
+                              :min="-10"
+                              :max="10"
+                            />
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+
+                  <v-col cols="12" md="6" class="pa-2">
+                    <v-row dense class="pa-2 rounded-lg border-primary">
+                      <v-col cols="12" v-for="type in types.Mind" :key="type">
+                        <v-row no-gutters>
+                          <v-col
+                            class="grow"
+                            :class="type === 'Mind' && 'tree--mind font-weight-bold pb-3'"
+                          >
+                            {{ takeTranslate(type) }}
+                          </v-col>
+                          <v-col class="shrink">
+                            <square-field
+                              v-model.number="advancedForm[type]"
+                              :min="-10"
+                              :max="10"
+                            />
+                          </v-col>
+                        </v-row>
+                      </v-col>
+                    </v-row>
+                  </v-col>
+                </v-row>
+              </v-col>
+            </v-expand-transition>
+
             <v-col cols="4" class="pt-4 d-flex align-center">
               <v-btn
                 color="primary"
@@ -157,6 +260,13 @@ import HomeCard from '../components/HomeCard.vue';
 import BaseField from '../components/base/Field.vue';
 import BaseSelect from '../components/base/Select.vue';
 import Loading from '../components/Icons/Loading.vue';
+import SquareField from '../components/base/SquareField.vue';
+
+// types
+import Strength from '../Types/StrengthSkillType';
+import Dexterity from '../Types/DexteritySkillType';
+import Signs from '../Types/SignsSkillType';
+import Mind from '../Types/MindSkill';
 
 // methods
 import { availableSchools, schoolBonuses } from '../methods/availableSchools';
@@ -170,20 +280,42 @@ export default {
     HomeCard,
     BaseField,
     BaseSelect,
+    SquareField,
   },
-  data: () => ({
-    showForm: false,
-    creatingWitcher: false,
-    form: {
-      name: '',
-      origin: '',
-      level: 1,
-      school: '',
-      bonuses: [],
-      history: '',
-    },
-    witchers: [],
-  }),
+  data: () => {
+    const advancedForm = {};
+
+    Object.keys({
+      ...Strength,
+      ...Dexterity,
+      ...Signs,
+      ...Mind,
+    }).forEach((key) => {
+      advancedForm[key] = 0;
+    });
+
+    return ({
+      showForm: false,
+      creatingWitcher: false,
+      showAdvanced: false,
+      form: {
+        name: '',
+        origin: '',
+        level: 1,
+        school: '',
+        bonuses: [],
+        history: '',
+      },
+      advancedForm,
+      witchers: [],
+      types: {
+        Strength,
+        Dexterity,
+        Signs,
+        Mind,
+      },
+    });
+  },
   computed: {
     schools() {
       const witcherSchools = availableSchools();
@@ -202,18 +334,33 @@ export default {
   },
   methods: {
     takeTranslate,
+    showAdvancedSettings() {
+      this.showAdvanced = !this.showAdvanced;
+    },
     createWitcher() {
       this.creatingWitcher = true;
       const {
-        name,
-        origin,
-        level,
-        school,
-        bonuses,
-        history,
-      } = this.form;
+        form: {
+          name,
+          origin,
+          level,
+          school,
+          bonuses,
+          history,
+        },
+        advancedForm,
+      } = this;
+
       setTimeout(() => {
-        createNewWitcher(name, origin, school, history, bonuses, level).then((witcherId) => {
+        createNewWitcher(
+          name,
+          origin,
+          school,
+          history,
+          advancedForm,
+          bonuses,
+          level,
+        ).then((witcherId) => {
           this.$router.push({ name: 'WitcherCard', params: { id: witcherId } });
         });
       }, 0);
@@ -223,16 +370,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .about-section {
-    border: 2px solid #2c3e50;
-    border-top: none;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
+.about-section {
+  border: 2px solid #2c3e50;
+  border-top: none;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
 
-  .home-divider {
-    border-width: medium;
-    border-color: rgba(0, 0, 0, 0.67) !important;
-    border-radius: 8px;
+.home-divider {
+  border-width: medium;
+  border-color: rgba(0, 0, 0, 0.67) !important;
+  border-radius: 8px;
+}
+
+.tree {
+  &--signs {
+    color: #123B79;
   }
+  &--strength {
+    color: #710404;
+  }
+  &--dexterity {
+    color: #0C5818;
+  }
+  &--mind {
+    color: #4A1A61;
+  }
+}
 </style>
