@@ -35,6 +35,19 @@ function setWitcherBonuses(skillTree, bonuses) {
   return skillTree;
 }
 
+/**
+ * @param {Object} skillTree - skill tree to set
+ * @param {Object} advancedSkills - advanced skills
+ * @returns {Object} - returns skillTree with increased skill points
+ */
+function setAdvancedSkills(skillTree, advancedSkills) {
+  Object.keys(skillTree).forEach((item) => {
+    const bonus = advancedSkills[item] || 0;
+    skillTree[item] += bonus;
+  });
+  return skillTree;
+}
+
 function createTableWithIncrementedId(schema, size = 6, defaultValue = '') {
   const table = [];
 
@@ -66,11 +79,20 @@ function createBigTable(schema, size = 10, defaultValue = '') {
  * @param {String} origin
  * @param {String} school
  * @param {String} history
+ * @param {Object} advancedSkills
  * @param {Array} schoolBonuses
  * @param {Number} level
  * @returns {Number} created witcher id
  */
-async function createNewWitcher(name, origin, school, history, schoolBonuses = [], level = 1) {
+async function createNewWitcher(
+  name,
+  origin,
+  school,
+  history,
+  advancedSkills,
+  schoolBonuses = [],
+  level = 1,
+) {
   const newWitcher = createObjectWithKeys(witcherInfo, '');
   newWitcher[witcherInfo.Level] = level;
   newWitcher[witcherInfo.Name] = name;
@@ -94,18 +116,22 @@ async function createNewWitcher(name, origin, school, history, schoolBonuses = [
 
   let witcherStrengthSkills = createObjectWithKeys(strengthSkill, 0);
   witcherStrengthSkills = setWitcherBonuses(witcherStrengthSkills, schoolBonuses);
+  witcherStrengthSkills = setAdvancedSkills(witcherStrengthSkills, advancedSkills);
   addNewObjectToLocalStorage(tables.StrengthSkills, witcherStrengthSkills, witcherId);
 
   let witcherDexteritySkills = createObjectWithKeys(dexteritySkill, 0);
   witcherDexteritySkills = setWitcherBonuses(witcherDexteritySkills, schoolBonuses);
+  witcherDexteritySkills = setAdvancedSkills(witcherDexteritySkills, advancedSkills);
   addNewObjectToLocalStorage(tables.DexteritySkills, witcherDexteritySkills, witcherId);
 
   let witcherSignsSkills = createObjectWithKeys(signsSkill, 0);
   witcherSignsSkills = setWitcherBonuses(witcherSignsSkills, schoolBonuses);
+  witcherSignsSkills = setAdvancedSkills(witcherSignsSkills, advancedSkills);
   addNewObjectToLocalStorage(tables.SignsSkills, witcherSignsSkills, witcherId);
 
   let witcherMindSkills = createObjectWithKeys(mindSkill, 0);
   witcherMindSkills = setWitcherBonuses(witcherMindSkills, schoolBonuses);
+  witcherMindSkills = setAdvancedSkills(witcherMindSkills, advancedSkills);
   addNewObjectToLocalStorage(tables.MindSkills, witcherMindSkills, witcherId);
 
   const bombsTable = createTableWithIncrementedId({ name: null }, 6, '');
