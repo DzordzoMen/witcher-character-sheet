@@ -48,6 +48,13 @@ function setAdvancedSkills(skillTree, advancedSkills) {
   return skillTree;
 }
 
+/**
+ * creates table with Object schema and autoIncrement id
+ * @param {Object} schema - row schema
+ * @param {Number} size - row size of table
+ * @param {*} defaultValue - default value for table rows
+ * @returns {Array}
+ */
 function createTableWithIncrementedId(schema, size = 6, defaultValue = '') {
   const table = [];
 
@@ -62,6 +69,13 @@ function createTableWithIncrementedId(schema, size = 6, defaultValue = '') {
   return table;
 }
 
+/**
+ * creates table with Object schema
+ * @param {Object} schema - row schema
+ * @param {Number} size - row size of table
+ * @param {*} defaultValue - default value for table rows
+ * @returns {Array}
+ */
 function createBigTable(schema, size = 10, defaultValue = '') {
   const bigTable = [];
   for (let i = 0; i < size; i += 1) {
