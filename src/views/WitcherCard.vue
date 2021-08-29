@@ -320,7 +320,7 @@ export default {
       magicResists: 'MAGIC_RESISTS_SKILL',
     }),
     healthPoints() {
-      const baseHealth = 8;
+      const baseHealth = 5;
       const { level, wholesomness } = this;
       return baseHealth + (level * 3) + (wholesomness * 2);
     },
