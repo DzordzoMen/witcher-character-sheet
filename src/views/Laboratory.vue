@@ -9,8 +9,28 @@
           Sprawdź tutaj swoje możliwości alchemiczne
         </v-col>
 
-        <v-col cols="12" class="primary--text text-center py-4 subtitle-1 font-weight-bold">
+        <v-col
+          cols="12"
+          class="
+            primary--text
+            text-center
+            py-4
+            subtitle-1
+            font-weight-bold
+            d-flex
+            justify-center
+            flex-column
+            align-center
+          "
+        >
           Wybierz rodzaj alchemii
+
+          <span
+            class="body-2 laboratory__subtitle"
+            @click="selectAllTypes()"
+          >
+            {{ isAllTypesSelected() ? 'Odznacz wszystko' : 'Wybierz wszystko' }}
+          </span>
         </v-col>
 
         <v-col cols="12">
@@ -202,6 +222,19 @@ export default {
 
       this.ingredients = userIngredients;
     },
+    isAllTypesSelected() {
+      const {
+        alchemyType: { length: selectedLength },
+        alchemyTypes: { length: typesLength },
+      } = this;
+
+      return selectedLength === typesLength;
+    },
+    selectAllTypes() {
+      this.alchemyType = this.isAllTypesSelected()
+        ? []
+        : this.alchemyTypes.map((type) => type.value);
+    },
     takeObjectFromArrayByName(array, nameToFind) {
       return array.filter((item) => item?.name === nameToFind)[0] || null;
     },
@@ -252,6 +285,11 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.laboratory {
+  &__subtitle {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
 </style>
