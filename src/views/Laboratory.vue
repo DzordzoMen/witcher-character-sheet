@@ -78,7 +78,12 @@
           </v-row>
         </v-col>
 
-        <v-col cols="12" md="6" class="pt-4 px-4 pt-md-8" >
+        <v-col
+          cols="12"
+          md="6"
+          class="pt-4 px-4 pt-md-8"
+          v-if="isUserInCard"
+        >
           <v-btn
             block
             depressed
@@ -90,7 +95,11 @@
           </v-btn>
         </v-col>
 
-        <v-col cols="12" md="6" class="pt-4 px-4 pt-md-8">
+        <v-col
+          cols="12"
+          :md="isUserInCard ? 6 : 12"
+          class="pt-4 px-4 pt-md-8"
+        >
           <v-btn
             block
             depressed
@@ -164,6 +173,7 @@ import Loading from '../components/Icons/Loading.vue';
 
 import herbs from '../Types/HerbType';
 import Api from '../axios/Api';
+import isUserInCard from '../mixins/isUserInCard';
 
 import Elixirs from '../assets/data/elixirs.json';
 import Bombs from '../assets/data/bombs.json';
@@ -178,6 +188,9 @@ export default {
     RecipeTitle,
     Loading,
   },
+  mixins: [
+    isUserInCard,
+  ],
   data: () => {
     const ingredients = Object.keys(herbs).reduce((acc, herb) => {
       acc[herb] = 0;

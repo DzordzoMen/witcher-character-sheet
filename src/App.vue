@@ -282,10 +282,6 @@ export default {
   border: 1px solid #2c3e50;
 }
 
-.v-main__wrap {
-  min-height: calc(100vh - 48px);
-}
-
 @media (min-width: 960px) {
   .v-application .order-md-13 {
     order: 13 !important
