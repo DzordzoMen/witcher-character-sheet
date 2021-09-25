@@ -173,7 +173,7 @@
       <template #append v-if="showInstallButton">
         <v-list dense nav class="sidebar-list">
           <v-list-item-group>
-            <v-list-item>
+            <v-list-item @click="installer()">
               <v-tooltip left nudge-left="8px">
                 <template #activator="{ on }">
                   <v-list-item-icon v-on="on">
