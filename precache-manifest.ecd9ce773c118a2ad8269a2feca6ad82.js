@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/witcher-character-sheet/img/logo.94d2ac39.png"
   },
   {
-    "revision": "067359e79a34f6e7353d848213a9c008",
+    "revision": "bde599bf0af46ecd69f3408f99dbe067",
     "url": "/witcher-character-sheet/index.html"
   },
   {
