@@ -169,6 +169,33 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+
+      <template #append v-if="showInstallButton">
+        <v-list dense nav class="sidebar-list">
+          <v-list-item-group>
+            <v-list-item>
+              <v-tooltip left nudge-left="8px">
+                <template #activator="{ on }">
+                  <v-list-item-icon v-on="on">
+                    <v-icon size="32">
+                      mdi-cellphone-arrow-down
+                    </v-icon>
+                  </v-list-item-icon>
+                </template>
+
+                <span>
+                  Zainstaluj
+                </span>
+              </v-tooltip>
+              <v-list-item-content>
+                <v-list-item-title>
+                  Zainstaluj
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </template>
     </v-navigation-drawer>
 
     <v-main>
@@ -198,11 +225,28 @@ export default {
   },
   data: () => ({
     showDrawer: false,
+    showInstallButton: false,
   }),
   computed: {
     showNavigationDrawer() {
       return this.$route.path.includes('/card/');
     },
+  },
+  created() {
+    let installPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      installPrompt = e;
+      this.showInstallButton = true;
+    });
+
+    this.installer = () => {
+      this.showInstallButton = false;
+      installPrompt.prompt();
+      installPrompt.userChoice.then((restult) => {
+        if (restult.outcome === 'accepted') installPrompt = null;
+      });
+    };
   },
   methods: {
     isItemActive(endpointName) {
