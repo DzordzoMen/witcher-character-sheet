@@ -2,12 +2,12 @@
   <v-app>
     <the-header
       @onNavIconClick="showDrawer = !showDrawer"
-      :show-icon="showNavigationDrawer"
+      :show-icon="isUserInCard"
     />
 
     <v-navigation-drawer
       v-model="showDrawer"
-      v-if="showNavigationDrawer"
+      v-if="isUserInCard"
       app
       clipped
       right
@@ -201,11 +201,18 @@
     <v-main>
       <router-view :key="$route.fullPath" />
     </v-main>
+
+    <the-footer
+      v-if="!isUserInCard"
+      :installer="installer"
+      :showInstallButton="showInstallButton"
+    />
   </v-app>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
+import TheFooter from './components/TheFooter.vue';
 
 import WitcherIcon from './components/Icons/WitcherIcon.vue';
 import HerbBookIcon from './components/Icons/HerbBookIcon.vue';
@@ -213,25 +220,26 @@ import SaddlebagsIcon from './components/Icons/SaddlebagsIcon.vue';
 import ElixirIcon from './components/Icons/ElixirIcon.vue';
 import NotesIcon from './components/Icons/NotesIcon.vue';
 
+import isUserInCard from './mixins/isUserInCard';
+
 export default {
   name: 'App',
   components: {
     TheHeader,
+    TheFooter,
     NotesIcon,
     ElixirIcon,
     WitcherIcon,
     HerbBookIcon,
     SaddlebagsIcon,
   },
+  mixins: [
+    isUserInCard,
+  ],
   data: () => ({
     showDrawer: false,
     showInstallButton: false,
   }),
-  computed: {
-    showNavigationDrawer() {
-      return this.$route.path.includes('/card/');
-    },
-  },
   created() {
     let installPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
