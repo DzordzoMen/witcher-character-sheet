@@ -51,6 +51,16 @@ const routes = [
     meta: { hasId: true },
     component: Laboratory,
   },
+  {
+    path: '/laboratory',
+    name: 'GuestLaboratory',
+    component: Laboratory,
+  },
+  {
+    path: '/recipe',
+    name: 'GuestRecipeInfo',
+    component: RecipesInfo,
+  },
 ];
 
 const router = new VueRouter({
