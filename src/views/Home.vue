@@ -206,9 +206,10 @@
               </v-col>
             </v-expand-transition>
 
-            <v-col cols="4" class="pt-4 d-flex align-center">
+            <v-col cols="10" md="8" class="pt-4 d-flex align-center">
               <v-btn
                 color="primary"
+                block
                 class="mx-auto d-flex"
                 :disabled="!form.name || !form.school"
                 @click="createWitcher()"
@@ -224,6 +225,30 @@
               />
             </v-col>
 
+            <v-col cols="10" md="8">
+              <v-divider class="my-5" />
+            </v-col>
+
+            <v-col cols="10" md="8" class="d-flex align-center">
+              <v-btn
+                block
+                color="primary"
+                class="relative"
+                text
+              >
+                <v-icon class="mr-2">
+                  mdi-tray-arrow-down
+                </v-icon>
+                Importuj karte
+                <v-file-input
+                  prepend-icon=""
+                  accept=".json"
+                  @change="(file) => importWitcher(file)"
+                  hide-details
+                  class="absolute pa-0 ma-0 import-witcher-input"
+                />
+              </v-btn>
+            </v-col>
           </v-row>
         </v-col>
       </v-expand-transition>
@@ -276,7 +301,7 @@ import Mind from '../Types/MindSkill';
 
 // methods
 import { availableSchools, schoolBonuses } from '../methods/availableSchools';
-import { createNewWitcher, WitcherInfo } from '../database';
+import { createNewWitcher, WitcherInfo, importWitcher } from '../database';
 import takeTranslate from '../dictionary/pl';
 
 export default {
@@ -334,12 +359,15 @@ export default {
     },
   },
   created() {
-    WitcherInfo.getAll().then((data) => {
-      this.witchers = data;
-    });
+    this.getAllWitchers();
   },
   methods: {
     takeTranslate,
+    getAllWitchers() {
+      WitcherInfo.getAll().then((data) => {
+        this.witchers = data;
+      });
+    },
     showAdvancedSettings() {
       this.showAdvanced = !this.showAdvanced;
     },
@@ -371,9 +399,59 @@ export default {
         });
       }, 0);
     },
+    importWitcher(file) {
+      if (file) {
+        const reader = new FileReader();
+
+        reader.onload = ({ target: { result } }) => {
+          try {
+            const card = JSON.parse(result);
+            if (
+              card?.witcher
+              && card?.strenght
+              && card?.dexterity
+              && card?.signs
+              && card?.mind
+              && card?.herbs
+              && card?.equipment
+              && card?.saddlebags
+              && card?.bombs
+              && card?.oils
+              && card?.notes
+            ) {
+              this.importWitcherFromFile(card);
+            } else {
+              throw new Error('Wrong file structure');
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        reader.readAsText(file);
+      }
+    },
+    async importWitcherFromFile(witcherCard) {
+      importWitcher(witcherCard).then(() => {
+        Object.assign(this.$data, this.$options.data());
+
+        this.getAllWitchers();
+      });
+    },
   },
 };
 </script>
+
+<style lang="scss">
+.import-witcher-input {
+  opacity: 0;
+  width: 100%;
+  cursor: pointer;
+
+  .v-file-input__text {
+    cursor: pointer !important;
+  }
+}
+</style>
 
 <style lang="scss" scoped>
 .about-section {
