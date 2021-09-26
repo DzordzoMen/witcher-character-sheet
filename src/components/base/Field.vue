@@ -120,13 +120,6 @@ export default {
     width: 100%;
     height: 100%;
 
-    &--is-disabled {
-      color: rgba(84, 84, 84, 0.93) !important;
-      & input {
-        color: rgba(84, 84, 84, 0.93) !important;
-      }
-    }
-
     &__slot:after, &__slot:before {
       content: none !important;
     }
@@ -175,6 +168,15 @@ export default {
 .theme--light {
   .field-label {
     background: #fff;
+  }
+
+  .v-input {
+    &--is-disabled {
+      color: rgba(84, 84, 84, 0.93) !important;
+      & input {
+        color: rgba(84, 84, 84, 0.93) !important;
+      }
+    }
   }
 }
 .theme--dark {
