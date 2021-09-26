@@ -249,6 +249,15 @@
                 />
               </v-btn>
             </v-col>
+
+            <v-col
+              cols="10"
+              md="8"
+              class="error--text text--darken-1"
+              v-if="showImportErrors"
+            >
+              Wygląda na to, że Twoja karta zawiera niepoprawne dane
+            </v-col>
           </v-row>
         </v-col>
       </v-expand-transition>
@@ -329,6 +338,7 @@ export default {
       showForm: false,
       creatingWitcher: false,
       showAdvanced: false,
+      showImportErrors: false,
       form: {
         name: '',
         origin: '',
@@ -425,6 +435,7 @@ export default {
             }
           } catch (error) {
             console.error(error);
+            this.showImportErrors = true;
           }
         };
         reader.readAsText(file);
