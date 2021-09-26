@@ -4,11 +4,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/witcher-character-sheet/character-sheet.pdf"
   },
   {
-    "revision": "a670255d6ee0194b5367",
-    "url": "/witcher-character-sheet/css/app.a2913753.css"
+    "revision": "296e8fc350e85ba9feab",
+    "url": "/witcher-character-sheet/css/app.2cd0442c.css"
   },
   {
-    "revision": "1ec6f751184226e9d233",
+    "revision": "e9f23670ca2075429a8c",
     "url": "/witcher-character-sheet/css/chunk-vendors.744a2224.css"
   },
   {
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/witcher-character-sheet/img/logo.94d2ac39.png"
   },
   {
-    "revision": "9cc68c3499c5e9293f6956ee30ba841b",
+    "revision": "3c99ff0528c3bde898438bc09da9670d",
     "url": "/witcher-character-sheet/index.html"
   },
   {
-    "revision": "a670255d6ee0194b5367",
-    "url": "/witcher-character-sheet/js/app.1cf711fa.js"
+    "revision": "296e8fc350e85ba9feab",
+    "url": "/witcher-character-sheet/js/app.5bf6ccd1.js"
   },
   {
-    "revision": "1ec6f751184226e9d233",
-    "url": "/witcher-character-sheet/js/chunk-vendors.507445d1.js"
+    "revision": "e9f23670ca2075429a8c",
+    "url": "/witcher-character-sheet/js/chunk-vendors.2e29b18a.js"
   },
   {
     "revision": "fb498234e0e9edc4736bde9b139e9765",
