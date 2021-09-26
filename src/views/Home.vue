@@ -9,7 +9,13 @@
           Jest to fanowska wersja papierowej gry do Wiedźmina, stworzysz tutaj
           swoją własną postać, albo przejdziesz do już stworzonej. <br />
           Jeżeli nie chcesz używać wirtualnej wersji możesz pobrać
-          <a href="/character-sheet.pdf" download="character-sheet">papierową wersje</a>
+          <a
+            href="/character-sheet.pdf"
+            class="textPrimary--text"
+            download="character-sheet"
+          >
+            papierową wersje
+          </a>
           i bawić się ze znajomymi.
         </p>
 
@@ -232,7 +238,7 @@
             <v-col cols="10" md="8" class="d-flex align-center">
               <v-btn
                 block
-                color="primary"
+                color="textPrimary"
                 class="relative"
                 text
               >

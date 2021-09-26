@@ -76,6 +76,7 @@
                 <v-btn
                   color="primary"
                   class="pa-0"
+                  text
                   :disabled="!newItemName"
                   @click="addNewBoardItem()"
                   style="min-height: 24px; min-width: 36px;"

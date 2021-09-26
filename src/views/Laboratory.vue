@@ -5,7 +5,11 @@
         <v-col cols="12" class="textPrimary--text title font-weight-regular">
           Laboratorium
         </v-col>
-        <v-col cols="12" class="secondary--text body-2 pt-0 px-3">
+        <v-col
+          cols="12"
+          class="secondary--text body-2 pt-0 px-3"
+          :class="$vuetify.theme.dark && 'text--lighten-4'"
+        >
           Sprawdź tutaj swoje możliwości alchemiczne
         </v-col>
 
@@ -41,10 +45,16 @@
                   v-model="alchemyType"
                   :value="type.value"
                   hide-details
+                  color="textPrimary"
                   class="ma-0 pa-0"
                 >
                   <template #label>
-                    <div class="grey--text text--darken-4">
+                    <div
+                      :class="$vuetify.theme.dark
+                        ? 'grey--text text--lighten-3'
+                        : 'grey--text text--darken-4'
+                      "
+                    >
                       {{ type.name }}
                     </div>
                   </template>
@@ -88,7 +98,7 @@
             block
             depressed
             text
-            color="primary"
+            color="textPrimary"
             @click="setIngredientsFromUserCard()"
           >
             Użyj składników z karty
