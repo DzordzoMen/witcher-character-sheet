@@ -388,6 +388,11 @@ export default {
   --primary-color: #2c3e50;
 }
 .theme--dark {
-  --primary-color: #8ea1b6;
+  // --primary-color: #8ea1b6;
+  --primary-color: #2c3e50;
+
+  input, textarea {
+    caret-color: #fff;
+  }
 }
 </style>

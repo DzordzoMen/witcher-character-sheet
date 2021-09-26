@@ -78,7 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 .v-card {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
 
   &__title {
     cursor: pointer;
