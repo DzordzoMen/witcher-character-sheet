@@ -142,7 +142,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @media (min-width: 1264px) {
   .options__item {
     line-height: 25px !important;
@@ -192,7 +192,6 @@ export default {
   height: inherit;
 }
 .options {
-  background-color: #fff;
   width: 90%;
   /* overflow: hidden; */
   border: 1px solid var(--primary-color);
@@ -248,6 +247,45 @@ export default {
     opacity: 1;
      visibility: visible;
      pointer-events: all;
+  }
+}
+
+.theme--light {
+  .options {
+    background-color: #fff;
+
+    &__item {
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.17);
+      }
+      // TODO fix BEM
+      &-disabled {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+      // TODO fix BEM
+      &-selected {
+        background-color: rgba(0, 0, 0, 0.17);
+      }
+    }
+  }
+}
+.theme--dark {
+  .options {
+    background-color: #121212;
+
+    &__item {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.22);
+      }
+      // TODO fix BEM
+      &-disabled {
+        background-color: rgba(255, 255, 255, 0.10);
+      }
+      // TODO fix BEM
+      &-selected {
+        background-color: rgba(255, 255, 255, 0.22);
+      }
+    }
   }
 }
 </style>
