@@ -184,7 +184,7 @@
               </base-field>
             </v-col>
 
-            <v-col cols="6" md="12" class="primary--text text-center" order="1" order-md="2">
+            <v-col cols="6" md="12" class="textPrimary--text text-center" order="1" order-md="2">
               Pas na eliksiry
             </v-col>
 
@@ -204,7 +204,7 @@
               </v-row>
             </v-col>
 
-            <v-col cols="6" md="12" class="primary--text text-center" order="2" order-md="4">
+            <v-col cols="6" md="12" class="textPrimary--text text-center" order="2" order-md="4">
               Składniki
             </v-col>
             <v-col cols="6" md="12" order="4" order-md="5">
@@ -238,7 +238,7 @@
           </v-row>
 
           <v-row dense>
-            <v-col cols="12" class="primary--text text-center">
+            <v-col cols="12" class="textPrimary--text text-center">
               Ekwipunek podręczny
             </v-col>
             <template v-for="(row, index) in equipment">

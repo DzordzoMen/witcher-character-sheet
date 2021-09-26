@@ -1,5 +1,5 @@
 <template>
-  <div class="herbs-area rounded-lg primary--text">
+  <div class="herbs-area rounded-lg textPrimary--text">
     <template v-for="(herb, index) in userHerbs">
       <v-row no-gutters :key="index" class="pa-2" :id="herb.name">
         <v-col class="grow">
@@ -47,13 +47,8 @@ export default {
   .row:not(:last-child) {
     border-bottom: 1px solid #2c3e50;
   }
-  // TODO recactor to --success --error and elixirs
-  // TODO refactor contrast
-  .herb__success {
-    background-color: #A5D6A7;
-    color: #388E3C; // TODO ask team about this
-    // TODO idea without text color change
 
+  .herb__success {
     &:first-child {
       border-top-left-radius: inherit;
       border-top-right-radius: inherit;
@@ -65,10 +60,6 @@ export default {
     }
   }
   .herb__error {
-    background-color: #EF9A9A;
-    color: #D32F2F; // TODO ask team about this
-    // TODO idea without text color change
-
     &:first-child {
       border-top-left-radius: inherit;
       border-top-right-radius: inherit;
@@ -77,6 +68,31 @@ export default {
     &:last-child {
       border-bottom-left-radius: inherit;
       border-bottom-right-radius: inherit;
+    }
+  }
+}
+
+.theme--light {
+  .herb {
+    &__success {
+      background-color: #A5D6A7;
+      color: #388E3C;
+    }
+    &__error {
+      background-color: #EF9A9A;
+      color: #D32F2F;
+    }
+  }
+}
+.theme--dark {
+  .herb {
+    &__success {
+      color: #A5D6A7;
+      background-color: rgba(56, 142, 60, 0.37);
+    }
+    &__error {
+      color: #EF9A9A;
+      background-color: rgba(211, 47, 47, 0.37);
     }
   }
 }

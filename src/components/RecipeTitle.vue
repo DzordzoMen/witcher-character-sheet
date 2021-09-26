@@ -1,7 +1,7 @@
 <template>
   <v-col
     cols="12"
-    class="primary--text text-center recipe-title title font-weight-regular"
+    class="textPrimary--text text-center recipe-title title font-weight-regular"
   >
     <slot />
   </v-col>
@@ -30,6 +30,20 @@ export default {
     border-radius: 8px;
     width: 38%;
     height: 5px;
+  }
+}
+.theme--light {
+  .recipe-title {
+    &::before, &::after {
+      background-color: rgba(0, 0, 0, 0.47);
+    }
+  }
+}
+.theme--dark {
+  .recipe-title {
+    &::before, &::after {
+      background-color: rgba(255, 255, 255, 0.47);
+    }
   }
 }
 </style>

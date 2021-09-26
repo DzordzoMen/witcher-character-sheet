@@ -1,6 +1,6 @@
 <template>
   <div class="base-field rounded-lg relative">
-    <div class="absolute field-label primary--text">
+    <div class="absolute field-label textPrimary--text">
       <slot name="label" />
     </div>
     <slot name="default">
@@ -9,6 +9,7 @@
           <v-btn
             @click="decreaseValue"
             elevation="0"
+            text
             :disabled="disableDecreaseBtn || +fieldValue === min"
           >
             <minus-icon />
@@ -22,7 +23,11 @@
           />
         </v-col>
         <v-col class="shrink" v-if="showBtns">
-          <v-btn @click="increaseValue" elevation="0">
+          <v-btn
+            @click="increaseValue"
+            elevation="0"
+            text
+          >
             <plus-icon />
           </v-btn>
         </v-col>
@@ -103,7 +108,9 @@ export default {
 
 <style lang="scss">
 .base-field {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
+  position: relative;
+  background: inherit;
 
   .v-input {
     border-radius: inherit;
@@ -112,13 +119,6 @@ export default {
     padding: 6px 0 0 ;
     width: 100%;
     height: 100%;
-
-    &--is-disabled {
-      color: rgba(84, 84, 84, 0.93) !important;
-      & input {
-        color: rgba(84, 84, 84, 0.93) !important;
-      }
-    }
 
     &__slot:after, &__slot:before {
       content: none !important;
@@ -162,6 +162,26 @@ export default {
     top: -10px;
     left: 12px;
     padding: 0 4px;
+  }
+}
+
+.theme--light {
+  .field-label {
+    background: #fff;
+  }
+
+  .v-input {
+    &--is-disabled {
+      color: rgba(84, 84, 84, 0.93) !important;
+      & input {
+        color: rgba(84, 84, 84, 0.93) !important;
+      }
+    }
+  }
+}
+.theme--dark {
+  .field-label {
+    background: #121212;
   }
 }
 </style>

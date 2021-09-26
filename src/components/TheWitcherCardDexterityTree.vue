@@ -1,7 +1,7 @@
 <template>
   <v-container class="dexterity-tree rounded-lg">
     <v-row dense>
-      <v-col cols="12" class="pb-3 dexterity-tree__title">
+      <v-col cols="12" class="pb-3 dexterity--text">
         <v-row no-gutters>
           <v-col class="grow font-weight-bold">
             Zręczność
@@ -278,11 +278,7 @@ export default {
 
 <style lang="scss" scoped>
 .dexterity-tree {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
   width: 100%;
-
-  &__title {
-    color: #0C5818;
-  }
 }
 </style>
