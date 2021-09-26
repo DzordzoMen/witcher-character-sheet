@@ -321,7 +321,7 @@ export default {
 }
 
 .border-primary {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
 }
 
 @media (min-width: 960px) {
@@ -383,5 +383,11 @@ export default {
       min-width: 32px;
     }
   }
+}
+.theme--light {
+  --primary-color: #2c3e50;
+}
+.theme--dark {
+  --primary-color: #8ea1b6;
 }
 </style>

@@ -32,4 +32,18 @@ export default {
     height: 5px;
   }
 }
+.theme--light {
+  .recipe-title {
+    &::before, &::after {
+      background-color: rgba(0, 0, 0, 0.47);
+    }
+  }
+}
+.theme--dark {
+  .recipe-title {
+    &::before, &::after {
+      background-color: rgba(255, 255, 255, 0.47);
+    }
+  }
+}
 </style>

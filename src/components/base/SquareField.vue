@@ -128,7 +128,7 @@ export default {
   --size: 24px;
 
   &__border {
-    border: 1px solid #2c3e50;
+    border: 1px solid var(--primary-color);
   }
 
   .v-input {

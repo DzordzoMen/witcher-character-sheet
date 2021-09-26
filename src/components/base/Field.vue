@@ -108,7 +108,7 @@ export default {
 
 <style lang="scss">
 .base-field {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
   position: relative;
   background: inherit;
 

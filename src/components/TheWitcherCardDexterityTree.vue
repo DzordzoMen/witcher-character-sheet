@@ -278,7 +278,7 @@ export default {
 
 <style lang="scss" scoped>
 .dexterity-tree {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
   width: 100%;
 }
 </style>

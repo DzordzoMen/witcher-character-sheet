@@ -179,7 +179,7 @@ export default {
   flex-shrink: 1;
   height: 20px;
   width: 20px;
-  transition: all 0.33s ease-in-out;
+  transition: transform 0.33s ease-in-out;
 }
 .select__icon-animation {
   transform: rotate(-90deg);
@@ -195,7 +195,7 @@ export default {
   background-color: #fff;
   width: 90%;
   /* overflow: hidden; */
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   position: absolute;
@@ -231,7 +231,7 @@ export default {
 }
 
 .options .options__item:nth-child(n) {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--primary-color);
 }
 .options .options__item:last-child {
   border: none;
