@@ -14,6 +14,27 @@
       <h2 class="pl-5 hidden-sm-and-down">Witcher character sheet</h2>
     </v-row>
 
+    <div
+      class="theme-icon pa-1"
+      @click="darkTheme = !darkTheme"
+      v-if="!showIcon"
+      v-ripple
+    >
+      <sun-icon
+        v-if="!darkTheme"
+        :height="32"
+        :width="32"
+        color="#fff"
+      />
+
+      <moon-icon
+        v-else
+        :height="32"
+        :width="32"
+        color="#fff"
+      />
+    </div>
+
     <v-app-bar-nav-icon
       @click="$emit('onNavIconClick')"
       v-if="showIcon && $vuetify.breakpoint.smAndDown"
@@ -22,8 +43,20 @@
 </template>
 
 <script>
+import SunIcon from './Icons/SunIcon.vue';
+import MoonIcon from './Icons/MoonIcon.vue';
+
+import darkTheme from '../mixins/darkTheme';
+
 export default {
   name: 'TheHeader',
+  components: {
+    SunIcon,
+    MoonIcon,
+  },
+  mixins: [
+    darkTheme,
+  ],
   props: {
     showIcon: {
       type: Boolean,
@@ -33,3 +66,13 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.theme-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+</style>

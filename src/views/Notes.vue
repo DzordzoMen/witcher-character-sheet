@@ -29,10 +29,14 @@
                     v-model="item.done"
                     @change="(val) => setItemIsDone(index, val)"
                     hide-details
+                    color="textPrimary"
                     class="ma-0 pa-0"
                   >
                     <template #label>
-                      <div class="grey--text text--darken-4 body-2 board__item">
+                      <div
+                        class="grey--text body-2 board__item"
+                        :class="$vuetify.theme.dark ? 'text--lighten-3' : 'text--darken-4'"
+                      >
                         <span class="board__item__name">
                           {{ item.name }}
                         </span>
@@ -76,6 +80,7 @@
                 <v-btn
                   color="primary"
                   class="pa-0"
+                  text
                   :disabled="!newItemName"
                   @click="addNewBoardItem()"
                   style="min-height: 24px; min-width: 36px;"

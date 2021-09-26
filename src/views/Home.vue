@@ -9,7 +9,13 @@
           Jest to fanowska wersja papierowej gry do Wiedźmina, stworzysz tutaj
           swoją własną postać, albo przejdziesz do już stworzonej. <br />
           Jeżeli nie chcesz używać wirtualnej wersji możesz pobrać
-          <a href="/character-sheet.pdf" download="character-sheet">papierową wersje</a>
+          <a
+            href="/character-sheet.pdf"
+            class="textPrimary--text"
+            download="character-sheet"
+          >
+            papierową wersje
+          </a>
           i bawić się ze znajomymi.
         </p>
 
@@ -105,7 +111,7 @@
 
             <v-col
               cols="12"
-              class="primary--text text-center"
+              class="textPrimary--text text-center"
               style="text-decoration: underline; cursor: pointer;"
               @click="showAdvancedSettings()"
             >
@@ -121,7 +127,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Strength' && 'tree--strength font-weight-bold pb-3'"
+                            :class="type === 'Strength' && 'strength--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -143,7 +149,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Dexterity' && 'tree--dexterity font-weight-bold pb-3'"
+                            :class="type === 'Dexterity' && 'dexterity--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -165,7 +171,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Signs' && 'tree--signs font-weight-bold pb-3'"
+                            :class="type === 'Signs' && 'signs--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -187,7 +193,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Mind' && 'tree--mind font-weight-bold pb-3'"
+                            :class="type === 'Mind' && 'mind--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -232,7 +238,7 @@
             <v-col cols="10" md="8" class="d-flex align-center">
               <v-btn
                 block
-                color="primary"
+                color="textPrimary"
                 class="relative"
                 text
               >
@@ -471,25 +477,19 @@ export default {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-
 .home-divider {
   border-width: medium;
-  border-color: rgba(0, 0, 0, 0.67) !important;
   border-radius: 8px;
 }
 
-.tree {
-  &--signs {
-    color: #123B79;
+.theme--light {
+  .home-divider {
+    border-color: rgba(0, 0, 0, 0.67) !important;
   }
-  &--strength {
-    color: #710404;
-  }
-  &--dexterity {
-    color: #0C5818;
-  }
-  &--mind {
-    color: #4A1A61;
+}
+.theme--dark {
+  .home-divider {
+    border-color: rgba(255, 255, 255, 0.37) !important;
   }
 }
 </style>

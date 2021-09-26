@@ -1,5 +1,5 @@
 <template>
-  <div class="select primary--text" role="tree">
+  <div class="select textPrimary--text" role="tree">
     <div class="select__clear" @click="clearSelected()" v-if="selected && removable">
       <svg class="icon-inherit" viewBox="0 0 24 24">
         <path fill="currentColor" d="M19,13H5V11H19V13Z" />
@@ -142,7 +142,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @media (min-width: 1264px) {
   .options__item {
     line-height: 25px !important;
@@ -179,7 +179,7 @@ export default {
   flex-shrink: 1;
   height: 20px;
   width: 20px;
-  transition: all 0.33s ease-in-out;
+  transition: transform 0.33s ease-in-out;
 }
 .select__icon-animation {
   transform: rotate(-90deg);
@@ -192,10 +192,9 @@ export default {
   height: inherit;
 }
 .options {
-  background-color: #fff;
   width: 90%;
   /* overflow: hidden; */
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   position: absolute;
@@ -231,7 +230,7 @@ export default {
 }
 
 .options .options__item:nth-child(n) {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--primary-color);
 }
 .options .options__item:last-child {
   border: none;
@@ -248,6 +247,45 @@ export default {
     opacity: 1;
      visibility: visible;
      pointer-events: all;
+  }
+}
+
+.theme--light {
+  .options {
+    background-color: #fff;
+
+    &__item {
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.17);
+      }
+      // TODO fix BEM
+      &-disabled {
+        background-color: rgba(0, 0, 0, 0.12);
+      }
+      // TODO fix BEM
+      &-selected {
+        background-color: rgba(0, 0, 0, 0.17);
+      }
+    }
+  }
+}
+.theme--dark {
+  .options {
+    background-color: #121212;
+
+    &__item {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.22);
+      }
+      // TODO fix BEM
+      &-disabled {
+        background-color: rgba(255, 255, 255, 0.10);
+      }
+      // TODO fix BEM
+      &-selected {
+        background-color: rgba(255, 255, 255, 0.22);
+      }
+    }
   }
 }
 </style>

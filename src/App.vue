@@ -178,6 +178,37 @@
           class="sidebar-list"
         >
           <v-list-item-group>
+            <v-list-item @click="darkTheme = !darkTheme">
+              <v-tooltip left nudge-left="8px">
+                <template #activator="{ on }">
+                  <v-list-item-icon v-on="on">
+                    <sun-icon
+                      v-if="!darkTheme"
+                      :width="32"
+                      :height="32"
+                      color="#fff"
+                    />
+
+                    <moon-icon
+                      v-else
+                      :width="32"
+                      :height="32"
+                      color="#fff"
+                    />
+                  </v-list-item-icon>
+                </template>
+
+                <span>
+                  {{ darkTheme ? 'Tryb nocny' : 'Tryb dzienny' }}
+                </span>
+              </v-tooltip>
+              <v-list-item-content>
+                <v-list-item-title>
+                  {{ darkTheme ? 'Tryb nocny' : 'Tryb dzienny' }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+
             <v-list-item @click="exportCard()">
               <v-tooltip left nudge-left="8px">
                 <template #activator="{ on }">
@@ -245,14 +276,19 @@ import HerbBookIcon from './components/Icons/HerbBookIcon.vue';
 import SaddlebagsIcon from './components/Icons/SaddlebagsIcon.vue';
 import ElixirIcon from './components/Icons/ElixirIcon.vue';
 import NotesIcon from './components/Icons/NotesIcon.vue';
+import SunIcon from './components/Icons/SunIcon.vue';
+import MoonIcon from './components/Icons/MoonIcon.vue';
 
 import isUserInCard from './mixins/isUserInCard';
+import darkTheme from './mixins/darkTheme';
 
 import { exportWitcher } from './database';
 
 export default {
   name: 'App',
   components: {
+    SunIcon,
+    MoonIcon,
     TheHeader,
     TheFooter,
     NotesIcon,
@@ -262,6 +298,7 @@ export default {
     SaddlebagsIcon,
   },
   mixins: [
+    darkTheme,
     isUserInCard,
   ],
   data: () => ({
@@ -321,7 +358,7 @@ export default {
 }
 
 .border-primary {
-  border: 1px solid #2c3e50;
+  border: 1px solid var(--primary-color);
 }
 
 @media (min-width: 960px) {
@@ -382,6 +419,17 @@ export default {
       min-height: 32px;
       min-width: 32px;
     }
+  }
+}
+.theme--light {
+  --primary-color: #2c3e50;
+}
+.theme--dark {
+  // --primary-color: #8ea1b6;
+  --primary-color: #2c3e50;
+
+  input, textarea {
+    caret-color: #fff;
   }
 }
 </style>

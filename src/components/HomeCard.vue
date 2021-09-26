@@ -10,17 +10,21 @@
       <home-card-border position="left" />
       <home-card-border position="right" />
 
-      <v-row no-gutters class="flex-column text-center">
-        <v-col cols="12" class="title font-weight-regular black--text">
+      <v-row dense class="flex-column text-center">
+        <v-col
+          cols="12"
+          class="title font-weight-regular"
+          :class="$vuetify.theme.dark ? 'white--text' : 'black--text'"
+        >
           {{ Name }}
         </v-col>
         <v-col cols="12" class="body-2" v-if="!!Title">
           {{ Title }}
         </v-col>
-        <v-col cols="12" class="black--text">
+        <v-col cols="12" :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
           {{ School }}
         </v-col>
-        <v-col cols="12" class="black--text">
+        <v-col cols="12" :class="$vuetify.theme.dark ? 'white--text' : 'black--text'">
           Poziom {{ Level }}
         </v-col>
       </v-row>
@@ -66,9 +70,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-card {
+  border: 1px solid rgba(0, 0, 0, 0.67);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme--light {
   .v-card {
     border: 1px solid rgba(0, 0, 0, 0.67);
-    position: relative;
-    overflow: hidden;
   }
+}
+.theme--dark {
+  .v-card {
+    border: 1px solid rgba(255, 255, 255, 0.27);
+  }
+}
 </style>

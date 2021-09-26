@@ -4,7 +4,7 @@
       <v-row dense class="align-self-baseline">
         <v-col cols="12" md="3">
           <v-row dense class="flex-column">
-            <v-col cols="12" class="primary--text text-center">
+            <v-col cols="12" class="textPrimary--text text-center">
               Oleje
             </v-col>
             <v-col cols="12">
@@ -19,7 +19,7 @@
                 </template>
               </v-row>
             </v-col>
-            <v-col cols="12" class="primary--text text-center">
+            <v-col cols="12" class="textPrimary--text text-center">
               Petardy
             </v-col>
 
@@ -39,7 +39,7 @@
         </v-col>
         <v-col cols="12" md="9">
           <v-row dense>
-            <v-col cols="12" class="primary--text text-center">
+            <v-col cols="12" class="textPrimary--text text-center">
               Ekwipunek przy koniu
             </v-col>
             <template v-for="(bag, id) in saddlebags">
