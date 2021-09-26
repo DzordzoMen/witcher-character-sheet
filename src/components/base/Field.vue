@@ -9,6 +9,7 @@
           <v-btn
             @click="decreaseValue"
             elevation="0"
+            text
             :disabled="disableDecreaseBtn || +fieldValue === min"
           >
             <minus-icon />
@@ -22,7 +23,11 @@
           />
         </v-col>
         <v-col class="shrink" v-if="showBtns">
-          <v-btn @click="increaseValue" elevation="0">
+          <v-btn
+            @click="increaseValue"
+            elevation="0"
+            text
+          >
             <plus-icon />
           </v-btn>
         </v-col>

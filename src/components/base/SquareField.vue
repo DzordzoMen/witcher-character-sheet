@@ -8,6 +8,7 @@
       <v-btn
         :class="showBtnBorder && 'v-btn__left'"
         elevation="0"
+        text
         :tile="showBtnBorder"
         @click="decreaseValue"
         :disabled="disableDecreaseBtn || +fieldValue === min"
@@ -31,6 +32,7 @@
       <v-btn
         :class="showBtnBorder && 'v-btn__right'"
         elevation="0"
+        text
         :tile="showBtnBorder"
         @click="increaseValue"
         :disabled="disableIncreaseBtn || +fieldValue === max"
