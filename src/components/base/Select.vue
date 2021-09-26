@@ -1,5 +1,5 @@
 <template>
-  <div class="select primary--text" role="tree">
+  <div class="select textPrimary--text" role="tree">
     <div class="select__clear" @click="clearSelected()" v-if="selected && removable">
       <svg class="icon-inherit" viewBox="0 0 24 24">
         <path fill="currentColor" d="M19,13H5V11H19V13Z" />

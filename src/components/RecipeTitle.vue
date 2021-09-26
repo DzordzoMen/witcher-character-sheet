@@ -1,7 +1,7 @@
 <template>
   <v-col
     cols="12"
-    class="primary--text text-center recipe-title title font-weight-regular"
+    class="textPrimary--text text-center recipe-title title font-weight-regular"
   >
     <slot />
   </v-col>

@@ -105,7 +105,7 @@
 
             <v-col
               cols="12"
-              class="primary--text text-center"
+              class="textPrimary--text text-center"
               style="text-decoration: underline; cursor: pointer;"
               @click="showAdvancedSettings()"
             >

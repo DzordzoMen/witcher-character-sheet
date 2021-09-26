@@ -2,7 +2,7 @@
   <loading-screen>
     <template #resolved>
       <v-row dense class="align-self-baseline">
-        <v-col cols="12" class="primary--text title font-weight-regular">
+        <v-col cols="12" class="textPrimary--text title font-weight-regular">
           Laboratorium
         </v-col>
         <v-col cols="12" class="secondary--text body-2 pt-0 px-3">
@@ -12,7 +12,7 @@
         <v-col
           cols="12"
           class="
-            primary--text
+            textPrimary--text
             text-center
             py-4
             subtitle-1
@@ -54,7 +54,7 @@
           </v-row>
         </v-col>
 
-        <v-col cols="12" class="primary--text text-center py-4 subtitle-1 font-weight-bold">
+        <v-col cols="12" class="textPrimary--text text-center py-4 subtitle-1 font-weight-bold">
           Wprowadź ilość składników
         </v-col>
 

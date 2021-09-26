@@ -2,7 +2,7 @@
   <v-card
     rounded
     elevation="0"
-    class="primary--text"
+    class="textPrimary--text"
     :class="expanded && 'fill-height'"
   >
     <v-card-title

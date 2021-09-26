@@ -1,5 +1,5 @@
 <template>
-  <div class="herbs-area rounded-lg primary--text">
+  <div class="herbs-area rounded-lg textPrimary--text">
     <template v-for="(herb, index) in userHerbs">
       <v-row no-gutters :key="index" class="pa-2" :id="herb.name">
         <v-col class="grow">
