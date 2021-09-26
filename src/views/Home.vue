@@ -26,14 +26,20 @@
         <v-col cols="12" md="10" lg="7" class="pa-0 px-1" v-show="showForm">
           <v-row dense class="justify-center mt-5 mb-2">
             <v-col cols="5" md="4">
-              <base-field v-model="form.name">
+              <base-field
+                v-model="form.name"
+                style="min-height: 100%"
+              >
                 <template #label>
                   Imię
                 </template>
               </base-field>
             </v-col>
             <v-col cols="5" md="4">
-              <base-field v-model="form.origin">
+              <base-field
+                v-model="form.origin"
+                style="min-height: 100%"
+              >
                 <template #label>
                   Pochodzenie
                 </template>
