@@ -1,6 +1,6 @@
 <template>
   <div class="base-field rounded-lg relative">
-    <div class="absolute field-label primary--text">
+    <div class="absolute field-label textPrimary--text">
       <slot name="label" />
     </div>
     <slot name="default">
@@ -104,6 +104,8 @@ export default {
 <style lang="scss">
 .base-field {
   border: 1px solid #2c3e50;
+  position: relative;
+  background: inherit;
 
   .v-input {
     border-radius: inherit;
@@ -162,6 +164,17 @@ export default {
     top: -10px;
     left: 12px;
     padding: 0 4px;
+  }
+}
+
+.theme--light {
+  .field-label {
+    background: #fff;
+  }
+}
+.theme--dark {
+  .field-label {
+    background: #121212;
   }
 }
 </style>
