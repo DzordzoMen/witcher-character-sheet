@@ -477,10 +477,19 @@ export default {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-
 .home-divider {
   border-width: medium;
-  border-color: rgba(0, 0, 0, 0.67) !important;
   border-radius: 8px;
+}
+
+.theme--light {
+  .home-divider {
+    border-color: rgba(0, 0, 0, 0.67) !important;
+  }
+}
+.theme--dark {
+  .home-divider {
+    border-color: rgba(255, 255, 255, 0.37) !important;
+  }
 }
 </style>
