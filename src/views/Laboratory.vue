@@ -50,10 +50,8 @@
                 >
                   <template #label>
                     <div
-                      :class="$vuetify.theme.dark
-                        ? 'grey--text text--lighten-3'
-                        : 'grey--text text--darken-4'
-                      "
+                      class="grey--text"
+                      :class="$vuetify.theme.dark ? 'text--lighten-3' : 'text--darken-4'"
                     >
                       {{ type.name }}
                     </div>
