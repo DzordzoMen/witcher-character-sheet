@@ -121,7 +121,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Strength' && 'tree--strength font-weight-bold pb-3'"
+                            :class="type === 'Strength' && 'strength--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -143,7 +143,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Dexterity' && 'tree--dexterity font-weight-bold pb-3'"
+                            :class="type === 'Dexterity' && 'dexterity--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -165,7 +165,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Signs' && 'tree--signs font-weight-bold pb-3'"
+                            :class="type === 'Signs' && 'signs--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -187,7 +187,7 @@
                         <v-row no-gutters>
                           <v-col
                             class="grow"
-                            :class="type === 'Mind' && 'tree--mind font-weight-bold pb-3'"
+                            :class="type === 'Mind' && 'mind--text font-weight-bold pb-3'"
                           >
                             {{ takeTranslate(type) }}
                           </v-col>
@@ -476,20 +476,5 @@ export default {
   border-width: medium;
   border-color: rgba(0, 0, 0, 0.67) !important;
   border-radius: 8px;
-}
-
-.tree {
-  &--signs {
-    color: #123B79;
-  }
-  &--strength {
-    color: #710404;
-  }
-  &--dexterity {
-    color: #0C5818;
-  }
-  &--mind {
-    color: #4A1A61;
-  }
 }
 </style>

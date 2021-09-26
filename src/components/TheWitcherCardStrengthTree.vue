@@ -1,7 +1,7 @@
 <template>
   <v-container class="strength-tree rounded-lg">
     <v-row dense>
-      <v-col cols="12" class="pb-3 strength-tree__title">
+      <v-col cols="12" class="pb-3 strength--text">
         <v-row no-gutters>
           <v-col class="grow font-weight-bold">
             Siła
@@ -284,9 +284,5 @@ export default {
 .strength-tree {
   border: 1px solid #2c3e50;
   width: 100%;
-
-  &__title {
-    color: #710404;
-  }
 }
 </style>

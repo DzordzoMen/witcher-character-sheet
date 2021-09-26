@@ -1,7 +1,7 @@
 <template>
   <v-container class="mind-tree rounded-lg">
     <v-row dense>
-      <v-col cols="12" class="pb-3 mind-tree__title">
+      <v-col cols="12" class="pb-3 mind--text">
         <v-row no-gutters>
           <v-col class="grow font-weight-bold">
             Umysł
@@ -279,9 +279,5 @@ export default {
 .mind-tree {
   border: 1px solid #2c3e50;
   width: 100%;
-
-  &__title {
-    color: #4A1A61;
-  }
 }
 </style>

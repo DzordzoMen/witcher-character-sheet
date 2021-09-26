@@ -1,7 +1,7 @@
 <template>
   <v-container class="signs-tree rounded-lg">
     <v-row dense>
-      <v-col cols="12" class="pb-3 signs-tree__title">
+      <v-col cols="12" class="pb-3 signs--text">
         <v-row no-gutters>
           <v-col class="grow font-weight-bold">
             Znaki
@@ -279,9 +279,5 @@ export default {
 .signs-tree {
   border: 1px solid #2c3e50;
   width: 100%;
-
-  &__title {
-    color: #123B79;
-  }
 }
 </style>
