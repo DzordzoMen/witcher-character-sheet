@@ -69,6 +69,11 @@ export default {
       required: false,
       default: true,
     },
+    closeOnClickOutside: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
     mouseOverHandler: {
       type: Function,
       required: false,
@@ -101,7 +106,21 @@ export default {
       },
     },
   },
+  mounted() {
+    if (this.closeOnClickOutside) {
+      document.addEventListener('click', this.clickOutsideHandler);
+    }
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.clickOutsideHandler);
+  },
   methods: {
+    clickOutsideHandler(event) {
+      const { target } = event;
+      const { $el } = this;
+
+      if (!$el.contains(target)) this.optionsMenu = false;
+    },
     showOptions() {
       this.optionsMenu = !this.optionsMenu;
     },

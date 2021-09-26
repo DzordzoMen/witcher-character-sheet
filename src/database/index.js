@@ -10,3 +10,5 @@ export { default as Bombs } from './Tables/Bombs';
 export { default as Oils } from './Tables/Oils';
 export { default as Notes } from './Tables/Notes';
 export { default as createNewWitcher } from './createNewWitcher';
+export { default as exportWitcher } from './exportWitcher';
+export { default as importWitcher } from './importWitcher';

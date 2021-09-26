@@ -170,10 +170,36 @@
         </v-list-item-group>
       </v-list>
 
-      <template #append v-if="showInstallButton">
-        <v-list dense nav class="sidebar-list">
+      <template #append>
+        <v-list
+          dense
+          nav
+          flat
+          class="sidebar-list"
+        >
           <v-list-item-group>
-            <v-list-item @click="installer()">
+            <v-list-item @click="exportCard()">
+              <v-tooltip left nudge-left="8px">
+                <template #activator="{ on }">
+                  <v-list-item-icon v-on="on">
+                    <v-icon size="32">
+                      mdi-tray-arrow-up
+                    </v-icon>
+                  </v-list-item-icon>
+                </template>
+
+                <span>
+                  Eksportuj kartę
+                </span>
+              </v-tooltip>
+              <v-list-item-content>
+                <v-list-item-title>
+                  Eksportuj kartę
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-list-item @click="installer()" v-if="showInstallButton">
               <v-tooltip left nudge-left="8px">
                 <template #activator="{ on }">
                   <v-list-item-icon v-on="on">
@@ -222,6 +248,8 @@ import NotesIcon from './components/Icons/NotesIcon.vue';
 
 import isUserInCard from './mixins/isUserInCard';
 
+import { exportWitcher } from './database';
+
 export default {
   name: 'App',
   components: {
@@ -264,6 +292,20 @@ export default {
     goTo(endpointName) {
       const { id } = this.$route.params;
       this.$router.push({ name: endpointName, params: { id } });
+    },
+    exportCard() {
+      const witcherId = this.$store.getters.WITCHER_ID;
+      exportWitcher(witcherId).then((data) => {
+        const fileUrl = `data:text/json;charset=utf-8,${encodeURIComponent(data.file)}`;
+
+        const link = document.createElement('a');
+        link.setAttribute('href', fileUrl);
+        link.setAttribute('download', `${data.name}.json`);
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
     },
   },
 };

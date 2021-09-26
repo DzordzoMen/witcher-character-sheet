@@ -1,4 +1,3 @@
-import isEqual from 'lodash.isequal';
 import { getLocalStorageItem } from './index';
 import setLocalStorageItem from './setLocalStorageItem';
 
@@ -10,14 +9,15 @@ import setLocalStorageItem from './setLocalStorageItem';
  */
 function addNewObjectToLocalStorage(tableName, newObject, withIndex = null) {
   const table = getLocalStorageItem(tableName);
+  let objectIndex = withIndex;
+
   if (withIndex !== null) {
     table[withIndex] = newObject;
   } else {
-    table.push(newObject);
+    objectIndex = table.push(newObject) - 1;
   }
-  setLocalStorageItem(tableName, table);
 
-  const objectIndex = table.findIndex((item) => isEqual(item, newObject));
+  setLocalStorageItem(tableName, table);
   return objectIndex;
 }
 
