@@ -58,7 +58,7 @@ export default {
   }
 
   &__line {
-    background-color: rgba(0, 0, 0, 0.87);
+    background-color: var(--primary-color);
     width: 80px;
     height: 3px;
     position: absolute;
@@ -70,21 +70,6 @@ export default {
     }
     &-right {
       transform: rotate(140deg);
-    }
-  }
-}
-
-.theme--light {
-  .card-border {
-    &__line {
-      background-color: rgba(0, 0, 0, 0.87);
-    }
-  }
-}
-.theme--dark {
-  .card-border {
-    &__line {
-      background-color: rgba(255, 255, 255, 0.47);
     }
   }
 }
