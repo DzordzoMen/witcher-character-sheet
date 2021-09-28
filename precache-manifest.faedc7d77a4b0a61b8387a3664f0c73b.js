@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/witcher-character-sheet/character-sheet.pdf"
   },
   {
-    "revision": "296e8fc350e85ba9feab",
-    "url": "/witcher-character-sheet/css/app.2cd0442c.css"
+    "revision": "0127f2fd28f757c49dbf",
+    "url": "/witcher-character-sheet/css/app.6e6f44b7.css"
   },
   {
     "revision": "e9f23670ca2075429a8c",
@@ -16,19 +16,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/witcher-character-sheet/img/logo.94d2ac39.png"
   },
   {
-    "revision": "3c99ff0528c3bde898438bc09da9670d",
+    "revision": "7dde58ff75949c01cc0f2778d1d5f1d5",
     "url": "/witcher-character-sheet/index.html"
   },
   {
-    "revision": "296e8fc350e85ba9feab",
-    "url": "/witcher-character-sheet/js/app.5bf6ccd1.js"
+    "revision": "0127f2fd28f757c49dbf",
+    "url": "/witcher-character-sheet/js/app.7835cf42.js"
   },
   {
     "revision": "e9f23670ca2075429a8c",
     "url": "/witcher-character-sheet/js/chunk-vendors.2e29b18a.js"
   },
   {
-    "revision": "fb498234e0e9edc4736bde9b139e9765",
+    "revision": "1bd9412d8c8a08744d8eb7e53eb82297",
     "url": "/witcher-character-sheet/manifest.json"
   },
   {
