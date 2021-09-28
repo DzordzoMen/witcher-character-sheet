@@ -227,7 +227,7 @@
                 v-if="creatingWitcher"
                 :width="36"
                 :height="36"
-                color="rgba(0, 0, 0, .87)"
+                :color="$vuetify.theme.dark ? 'rgba(255, 255, 255, .87)' : 'rgba(0, 0, 0, .87)'"
               />
             </v-col>
 
