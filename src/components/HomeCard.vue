@@ -71,19 +71,8 @@ export default {
 
 <style lang="scss" scoped>
 .v-card {
-  border: 1px solid rgba(0, 0, 0, 0.67);
+  border: 1px solid var(--primary-color);
   position: relative;
   overflow: hidden;
-}
-
-.theme--light {
-  .v-card {
-    border: 1px solid rgba(0, 0, 0, 0.67);
-  }
-}
-.theme--dark {
-  .v-card {
-    border: 1px solid rgba(255, 255, 255, 0.27);
-  }
 }
 </style>

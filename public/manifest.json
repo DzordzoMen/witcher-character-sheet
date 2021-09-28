@@ -43,5 +43,45 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2c3e50",
-  "orientation": "portrait-primary"
+  "orientation": "portrait-primary",
+  "shortcuts": [
+    {
+      "name": "Laboratorium",
+      "short_name": "Laboratorium",
+      "url": "/witcher-character-sheet/laboratory",
+      "icons": [
+        {
+          "src": "./img/icons/lab_icon_16x16.png",
+          "sizes": "16x16"
+        },
+        {
+          "src": "./img/icons/lab_icon_32x32.png",
+          "sizes": "32x32"
+        },
+        {
+          "src": "./img/icons/lab_icon_192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Przepisy",
+      "short_name": "Przepisy",
+      "url": "/witcher-character-sheet/recipe",
+      "icons": [
+        {
+          "src": "./img/icons/recipe_icon_16x16.png",
+          "sizes": "16x16"
+        },
+        {
+          "src": "./img/icons/recipe_icon_32x32.png",
+          "sizes": "32x32"
+        },
+        {
+          "src": "./img/icons/recipe_icon_192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }

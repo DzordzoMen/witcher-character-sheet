@@ -20,19 +20,9 @@
       v-if="!showIcon"
       v-ripple
     >
-      <sun-icon
-        v-if="!darkTheme"
-        :height="32"
-        :width="32"
-        color="#fff"
-      />
-
-      <moon-icon
-        v-else
-        :height="32"
-        :width="32"
-        color="#fff"
-      />
+      <v-icon size="32" color="#fff">
+        {{ darkTheme ? 'mdi-weather-night' : 'mdi-white-balance-sunny' }}
+      </v-icon>
     </div>
 
     <v-app-bar-nav-icon
@@ -43,17 +33,10 @@
 </template>
 
 <script>
-import SunIcon from './Icons/SunIcon.vue';
-import MoonIcon from './Icons/MoonIcon.vue';
-
 import darkTheme from '../mixins/darkTheme';
 
 export default {
   name: 'TheHeader',
-  components: {
-    SunIcon,
-    MoonIcon,
-  },
   mixins: [
     darkTheme,
   ],

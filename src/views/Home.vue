@@ -227,7 +227,7 @@
                 v-if="creatingWitcher"
                 :width="36"
                 :height="36"
-                color="rgba(0, 0, 0, .87)"
+                :color="$vuetify.theme.dark ? 'rgba(255, 255, 255, .87)' : 'rgba(0, 0, 0, .87)'"
               />
             </v-col>
 
@@ -291,7 +291,12 @@
               </v-col>
             </template>
 
-            <v-col cols="12" class="body-1 text-center secondary--text" v-if="!witchers.length">
+            <v-col
+              cols="12"
+              class="body-1 text-center secondary--text"
+              :class="$vuetify.theme.dark && 'text--lighten-4'"
+              v-if="!witchers.length"
+            >
               Wygląda na to, że nie masz jeszcze stworzonej postaci
             </v-col>
           </v-row>
