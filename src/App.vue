@@ -182,19 +182,12 @@
               <v-tooltip left nudge-left="8px">
                 <template #activator="{ on }">
                   <v-list-item-icon v-on="on">
-                    <sun-icon
-                      v-if="!darkTheme"
-                      :width="32"
-                      :height="32"
-                      color="#fff"
-                    />
-
-                    <moon-icon
-                      v-else
-                      :width="32"
-                      :height="32"
-                      color="#fff"
-                    />
+                    <v-icon size="32" color="#fff">
+                      {{ darkTheme
+                        ? 'mdi-weather-night'
+                        : 'mdi-white-balance-sunny'
+                      }}
+                    </v-icon>
                   </v-list-item-icon>
                 </template>
 
@@ -276,8 +269,6 @@ import HerbBookIcon from './components/Icons/HerbBookIcon.vue';
 import SaddlebagsIcon from './components/Icons/SaddlebagsIcon.vue';
 import ElixirIcon from './components/Icons/ElixirIcon.vue';
 import NotesIcon from './components/Icons/NotesIcon.vue';
-import SunIcon from './components/Icons/SunIcon.vue';
-import MoonIcon from './components/Icons/MoonIcon.vue';
 
 import isUserInCard from './mixins/isUserInCard';
 import darkTheme from './mixins/darkTheme';
@@ -287,8 +278,6 @@ import { exportWitcher } from './database';
 export default {
   name: 'App',
   components: {
-    SunIcon,
-    MoonIcon,
     TheHeader,
     TheFooter,
     NotesIcon,
