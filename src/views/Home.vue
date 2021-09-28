@@ -291,7 +291,12 @@
               </v-col>
             </template>
 
-            <v-col cols="12" class="body-1 text-center secondary--text" v-if="!witchers.length">
+            <v-col
+              cols="12"
+              class="body-1 text-center secondary--text"
+              :class="$vuetify.theme.dark && 'text--lighten-4'"
+              v-if="!witchers.length"
+            >
               Wygląda na to, że nie masz jeszcze stworzonej postaci
             </v-col>
           </v-row>
