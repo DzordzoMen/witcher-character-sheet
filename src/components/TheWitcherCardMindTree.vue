@@ -2,7 +2,7 @@
   <v-container class="mind-tree rounded-lg">
     <v-row dense>
       <v-col cols="12" class="pb-3 mind--text">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow font-weight-bold">
             Umysł
           </v-col>
@@ -23,7 +23,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Wytwarzanie
           </v-col>
@@ -45,7 +45,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Wiedza o potworach
           </v-col>
@@ -67,7 +67,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Wiedza o świecie
           </v-col>
@@ -89,7 +89,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Retoryka
           </v-col>
@@ -111,7 +111,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Wiedźmińskie zmysły
           </v-col>
@@ -133,7 +133,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Odporność magiczna
           </v-col>
@@ -155,7 +155,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Arkana
           </v-col>

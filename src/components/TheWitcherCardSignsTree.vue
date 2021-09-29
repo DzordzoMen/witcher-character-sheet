@@ -2,7 +2,7 @@
   <v-container class="signs-tree rounded-lg">
     <v-row dense>
       <v-col cols="12" class="pb-3 signs--text">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow font-weight-bold">
             Znaki
           </v-col>
@@ -23,7 +23,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Somne
           </v-col>
@@ -45,7 +45,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Heliotrop
           </v-col>
@@ -67,7 +67,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Aard
           </v-col>
@@ -89,7 +89,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Igni
           </v-col>
@@ -111,7 +111,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Axii
           </v-col>
@@ -133,7 +133,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Yrden
           </v-col>
@@ -155,7 +155,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Quen
           </v-col>

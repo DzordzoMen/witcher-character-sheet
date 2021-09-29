@@ -2,7 +2,7 @@
   <v-container class="strength-tree rounded-lg">
     <v-row dense>
       <v-col cols="12" class="pb-3 strength--text">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow font-weight-bold">
             Siła
           </v-col>
@@ -24,7 +24,7 @@
       </v-col>
 
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Ciężki pancerz
           </v-col>
@@ -46,7 +46,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Broń ciężka
           </v-col>
@@ -68,7 +68,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Walka na pięści
           </v-col>
@@ -90,7 +90,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Zdrowotność
           </v-col>
@@ -112,7 +112,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Wytrzymałość
           </v-col>
@@ -134,7 +134,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Tolerancja eliksirów
           </v-col>
@@ -156,7 +156,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Zastraszanie
           </v-col>

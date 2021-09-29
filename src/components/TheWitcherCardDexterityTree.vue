@@ -2,7 +2,7 @@
   <v-container class="dexterity-tree rounded-lg">
     <v-row dense>
       <v-col cols="12" class="pb-3 dexterity--text">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow font-weight-bold">
             Zręczność
           </v-col>
@@ -24,7 +24,7 @@
       </v-col>
 
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Lekki pancerz
           </v-col>
@@ -46,7 +46,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Broń lekka
           </v-col>
@@ -68,7 +68,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Inicjatywa
           </v-col>
@@ -90,7 +90,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Skradanie się
           </v-col>
@@ -112,7 +112,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Uniki
           </v-col>
@@ -134,7 +134,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Broń miotana
           </v-col>
@@ -156,7 +156,7 @@
         </v-row>
       </v-col>
       <v-col cols="12">
-        <v-row no-gutters>
+        <v-row no-gutters align="center">
           <v-col class="grow">
             Broń dystansowa
           </v-col>
