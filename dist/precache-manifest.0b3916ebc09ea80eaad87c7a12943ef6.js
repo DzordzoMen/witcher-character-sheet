@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/witcher-character-sheet/character-sheet.pdf"
   },
   {
-    "revision": "0127f2fd28f757c49dbf",
+    "revision": "041f4a06ba73914bf1d8",
     "url": "/witcher-character-sheet/css/app.6e6f44b7.css"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/witcher-character-sheet/img/logo.94d2ac39.png"
   },
   {
-    "revision": "7dde58ff75949c01cc0f2778d1d5f1d5",
+    "revision": "377dc45ab0b2e3e7861b9001c6867a01",
     "url": "/witcher-character-sheet/index.html"
   },
   {
-    "revision": "0127f2fd28f757c49dbf",
-    "url": "/witcher-character-sheet/js/app.7835cf42.js"
+    "revision": "041f4a06ba73914bf1d8",
+    "url": "/witcher-character-sheet/js/app.35aee034.js"
   },
   {
     "revision": "e9f23670ca2075429a8c",
