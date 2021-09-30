@@ -13,6 +13,7 @@ module.exports = {
       mstTileImage: './img/icons/witcher_logo_32x32.png',
     },
     backgroundColor: '#ffffff',
+    themeColor: '#2c3e50',
     name: 'Witcher Card',
     orientation: 'portrait-primary',
     display: 'standalone',
