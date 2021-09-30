@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/witcher-character-sheet/precache-manifest.faedc7d77a4b0a61b8387a3664f0c73b.js"
+  "/witcher-character-sheet/precache-manifest.0b3916ebc09ea80eaad87c7a12943ef6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "witcher-character-sheet"});
