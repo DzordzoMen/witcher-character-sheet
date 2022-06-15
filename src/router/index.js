@@ -7,6 +7,7 @@ import Saddlebags from '../views/Saddlebags.vue';
 import Notes from '../views/Notes.vue';
 import RecipesInfo from '../views/RecipesInfo.vue';
 import Laboratory from '../views/Laboratory.vue';
+import DmKit from '../views/DmKit.vue';
 
 Vue.use(VueRouter);
 
@@ -60,6 +61,11 @@ const routes = [
     path: '/recipe',
     name: 'GuestRecipeInfo',
     component: RecipesInfo,
+  },
+  {
+    path: '/dm-kit',
+    name: 'DMKit',
+    component: DmKit,
   },
 ];
 
