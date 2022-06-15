@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row dense class="pt-16">
-      <v-col cols="12" class="dm-kit__table-options">
+      <v-col cols="12" class="dm-kit__toolbar">
         <v-row no-gutters class="d-flex align-center justify-space-between">
           <v-col cols="4" class="dm-kit__title">
             Round {{ round }}
@@ -239,7 +239,7 @@ export default {
     gap: 8px;
   }
 
-  &__table-options {
+  &__toolbar {
     position: sticky;
     top: 64px;
     background-color: #121212;
