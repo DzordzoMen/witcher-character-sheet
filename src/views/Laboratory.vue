@@ -31,6 +31,8 @@
 
           <span
             class="body-2 laboratory__subtitle"
+            tabindex="0"
+            @keypress="selectAllTypes()"
             @click="selectAllTypes()"
           >
             {{ isAllTypesSelected() ? 'Odznacz wszystko' : 'Wybierz wszystko' }}

@@ -17,6 +17,8 @@
     <div
       class="theme-icon pa-1"
       @click="darkTheme = !darkTheme"
+      @keypress="darkTheme = !darkTheme"
+      tabindex="0"
       v-if="!showIcon"
       v-ripple
     >

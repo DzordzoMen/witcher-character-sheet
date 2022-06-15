@@ -6,7 +6,13 @@
     <router-link :to="{ name: 'GuestRecipeInfo' }" class="footer-item">
       Przepisy
     </router-link>
-    <div class="footer-item" @click="installer()" v-if="showInstallButton">
+    <div
+      class="footer-item"
+      @click="installer()"
+      @keypress="installer()"
+      tabindex="0"
+      v-if="showInstallButton"
+    >
       Zainstaluj
     </div>
   </v-footer>

@@ -1,11 +1,16 @@
 <template>
   <div class="select textPrimary--text" role="tree">
-    <div class="select__clear" @click="clearSelected()" v-if="selected && removable">
+    <div
+      class="select__clear"
+      @click="clearSelected()"
+      @keypress="clearSelected()"
+      v-if="selected && removable"
+    >
       <svg class="icon-inherit" viewBox="0 0 24 24">
         <path fill="currentColor" d="M19,13H5V11H19V13Z" />
       </svg>
     </div>
-    <div class="select__selected" @click="showOptions()">
+    <div class="select__selected" @click="showOptions()" @keypress="showOptions()">
       <slot name="selected" :selected="selected">
         {{ selected }}
       </slot>
@@ -14,6 +19,7 @@
       <div
         class="select__icon"
         @click="showOptions()"
+        @keypress="showOptions()"
         :class="optionsMenu && 'select__icon-animation'"
       >
         <svg
@@ -34,11 +40,16 @@
           class="options__item"
           role="treeitem"
           @click="selectItem(item)"
+          tabindex="0"
+          @keypress="selectItem(item)"
+          @focus="mouseOverHandler(item)"
           @mouseover="mouseOverHandler(item)"
-          @mouseleave="mouseLeaveHandler(item)"
           @touchstart="mouseOverHandler(item)"
+          @blur="mouseLeaveHandler(item)"
+          @mouseleave="mouseLeaveHandler(item)"
           @touchend="mouseLeaveHandler(item)"
           :aria-disabled="disableItem(item)"
+          :aria-selected="itemIsSelected(item.name)"
           :class="{
             'options__item-selected': itemIsSelected(item.name),
             'options__item-disabled': disableItem(item)

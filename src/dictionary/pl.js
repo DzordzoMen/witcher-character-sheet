@@ -47,4 +47,4 @@ function takeTranslate(key) {
   return polishDictionary?.get(key) || key;
 }
 
-export { takeTranslate as default };
+export default { takeTranslate };
