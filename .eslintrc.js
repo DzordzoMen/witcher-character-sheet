@@ -19,5 +19,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-restricted-syntax': 'warn',
     'vue/multi-word-component-names': 'off',
+    'vue/valid-v-slot': 'off',
   },
 };
