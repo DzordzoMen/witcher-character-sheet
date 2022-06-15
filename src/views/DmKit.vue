@@ -31,6 +31,22 @@
                   size="28"
                   v-bind="attrs"
                   v-on="on"
+                  @click="addNewColumn()"
+                >
+                  mdi-plus-thick
+                </v-icon>
+              </template>
+              <span>Add new column</span>
+            </v-tooltip>
+
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-icon
+                  color="textPrimary"
+                  dark
+                  size="28"
+                  v-bind="attrs"
+                  v-on="on"
                 >
                   mdi-sort-numeric-ascending
                 </v-icon>
