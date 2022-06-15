@@ -61,6 +61,7 @@
                   size="28"
                   v-bind="attrs"
                   v-on="on"
+                  @click="clearColumns()"
                 >
                   mdi-delete
                 </v-icon>
@@ -202,6 +203,12 @@ export default {
         armor: null,
         health: null,
       });
+    },
+    clearColumns() {
+      this.items = [];
+      for (let i = 0; i < 3; i += 1) {
+        this.addNewColumn();
+      }
     },
   },
 };
