@@ -6,6 +6,9 @@
     <router-link :to="{ name: 'GuestRecipeInfo' }" class="footer-item">
       Przepisy
     </router-link>
+    <router-link :to="{ name: 'DMKit' }" class="footer-item">
+      DM Kit
+    </router-link>
     <div
       class="footer-item"
       @click="installer()"
