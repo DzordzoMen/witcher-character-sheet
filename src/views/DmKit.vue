@@ -293,8 +293,18 @@ export default {
 
   &__toolbar {
     position: sticky;
-    top: 64px;
+    top: 56px;
     z-index: 4;
+    padding-bottom: 8px;
+  }
+
+  @media (min-width: 960px) {
+    &__toolbar {
+      position: sticky;
+      top: 64px;
+      z-index: 4;
+      padding-bottom: 4px;
+    }
   }
 
   &__table-footer {
