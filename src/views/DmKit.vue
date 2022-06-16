@@ -14,6 +14,7 @@
                   size="30"
                   v-bind="attrs"
                   v-on="on"
+                  @click="setNextItem()"
                 >
                   mdi-arrow-right-thick
                 </v-icon>
@@ -63,6 +64,7 @@
                   size="28"
                   v-bind="attrs"
                   v-on="on"
+                  @click="refreshRounds()"
                 >
                   mdi-autorenew
                 </v-icon>
@@ -246,8 +248,25 @@ export default {
         health: null,
       });
     },
+    setNextItem() {
+      const { items: { length }, currentItemId } = this;
+      if (!length) return;
+
+      if ((currentItemId + 1) > length) {
+        this.currentItemId = 0;
+      } else if (length === (currentItemId + 1)) {
+        this.round += 1;
+        this.currentItemId = 0;
+      } else {
+        this.currentItemId += 1;
+      }
+    },
     sortColumns() {
       this.items.sort((a, b) => (b.initiative - a.initiative));
+    },
+    refreshRounds() {
+      this.round = 1;
+      this.currentItemId = 0;
     },
     clearColumns() {
       this.items = [];
