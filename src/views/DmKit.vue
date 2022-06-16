@@ -47,6 +47,7 @@
                   size="28"
                   v-bind="attrs"
                   v-on="on"
+                  @click="sortColumns()"
                 >
                   mdi-sort-numeric-ascending
                 </v-icon>
@@ -204,8 +205,8 @@ export default {
         health: 100,
       },
       {
-        name: 'Test',
-        initiative: 10,
+        name: 'Test2',
+        initiative: 12,
         armor: 5,
         health: 100,
       },
@@ -219,6 +220,9 @@ export default {
         armor: null,
         health: null,
       });
+    },
+    sortColumns() {
+      this.items.sort((a, b) => (b.initiative - a.initiative));
     },
     clearColumns() {
       this.items = [];
