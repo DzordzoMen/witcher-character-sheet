@@ -265,14 +265,37 @@ export default {
   &__toolbar {
     position: sticky;
     top: 64px;
-    background-color: #121212;
     z-index: 4;
   }
 
   &__table-footer {
     width: 100%;
     padding: 8px 16px;
-    border-top: thin solid rgba(255, 255, 255, 0.12); // TODO change based on theme
+    border-top: thin solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+.theme--light {
+  .dm-kit {
+    &__toolbar {
+      background-color: #fff;
+    }
+
+    &__table-footer {
+      border-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+.theme--dark {
+  .dm-kit {
+    &__toolbar {
+      background-color: #121212;
+    }
+
+    &__table-footer {
+      border-color: rgba(255, 255, 255, 0.12);
+    }
   }
 }
 </style>
