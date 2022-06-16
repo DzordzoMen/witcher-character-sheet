@@ -270,6 +270,7 @@ export default {
     },
     clearColumns() {
       this.items = [];
+      this.refreshRounds();
       for (let i = 0; i < 3; i += 1) {
         this.addNewColumn();
       }
@@ -349,6 +350,11 @@ export default {
 
 <style lang="scss">
 .v-data-table {
+  &__wrapper {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
   & th {
     font-size: 1rem !important;
   }
