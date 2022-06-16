@@ -102,6 +102,7 @@
               v-model.number="item.initiative"
               type="number"
               step="1"
+              placeholder="0"
               hide-details
               solo
               flat
@@ -113,6 +114,7 @@
             <v-text-field
               v-model.number="item.name"
               hide-details
+              placeholder="Name"
               solo
               flat
               class="ma-0 pa-0"
@@ -123,6 +125,7 @@
             <v-text-field
               v-model.number="item.health"
               type="number"
+              placeholder="Health"
               step="1"
               hide-details
               solo
@@ -136,11 +139,23 @@
               v-model.number="item.armor"
               type="number"
               step="1"
+              placeholder="Armor"
               hide-details
               solo
               flat
               class="ma-0 pa-0"
             />
+          </template>
+
+          <template v-slot:item.actions="{ item }">
+            <v-icon
+              color="error darken-2"
+              dark
+              size="28"
+              @click="deleteItem(item)"
+            >
+              mdi-delete
+            </v-icon>
           </template>
 
           <template #footer>
@@ -192,7 +207,7 @@ export default {
       },
       {
         text: '',
-        align: 'start',
+        align: 'end',
         sortable: false,
         value: 'actions',
       },
@@ -229,6 +244,10 @@ export default {
       for (let i = 0; i < 3; i += 1) {
         this.addNewColumn();
       }
+    },
+    deleteItem(item) {
+      const itemIndex = this.items.indexOf(item);
+      this.items.splice(itemIndex, 1);
     },
   },
 };
