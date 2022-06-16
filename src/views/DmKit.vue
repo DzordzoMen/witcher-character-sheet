@@ -92,7 +92,7 @@
         <v-data-table
           :headers="headers"
           :items="items"
-          no-data-text="No data, click on add button to add a new column"
+          no-data-text="No data, to add a new row click the button below"
           hide-default-footer
           :items-per-page="9999"
           fixed-header
