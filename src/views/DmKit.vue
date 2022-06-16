@@ -179,12 +179,19 @@
         </v-data-table>
       </v-col>
     </v-row>
+
+    <the-dm-kit-sounds-panel />
   </v-container>
 </template>
 
 <script>
+import TheDmKitSoundsPanel from '../components/TheDmKitSoundsPanel.vue';
+
 export default {
   name: 'DmKit',
+  components: {
+    TheDmKitSoundsPanel,
+  },
   data: () => ({
     round: 1,
     currentItemId: 0,
