@@ -3,7 +3,7 @@
     <v-row dense class="pt-16">
       <v-col cols="12" class="dm-kit__toolbar">
         <v-row no-gutters class="d-flex align-center justify-space-between">
-          <v-col cols="4" class="dm-kit__title">
+          <v-col cols="12" md="4" class="dm-kit__title">
             Round {{ round }}
 
             <v-tooltip bottom>
@@ -22,7 +22,7 @@
             </v-tooltip>
           </v-col>
 
-          <v-col cols="2" class="d-flex justify-end" style="gap: 20px">
+          <v-col cols="12" md="2" class="d-flex justify-end" style="gap: 20px">
             <v-tooltip bottom>
               <template v-slot:activator="{ on, attrs }">
                 <v-icon
