@@ -97,65 +97,74 @@
           :items-per-page="9999"
           fixed-header
         >
-          <template v-slot:item.initiative="{ item }">
-            <v-text-field
-              v-model.number="item.initiative"
-              type="number"
-              step="1"
-              placeholder="0"
-              hide-details
-              solo
-              flat
-              class="ma-0 pa-0"
-            />
-          </template>
-
-          <template v-slot:item.name="{ item }">
-            <v-text-field
-              v-model.number="item.name"
-              hide-details
-              placeholder="Name"
-              solo
-              flat
-              class="ma-0 pa-0"
-            />
-          </template>
-
-          <template v-slot:item.health="{ item }">
-            <v-text-field
-              v-model.number="item.health"
-              type="number"
-              placeholder="Health"
-              step="1"
-              hide-details
-              solo
-              flat
-              class="ma-0 pa-0"
-            />
-          </template>
-
-          <template v-slot:item.armor="{ item }">
-            <v-text-field
-              v-model.number="item.armor"
-              type="number"
-              step="1"
-              placeholder="Armor"
-              hide-details
-              solo
-              flat
-              class="ma-0 pa-0"
-            />
-          </template>
-
-          <template v-slot:item.actions="{ item }">
-            <v-icon
-              color="strength"
-              dark
-              size="28"
-              @click="deleteItem(item)"
-            >
-              mdi-delete
-            </v-icon>
+          <template #body="{ items, isMobile }" v-if="items.length">
+            <tbody>
+              <tr
+                :class="{
+                  'v-data-table__mobile-table-row': isMobile,
+                  'active-row': currentItemId === index,
+                }"
+                v-for="(item, index) in items"
+                :key="index"
+              >
+                <td>
+                  <v-text-field
+                    v-model.number="item.initiative"
+                    type="number"
+                    step="1"
+                    placeholder="0"
+                    hide-details
+                    solo
+                    flat
+                    class="ma-0 pa-0"
+                  />
+                </td>
+                <td>
+                  <v-text-field
+                    v-model.number="item.name"
+                    hide-details
+                    placeholder="Name"
+                    solo
+                    flat
+                    class="ma-0 pa-0"
+                  />
+                </td>
+                <td>
+                  <v-text-field
+                    v-model.number="item.health"
+                    type="number"
+                    placeholder="Health"
+                    step="1"
+                    hide-details
+                    solo
+                    flat
+                    class="ma-0 pa-0"
+                  />
+                </td>
+                <td>
+                  <v-text-field
+                    v-model.number="item.armor"
+                    type="number"
+                    step="1"
+                    placeholder="Armor"
+                    hide-details
+                    solo
+                    flat
+                    class="ma-0 pa-0"
+                  />
+                </td>
+                <td class="text-end">
+                  <v-icon
+                    color="strength"
+                    dark
+                    size="28"
+                    @click="deleteItem(item)"
+                  >
+                    mdi-delete
+                  </v-icon>
+                </td>
+              </tr>
+            </tbody>
           </template>
 
           <template #footer>
@@ -176,6 +185,7 @@ export default {
   name: 'DmKit',
   data: () => ({
     round: 1,
+    currentItemId: 0,
     headers: [
       {
         text: 'Initiative',
@@ -285,6 +295,10 @@ export default {
       border-color: rgba(0, 0, 0, 0.12);
     }
   }
+
+  .active-row {
+    background-color: #ccc;
+  }
 }
 
 .theme--dark {
@@ -296,6 +310,10 @@ export default {
     &__table-footer {
       border-color: rgba(255, 255, 255, 0.12);
     }
+  }
+
+  .active-row {
+    background-color: #616161;
   }
 }
 </style>
@@ -314,6 +332,7 @@ export default {
     & .v-input__slot {
       transition-duration: 0s;
       padding: 0 !important;
+      background: inherit !important;
     }
   }
 
