@@ -36,7 +36,7 @@
                   mdi-plus-thick
                 </v-icon>
               </template>
-              <span>Add new column</span>
+              <span>Add new row</span>
             </v-tooltip>
 
             <v-tooltip bottom>
@@ -52,7 +52,7 @@
                   mdi-sort-numeric-ascending
                 </v-icon>
               </template>
-              <span>Sort</span>
+              <span>Sort rows</span>
             </v-tooltip>
 
             <v-tooltip bottom>
@@ -83,7 +83,7 @@
                   mdi-delete
                 </v-icon>
               </template>
-              <span>Clear</span>
+              <span>Clear all</span>
             </v-tooltip>
           </v-col>
         </v-row>
@@ -161,7 +161,7 @@
           <template #footer>
             <div class="dm-kit__table-footer">
               <v-btn width="220px" color="primary" depressed @click="addNewColumn()">
-                + Add new column
+                + Add new row
               </v-btn>
             </div>
           </template>
