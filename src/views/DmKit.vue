@@ -149,7 +149,7 @@
 
           <template v-slot:item.actions="{ item }">
             <v-icon
-              color="error darken-2"
+              color="strength"
               dark
               size="28"
               @click="deleteItem(item)"
@@ -312,6 +312,7 @@ export default {
     }
 
     & .v-input__slot {
+      transition-duration: 0s;
       padding: 0 !important;
     }
   }
