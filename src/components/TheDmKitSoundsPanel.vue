@@ -5,7 +5,7 @@
         <v-col cols="12" class="d-flex" style="gap: 8px">
           <v-text-field
             v-model.number="search"
-            placeholder="Search sound..."
+            placeholder="Search a sound..."
             dense
             color="#d2d2d2"
             hide-details
