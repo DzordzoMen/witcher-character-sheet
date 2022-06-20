@@ -41,9 +41,15 @@
         </v-col>
 
         <v-col cols="12" class="pt-4">
-          <v-row dense>
-            <v-col cols="12" style="py-1" v-for="sound in filteredSoundsList" :key="sound.id">
-              {{ sound.name }}
+          <v-row no-gutters>
+            <v-col cols="12" v-for="sound in filteredSoundsList" :key="sound.id">
+              <the-dm-kit-sounds-panel-item
+                :item="sound"
+                :isPlaying="isPlaying"
+                :isSelected="selectedSoundsId === sound.id"
+                @play="(val) => playSound(val)"
+                @stop="isPlaying = false"
+              />
             </v-col>
           </v-row>
         </v-col>
@@ -64,8 +70,13 @@
 </template>
 
 <script>
+import TheDmKitSoundsPanelItem from './TheDmKitSoundsPanelItem.vue';
+
 export default {
   name: 'TheDmKitSoundsPanel',
+  components: {
+    TheDmKitSoundsPanelItem,
+  },
   data: () => ({
     showContent: false,
     search: null,
@@ -184,6 +195,12 @@ export default {
           .filter((item) => item.name.toLowerCase().includes(search.toLowerCase())) || [];
       }
       return soundsList;
+    },
+  },
+  methods: {
+    playSound(soundId) {
+      this.selectedSoundsId = soundId;
+      this.isPlaying = true;
     },
   },
 };
