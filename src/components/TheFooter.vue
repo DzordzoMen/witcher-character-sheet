@@ -7,7 +7,7 @@
       Przepisy
     </router-link>
     <router-link :to="{ name: 'DMKit' }" class="footer-item">
-      DM Kit
+      DM
     </router-link>
     <div
       class="footer-item"
