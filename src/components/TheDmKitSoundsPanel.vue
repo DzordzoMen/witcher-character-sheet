@@ -230,6 +230,19 @@ export default {
     max-height: 600px;
     overflow-y: auto;
     border-bottom-right-radius: 8px;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      border: 2px solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      border-radius: 14px;
+      background-color: #C4C4C4;
+    }
   }
 
   @media (min-width: 960px) {
