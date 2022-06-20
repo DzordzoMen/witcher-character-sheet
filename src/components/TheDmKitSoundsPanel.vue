@@ -1,7 +1,44 @@
 <template>
   <div class="sounds-panel" :class="{ 'sounds-panel--show': showContent }">
     <div class="sounds-panel__content primary">
-      Content
+      <v-row no-gutters>
+        <v-col cols="12" class="d-flex" style="gap: 8px">
+          <v-text-field
+            v-model.number="search"
+            placeholder="Search sound..."
+            dense
+            color="#d2d2d2"
+            hide-details
+            outlined
+            flat
+            class="ma-0 pa-0"
+          />
+
+          <v-menu bottom left offset-y rounded="sm">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                dark
+                icon
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon dark> {{ volume === 0 ? 'mdi-volume-mute' : 'mdi-volume-high' }} </v-icon>
+              </v-btn>
+            </template>
+
+            <div style="background: #fff; overflow: hidden">
+              <v-slider
+                vertical
+                min="0"
+                max="100"
+                track-color="primary lighten-3"
+                hide-details
+                v-model="volume"
+              />
+            </div>
+          </v-menu>
+        </v-col>
+      </v-row>
     </div>
     <div
       class="sounds-panel__button primary"
@@ -10,8 +47,8 @@
       @click="showContent = !showContent"
       @keypress="showContent = !showContent"
     >
-      <v-icon dark size="28" color="">
-        mdi-volume-high
+      <v-icon dark size="28">
+        mdi-folder-music
       </v-icon>
     </div>
   </div>
@@ -22,6 +59,8 @@ export default {
   name: 'TheDmKitSoundsPanel',
   data: () => ({
     showContent: false,
+    search: null,
+    volume: 100,
   }),
 };
 </script>
@@ -33,7 +72,7 @@ export default {
   align-items: flex-start;
   position: fixed;
   z-index: 6;
-  top: 200px;
+  top: 170px;
   left: -350px;
   width: 400px;
   transition: transform .25s cubic-bezier(.4, 0, .2, 1),
@@ -67,6 +106,12 @@ export default {
     max-height: 600px;
     overflow-y: auto;
     border-bottom-right-radius: 8px;
+  }
+
+  @media (min-width: 960px) {
+    & {
+      top: 200px;
+    }
   }
 }
 </style>
