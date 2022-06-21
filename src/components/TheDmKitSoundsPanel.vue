@@ -92,97 +92,97 @@ export default {
       {
         id: 2,
         name: 'Knocking',
-        path: '/assets/sounds/knocking.mp3',
+        path: '/sounds/knocking.mp3',
       },
       {
         id: 3,
         name: 'Bats',
-        path: '/assets/sounds/bats.mp3',
+        path: '/sounds/bats.mp3',
       },
       {
         id: 4,
         name: 'Horse laugh',
-        path: '/assets/sounds/horse_laugh.mp3',
+        path: '/sounds/horse_laugh.mp3',
       },
       {
         id: 5,
         name: 'Walking horse',
-        path: '/assets/sounds/horse_walk.mp3',
+        path: '/sounds/horse_walk.mp3',
       },
       {
         id: 6,
         name: 'Dragon wings - fast',
-        path: '/assets/sounds/dragon_fast_wings_flap.mp3',
+        path: '/sounds/dragon_fast_wings_flap.mp3',
       },
       {
         id: 7,
         name: 'Dragon wings - slow',
-        path: '/assets/sounds/dragon_slow_wings_flap.mp3',
+        path: '/sounds/dragon_slow_wings_flap.mp3',
       },
       {
         id: 8,
         name: 'Doorbell',
-        path: '/assets/sounds/doorbell.mp3',
+        path: '/sounds/doorbell.mp3',
       },
       {
         id: 9,
         name: 'Knocking on doors',
-        path: '/assets/sounds/knocking_on_doors.mp3',
+        path: '/sounds/knocking_on_doors.mp3',
       },
       {
         id: 10,
         name: 'Room search',
-        path: '/assets/sounds/room_seach.mp3',
+        path: '/sounds/room_search.mp3',
       },
       {
         id: 11,
         name: 'Doors opening',
-        path: '/assets/sounds/opening_doors.mp3',
+        path: '/sounds/opening_doors.mp3',
       },
       {
         id: 12,
         name: 'Destroying an object',
-        path: '/assets/sounds/object_destroying.mp3',
+        path: '/sounds/object_destroying.mp3',
       },
       {
         id: 13,
         name: 'Steam machine',
-        path: '/assets/sounds/steam_machine.mp3',
+        path: '/sounds/steam_machine.mp3',
       },
       {
         id: 14,
         name: 'Writing on paper - Fast',
-        path: '/assets/sounds/paper_writing_fast.mp3',
+        path: '/sounds/paper_writing_fast.mp3',
       },
       {
         id: 15,
         name: 'Writing on paper - Slow',
-        path: '/assets/sounds/paper_writing_slow.mp3',
+        path: '/sounds/paper_writing_slow.mp3',
       },
       {
         id: 16,
         name: 'Torch flame',
-        path: '/assets/sounds/torch_flame.mp3',
+        path: '/sounds/torch_flame.mp3',
       },
       {
         id: 17,
         name: 'Scratching with stone',
-        path: '/assets/sounds/stone_scratching.mp3',
+        path: '/sounds/stone_scratching.mp3',
       },
       {
         id: 18,
         name: 'Lighter',
-        path: '/assets/sounds/lighter.mp3',
+        path: '/sounds/lighter.mp3',
       },
       {
         id: 19,
         name: 'Table scratching',
-        path: '/assets/sounds/table_scratching.mp3',
+        path: '/sounds/table_scratching.mp3',
       },
       {
         id: 20,
         name: 'Dragon roar',
-        path: '/assets/sounds/dragon_roar.mp3',
+        path: '/sounds/dragon_roar.mp3',
       },
     ],
     audio: null,
@@ -204,6 +204,7 @@ export default {
     },
     playSound(soundId) {
       this.selectedSoundsId = soundId;
+      if (this.audio) this.pauseSound();
       this.isPlaying = true;
 
       this.audio = new Audio(this.getItemInfoById(soundId).path);
