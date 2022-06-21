@@ -10,6 +10,7 @@
             dark
             color="#d2d2d2"
             hide-details
+            clearable
             outlined
             flat
             class="ma-0 pa-0"
