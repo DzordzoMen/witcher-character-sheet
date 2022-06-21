@@ -48,7 +48,7 @@
                 :isPlaying="isPlaying"
                 :isSelected="selectedSoundsId === sound.id"
                 @play="(val) => playSound(val)"
-                @stop="isPlaying = false"
+                @stop="pauseSound()"
               />
             </v-col>
           </v-row>
@@ -87,7 +87,7 @@ export default {
       {
         id: 1,
         name: 'Opening doors with creaking',
-        path: '/assets/sounds/creaking_doors.mp3',
+        path: '/sounds/creaking_doors.mp3',
       },
       {
         id: 2,
@@ -185,6 +185,7 @@ export default {
         path: '/assets/sounds/dragon_roar.mp3',
       },
     ],
+    audio: null,
   }),
   computed: {
     filteredSoundsList() {
@@ -198,9 +199,28 @@ export default {
     },
   },
   methods: {
+    getItemInfoById(id) {
+      return this.soundsList?.filter((item) => item.id === id)[0];
+    },
     playSound(soundId) {
       this.selectedSoundsId = soundId;
       this.isPlaying = true;
+
+      this.audio = new Audio(this.getItemInfoById(soundId).path);
+      this.audio.volume = (this.volume / 100);
+      this.audio.audioTracks = 0;
+      this.audio.addEventListener('canplaythrough', () => {
+        this.audio.play();
+      });
+
+      this.audio.addEventListener('ended', () => {
+        this.isPlaying = false;
+      });
+    },
+    pauseSound() {
+      this.isPlaying = false;
+      this.audio.pause();
+      this.audio.audioTracks = 0;
     },
   },
 };
